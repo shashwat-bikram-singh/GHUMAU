@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-dark-900 text-gray-100;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg;
+  }
+  
+  .dark .glass {
+    @apply bg-dark-800/80 border-gray-700/50;
+  }
+  
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-lg border border-white/30 shadow-xl;
+  }
+  
+  .dark .glass-card {
+    @apply bg-dark-800/60 border-gray-600/30;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-teal-500;
+  }
+  
+  .dark .text-gradient {
+    @apply from-primary-400 to-teal-300;
+  }
+}
