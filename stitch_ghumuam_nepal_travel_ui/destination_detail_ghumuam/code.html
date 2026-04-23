@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ghumuan - Destination Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#141d21",
+                        "on-primary-fixed": "#001d31",
+                        "on-surface-variant": "#3f4850",
+                        "on-secondary-fixed": "#0f2008",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "on-secondary-container": "#556849",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-fixed-dim": "#b7cda8",
+                        "secondary-container": "#d0e7c0",
+                        "surface-container-high": "#dce9ff",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#fdfcff",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#dbe4ea",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#d3e4fe",
+                        "inverse-primary": "#93ccff",
+                        "background": "#f8f9ff",
+                        "tertiary-fixed-dim": "#bfc8ce",
+                        "primary-fixed-dim": "#93ccff",
+                        "on-tertiary-container": "#fbfdff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#006398",
+                        "on-tertiary-fixed-variant": "#3f484d",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary": "#516445",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#6d767b",
+                        "surface": "#f8f9ff",
+                        "primary-fixed": "#cce5ff",
+                        "surface-variant": "#d3e4fe",
+                        "outline": "#707881",
+                        "secondary-fixed": "#d3e9c3",
+                        "surface-bright": "#f8f9ff",
+                        "tertiary": "#545d62",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#394c2f",
+                        "on-primary-fixed-variant": "#004b73",
+                        "outline-variant": "#bfc7d2",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#cbdbf5",
+                        "on-surface": "#0b1c30",
+                        "surface-container": "#e5eeff",
+                        "primary-container": "#007bb9",
+                        "primary": "#006194",
+                        "inverse-surface": "#213145"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f8f9ff; color: #0b1c30; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        .bg-mist { backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); background: linear-gradient(to top, transparent, rgba(248, 249, 255, 0.9)); }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl transition-all duration-300">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<a class="text-2xl font-bold tracking-tighter text-sky-900 font-headline" href="#">Ghumuan</a>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-slate-600 font-medium hover:text-sky-600 transition-colors font-body" href="#">Explore</a>
+<a class="text-slate-600 font-medium hover:text-sky-600 transition-colors font-body" href="#">AI Planner</a>
+<a class="text-slate-600 font-medium hover:text-sky-600 transition-colors font-body" href="#">Saved Trips</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-slate-600 font-medium hover:text-sky-600 transition-colors font-body">Sign In</button>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2 rounded-full font-label text-sm hover:opacity-90 transition-opacity">Plan My Trip</button>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<div class="h-px w-full bg-gradient-to-r from-transparent via-surface-container-highest to-transparent opacity-50"></div>
+</nav>
+<main class="pb-24">
+<!-- Hero Section -->
+<section class="relative h-[819px] min-h-[600px] flex items-end pb-24 px-8 md:px-16 overflow-hidden">
+<img alt="Pokhara Valley" class="absolute inset-0 w-full h-full object-cover z-0" data-alt="breathtaking wide aerial view of pokhara valley nepal with fewa lake reflecting the majestic snow capped annapurna mountain range at sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwc6jePqLhyCXN_EEMCCFjGwH_1_D2JEqU6NZXKMlLGYJHOys-d8px8Wb6JbhGHnJCkwzsm6WOHxgGEC4vfg8iAtAnaPc8PgNKJ-oHRn_JV-rKlt4pYpeVDjE1lgwZEqQsCVPaA19a-74JYRLCOxf1Igw-ClPG6sARb-80jJIFw5h3_SBq-5vm5j68jwL88gVIkqzpA4x7z6a6JtsNYYgO-Pr0Dksdsnm3rP_dbxoD2u-T-W_8jEPaYuOdCkPxuiZPLCwKAZZpgUx2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent z-10"></div>
+<div class="relative z-20 max-w-4xl">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur text-primary text-sm font-label mb-6">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span>
+                    Gandaki Province, Nepal
+                </span>
+<h1 class="text-6xl md:text-8xl font-headline font-bold tracking-tight text-on-background mb-4 leading-none">Pokhara</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant font-body max-w-2xl font-light">The city of lakes, where the mountains touch the water and the sky feels closer than ever before.</p>
+</div>
+</section>
+<div class="max-w-7xl mx-auto px-8 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 mt-12">
+<!-- Main Content -->
+<div class="lg:col-span-8 space-y-24">
+<!-- Overview -->
+<section>
+<h2 class="text-3xl font-headline font-bold text-on-background mb-6">The Atmosphere</h2>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed mb-6">
+                        Nestled in a tranquil valley beside the serene Phewa Lake, Pokhara is Nepal's premier destination for relaxation and adventure alike. Unlike the bustling streets of Kathmandu, Pokhara breathes at a slower pace. The air is crisp, carrying the scent of pine and the distant promise of the high Himalayas.
+                    </p>
+<p class="text-lg text-on-surface-variant font-body leading-relaxed">
+                        Here, morning mists slowly reveal the towering, jagged peaks of the Annapurna range, reflected perfectly in the still waters below. It is a sanctuary for trekkers resting their legs and dreamers seeking inspiration.
+                    </p>
+</section>
+<!-- Best Time to Visit (Bento) -->
+<section>
+<h2 class="text-3xl font-headline font-bold text-on-background mb-8">When to Journey</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-low rounded-xl p-8 hover:bg-surface-container-highest transition-colors duration-500">
+<span class="material-symbols-outlined text-primary text-4xl mb-4">wb_sunny</span>
+<h3 class="text-xl font-headline font-semibold text-on-background mb-2">Autumn (Oct - Nov)</h3>
+<p class="text-on-surface-variant font-body">The skies are impossibly clear, offering unobstructed views of the mountains. The weather is cool and pleasant.</p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-8 hover:bg-surface-container-highest transition-colors duration-500">
+<span class="material-symbols-outlined text-secondary text-4xl mb-4">local_florist</span>
+<h3 class="text-xl font-headline font-semibold text-on-background mb-2">Spring (Mar - May)</h3>
+<p class="text-on-surface-variant font-body">Rhododendrons bloom in the surrounding hills, painting the landscape in vibrant reds and pinks. Warmer days.</p>
+</div>
+</div>
+</section>
+<!-- Things to Do (Gallery) -->
+<section>
+<h2 class="text-3xl font-headline font-bold text-on-background mb-8">Experiences</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+<div class="col-span-2 row-span-2 relative rounded-xl overflow-hidden group aspect-square md:aspect-auto">
+<img alt="Boating on Phewa Lake" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="colorful wooden boats docked on the calm waters of phewa lake pokhara with soft morning light and distant mountains" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdbcUg1eJM8Sa7PlguGfZwuxctv2b5uhulWfpBCD7drYHLTbbFUkVHF526AZ04CuAFsG8IJ2jovFXrYQKcJftIFMosPtZ2LryE9hGcXYFHdnWLjJrKbT9JIzrSq0w0MdanX3XsDkTAejV1R6JJ76tCtI754HEb1fdaXfh_MrR9phjS0rFnRei3t3R0PjQ6ky3fX9AH-EGHhlk10OLVkFUBQmEmHQVrefn-8Jy5qvIQuNSTLdQAkgSr4Fn4O0d63vJIjdDkqHiiTTOa"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<h3 class="text-white text-xl font-headline font-semibold">Boating on Phewa Lake</h3>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden group aspect-square">
+<img alt="World Peace Pagoda" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="brilliant white buddhist world peace pagoda shrine standing against a deep blue clear sky in nepal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLZQtPaWKbMzotPlptiA_DED5FzK8ip3pKV4_2-MOtLU3P857xNqEvo1taOo7a5HWJdrjqsJGnKFGorQpKFsb4TOvuqeVsmhrRly-cXk1oN1HyCVzGNFNP8SJAYkfvAhwYQBVGPRRFT_hkHd8tIrzFl5UJ3PYPc2aH2cLDErgg4Z7yfCqEh8n03C2QJEmn61uT1GFNOFKNO4Y9546guboWOCz9NuWvc6mh1xYzmZ-cXGYHh4A_aUO2XnItaFajoSHUaspeFdnF_sVy"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-white font-headline font-medium">Peace Pagoda</h3>
+</div>
+</div>
+<div class="relative rounded-xl overflow-hidden group aspect-square">
+<img alt="Paragliding" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="colorful paraglider soaring high above lush green valley and blue lake with snow capped mountains in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIamyNvdvogcHcLTjrh_VOdEuHgNbmHhnfsVPTDUw0m5wNS3JqAK2ZYJffthDiXa1Zu4LHgT7gmpcDsNT-XjRlJy-kEcYkkzRI4_IZCPR7Un1pvDNhDnhBB9Tf6MNmZjLCwde-WwHRHhrWoWX_j2e5cmcKAvp4Ys7tI4_qTzvjIUWuBMWGB3wxpCGa3snmAH0Vj_GohgHeXBO1yzCLFshW0RCxdKTrZxiZfGOv4uvaStu6vzSbPEe5TkKB_0DeyIqUZkJreZCqAdxJ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-white font-headline font-medium">Paragliding</h3>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sticky Sidebar (Cost & Map) -->
+<div class="lg:col-span-4 relative">
+<div class="sticky top-32 space-y-8">
+<!-- Booking Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_8px_40px_rgb(11,28,48,0.06)] border border-outline-variant/15">
+<div class="flex items-end justify-between mb-8">
+<div>
+<span class="block text-on-surface-variant font-label text-sm mb-1">Estimated Daily Base</span>
+<span class="text-4xl font-headline font-bold text-on-background">$45</span>
+</div>
+<span class="text-on-surface-variant font-body text-sm mb-1">/ person</span>
+</div>
+<div class="space-y-4 mb-8">
+<div class="flex items-center justify-between py-2 border-b border-surface-variant">
+<div class="flex items-center text-on-surface">
+<span class="material-symbols-outlined text-primary mr-3 text-xl">hotel</span>
+<span class="font-body">Stay (Mid-range)</span>
+</div>
+<span class="font-label font-medium">$25</span>
+</div>
+<div class="flex items-center justify-between py-2 border-b border-surface-variant">
+<div class="flex items-center text-on-surface">
+<span class="material-symbols-outlined text-primary mr-3 text-xl">restaurant</span>
+<span class="font-body">Food &amp; Drink</span>
+</div>
+<span class="font-label font-medium">$15</span>
+</div>
+<div class="flex items-center justify-between py-2 border-b border-surface-variant">
+<div class="flex items-center text-on-surface">
+<span class="material-symbols-outlined text-primary mr-3 text-xl">directions_bus</span>
+<span class="font-body">Local Transport</span>
+</div>
+<span class="font-label font-medium">$5</span>
+</div>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary py-4 rounded-full font-headline font-semibold text-lg hover:opacity-90 transition-opacity flex items-center justify-center">
+                            Plan this trip
+                            <span class="material-symbols-outlined ml-2">arrow_forward</span>
+</button>
+</div>
+<!-- Stylized Map -->
+<div class="bg-surface-container-low rounded-xl p-6">
+<h3 class="text-lg font-headline font-semibold text-on-background mb-4">Location</h3>
+<div class="w-full h-48 rounded-lg overflow-hidden bg-surface-variant relative">
+<!-- Placeholder for map, using a subtle gradient/texture to match aesthetic -->
+<div class="absolute inset-0 opacity-50" style="background-image: radial-gradient(#006194 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-4xl" data-location="Pokhara">location_on</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-[1.5rem] mt-20 bg-slate-50 relative z-10 border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<a class="text-xl font-bold text-sky-900 font-headline mb-4 block" href="#">Ghumuan</a>
+<p class="text-slate-500 font-label text-sm mt-8">© 2024 Ghumuan. Inspired by the Stillness of the Himalayas.</p>
+</div>
+<div class="flex flex-col space-y-3">
+<a class="text-slate-500 font-body hover:text-sky-600 transition-colors" href="#">About Nepal</a>
+<a class="text-slate-500 font-body hover:text-sky-600 transition-colors" href="#">Trekking Guide</a>
+</div>
+<div class="flex flex-col space-y-3">
+<a class="text-slate-500 font-body hover:text-sky-600 transition-colors" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col space-y-3">
+<a class="text-slate-500 font-body hover:text-sky-600 transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-500 font-body hover:text-sky-600 transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>

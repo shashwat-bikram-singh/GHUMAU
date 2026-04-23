@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Explore - Ghumuan</title>
+<!-- Google Fonts: Plus Jakarta Sans & Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config injected from Design System -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#141d21",
+                    "on-primary-fixed": "#001d31",
+                    "on-surface-variant": "#3f4850",
+                    "on-secondary-fixed": "#0f2008",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#0b1c30",
+                    "on-secondary-container": "#556849",
+                    "surface-container-low": "#eff4ff",
+                    "secondary-fixed-dim": "#b7cda8",
+                    "secondary-container": "#d0e7c0",
+                    "surface-container-high": "#dce9ff",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#fdfcff",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#dbe4ea",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#d3e4fe",
+                    "inverse-primary": "#93ccff",
+                    "background": "#f8f9ff",
+                    "tertiary-fixed-dim": "#bfc8ce",
+                    "primary-fixed-dim": "#93ccff",
+                    "on-tertiary-container": "#fbfdff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#006398",
+                    "on-tertiary-fixed-variant": "#3f484d",
+                    "inverse-on-surface": "#eaf1ff",
+                    "secondary": "#516445",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#6d767b",
+                    "surface": "#f8f9ff",
+                    "primary-fixed": "#cce5ff",
+                    "surface-variant": "#d3e4fe",
+                    "outline": "#707881",
+                    "secondary-fixed": "#d3e9c3",
+                    "surface-bright": "#f8f9ff",
+                    "tertiary": "#545d62",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#394c2f",
+                    "on-primary-fixed-variant": "#004b73",
+                    "outline-variant": "#bfc7d2",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#cbdbf5",
+                    "on-surface": "#0b1c30",
+                    "surface-container": "#e5eeff",
+                    "primary-container": "#007bb9",
+                    "primary": "#006194",
+                    "inverse-surface": "#213145"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body": [
+                            "Manrope"
+                    ],
+                    "label": [
+                            "Manrope"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+             font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl bg-gradient-to-b from-surface to-transparent pb-4">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<!-- Brand -->
+<a class="text-2xl font-bold tracking-tighter text-primary font-headline" href="#">
+                Ghumuan
+            </a>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<!-- Active Link: Explore -->
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-headline text-[1.125rem] opacity-80 scale-95 transition-transform" href="#">
+                    Explore
+                </a>
+<!-- Inactive Links -->
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label text-md" href="#">
+                    AI Planner
+                </a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label text-md" href="#">
+                    Saved Trips
+                </a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<!-- Search Bar Placeholder - right aligned per JSON -->
+<button aria-label="Search" class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">search</span>
+</button>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label text-md hidden sm:block" href="#">
+                    Sign In
+                </a>
+<a class="bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full px-6 py-3 font-label font-medium hover:opacity-90 transition-opacity shadow-[0_4px_30px_rgba(11,28,48,0.06)]" href="#">
+                    Plan My Trip
+                </a>
+<button class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-highest border border-outline-variant/15 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant">person</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="pt-40 pb-24 px-8 max-w-screen-2xl mx-auto">
+<!-- Hero Section: Atmospheric Intro -->
+<section class="mb-16 md:w-2/3">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface tracking-[-0.02em] leading-tight mb-6">
+                Discover the <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Stillness of Nepal</span>
+</h1>
+<p class="font-body text-xl text-on-surface-variant max-w-2xl leading-relaxed">
+                Wander beyond the ordinary. Curated journeys through ancient heritage, quiet lakes, and the towering Himalayas.
+            </p>
+</section>
+<!-- Filters Section: Floating Bar Style -->
+<section class="mb-16 sticky top-24 z-40">
+<div class="bg-surface-container-low/80 backdrop-blur-md rounded-xl p-4 md:p-6 flex flex-col md:flex-row gap-6 md:items-center justify-between shadow-[0_8px_40px_rgba(11,28,48,0.04)] border border-outline-variant/15">
+<!-- Region Filter -->
+<div class="flex items-center gap-3 overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
+<span class="font-label text-sm text-on-surface-variant font-semibold mr-2 uppercase tracking-widest whitespace-nowrap">Region</span>
+<button class="px-5 py-2 rounded-full bg-surface-container-lowest text-primary font-label text-sm shadow-[0_2px_10px_rgba(11,28,48,0.03)] whitespace-nowrap transition-transform hover:scale-105">
+                        Himalaya
+                    </button>
+<button class="px-5 py-2 rounded-full bg-transparent text-on-surface-variant font-label text-sm hover:bg-surface-container-lowest/50 transition-colors whitespace-nowrap">
+                        Hills
+                    </button>
+<button class="px-5 py-2 rounded-full bg-transparent text-on-surface-variant font-label text-sm hover:bg-surface-container-lowest/50 transition-colors whitespace-nowrap">
+                        Terai
+                    </button>
+</div>
+<!-- Divider (Visual Tonal Shift) -->
+<div class="hidden md:block w-px h-8 bg-surface-variant/50"></div>
+<!-- Category Filter -->
+<div class="flex items-center gap-3 overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
+<span class="font-label text-sm text-on-surface-variant font-semibold mr-2 uppercase tracking-widest whitespace-nowrap">Vibe</span>
+<button class="px-5 py-2 rounded-full bg-transparent text-on-surface-variant font-label text-sm hover:bg-surface-container-lowest/50 transition-colors whitespace-nowrap">
+                        Trekking
+                    </button>
+<button class="px-5 py-2 rounded-full bg-surface-container-lowest text-primary font-label text-sm shadow-[0_2px_10px_rgba(11,28,48,0.03)] whitespace-nowrap transition-transform hover:scale-105">
+                        Lakes
+                    </button>
+<button class="px-5 py-2 rounded-full bg-transparent text-on-surface-variant font-label text-sm hover:bg-surface-container-lowest/50 transition-colors whitespace-nowrap">
+                        Heritage
+                    </button>
+</div>
+<!-- Divider -->
+<div class="hidden md:block w-px h-8 bg-surface-variant/50"></div>
+<!-- Budget Filter -->
+<div class="flex items-center gap-3">
+<span class="font-label text-sm text-on-surface-variant font-semibold mr-2 uppercase tracking-widest">Budget</span>
+<div class="flex bg-surface-variant/30 rounded-full p-1">
+<button class="px-4 py-1.5 rounded-full text-on-surface-variant font-label text-sm hover:bg-surface-container-lowest transition-colors">
+                            $
+                        </button>
+<button class="px-4 py-1.5 rounded-full bg-surface-container-lowest text-primary font-label text-sm shadow-sm">
+                            $$
+                        </button>
+<button class="px-4 py-1.5 rounded-full text-on-surface-variant font-label text-sm hover:bg-surface-container-lowest transition-colors">
+                            $$$
+                        </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Destination Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
+<!-- Card 1 (Asymmetric larger visual focus) -->
+<article class="group flex flex-col gap-5 md:col-span-2 lg:col-span-2">
+<div class="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-[1.5rem] bg-surface-container-lowest">
+<img alt="Gokyo Lakes" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Stunning panoramic view of turquoise Gokyo Lakes nestled amidst snow-capped Himalayan peaks under a clear blue sky, peaceful and majestic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKACSnmWFS52pXxywn_jSsHkwVMd4KIuzxmBS-r8_OxJyGgXjxmeW427bfHdZE4b6jbYism0YdKWD7Cc2OKls8c65QPZGpDjR9sHdG1DVGY2PBXquimo6ZujOritY816pgBKEZog03UixHpeid99tWDWwb0Z-pN-cF5MqblfihVsQAi_mJFNufZK89_4kciYmubQQy-SIfuKNdIpVk1UZQmOMMXeGtZVkiqCIV2_HKx40pHvalVRmopl0ZNVu51zO7uzeUuvkK7uCc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute top-6 left-6 bg-surface/80 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[1rem] text-primary">water</span>
+<span class="font-label text-xs font-semibold text-primary tracking-wide">Lakes</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 px-2">
+<div class="flex justify-between items-start">
+<h2 class="font-headline text-3xl font-bold text-on-surface tracking-tight">Gokyo Valley Ecosystem</h2>
+<span class="font-label text-lg font-medium text-secondary">$$$</span>
+</div>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed max-w-3xl">
+                        A serene alternative to the Everest Base Camp, featuring six cascading turquoise lakes set against the backdrop of Cho Oyu. Experience the high-altitude stillness away from the heavy crowds.
+                    </p>
+</div>
+</article>
+<!-- Card 2 -->
+<article class="group flex flex-col gap-5">
+<div class="relative w-full aspect-square md:aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-surface-container-lowest">
+<img alt="Bhaktapur Durbar Square" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Detailed close-up of intricate wood carvings on an ancient Newari temple in Bhaktapur Durbar Square, warm afternoon sunlight highlighting textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6CaQ9M6UjPvwRIWx3ZJHPUcPv9uvmzoyXzcbTD1Td8mIezAjdAzjWGkIX-SUGX98mJBBnd8mWczw87TFkkvwPfz62mB0pVub_cKacE6Qabl0F5x0eg2OBhz9lU3RVcOsZOgTH5tJkflAn3XXdmlnL2RxsUK8GIU-Na-T5tstSVy0nxMfRqP5EKuQ33fw8jOFp1MWsdFfGjCT8ZNOdtyx9EBAT4RGoTaSgh3pA2TOfuZ1vl1XL99bCUzjg30Cphpzj1ZrfSTOwLg4r"/>
+<div class="absolute top-6 left-6 bg-surface/80 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[1rem] text-primary">account_balance</span>
+<span class="font-label text-xs font-semibold text-primary tracking-wide">Heritage</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 px-2">
+<div class="flex justify-between items-start">
+<h2 class="font-headline text-2xl font-bold text-on-surface tracking-tight">Bhaktapur Ancient City</h2>
+<span class="font-label text-lg font-medium text-primary">$$</span>
+</div>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                        Step back in time in this preserved medieval city state. Wander through courtyards of intricate terracotta and dark wood architecture.
+                    </p>
+</div>
+</article>
+<!-- Card 3 -->
+<article class="group flex flex-col gap-5">
+<div class="relative w-full aspect-square md:aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-surface-container-lowest">
+<img alt="Mardi Himal Trek" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Hiker standing on a dramatic narrow ridge trail overlooking a sea of clouds with the sharp peak of Machapuchare towering in the distance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT7LwXNCBKbYHtRF649M84c17d0K2NPScu9wnQK-ZQEymqkn1yt-lGddu-M5Lmh3WQmzf69kmOmhafXcsk7zy7h9CFIwgirNzbhmj2eVbVooBnsy3gtiSykTnXHfQaTDNqdv3hlZyzX-2sicZiM8fA6STrIC5kOAy7aSn-wEfbD_Jq84xljf88CVdHHbiB-WhGHSFHBjmZRztLo-3WO98A16KiB03OVu2GyOw6PFubV1szm7shqt1ps8PQBXc5hAErc7ExEzBgUQnH"/>
+<div class="absolute top-6 left-6 bg-surface/80 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[1rem] text-primary">hiking</span>
+<span class="font-label text-xs font-semibold text-primary tracking-wide">Trekking</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 px-2">
+<div class="flex justify-between items-start">
+<h2 class="font-headline text-2xl font-bold text-on-surface tracking-tight">Mardi Himal Ridge</h2>
+<span class="font-label text-lg font-medium text-primary">$$</span>
+</div>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                        A hidden gem trek walking along dramatic ridges. Offers the most intimate and breathtaking close-up views of Mount Machapuchare.
+                    </p>
+</div>
+</article>
+<!-- Card 4 -->
+<article class="group flex flex-col gap-5 md:col-span-2 lg:col-span-1">
+<div class="relative w-full aspect-[16/9] md:aspect-square overflow-hidden rounded-[1.5rem] bg-surface-container-lowest">
+<img alt="Chitwan National Park" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Mist rising from a calm jungle river in Chitwan National park at dawn, dense green foliage on banks, soft tranquil atmospheric light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmof_2MRjVAscDUP11c0bvMn7o7JLL3e2wN2IXYU406Lt54qMULbVJgNWylBrbEsBE8N49xOR4ztqup4aJfR5P8TubNVaCAIk2aPqET8gq12CtTyyQvqsw1nE266AYFIzI4vNbHNCMnDjv3F_xSsk4HC_Fzr55Odj0KScTEqX4X97CApunSG9nVSZa0eK2e6vb8leqG4DqJPMSVraXkrsPRND45K5y4OLKocRbxV7w6IUoRlj-aVQ8apNQfeZunfmaZlQsCDLbKK2W"/>
+<div class="absolute top-6 left-6 bg-surface/80 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[1rem] text-secondary">forest</span>
+<span class="font-label text-xs font-semibold text-secondary tracking-wide">Terai Nature</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 px-2">
+<div class="flex justify-between items-start">
+<h2 class="font-headline text-2xl font-bold text-on-surface tracking-tight">Chitwan River Safaris</h2>
+<span class="font-label text-lg font-medium text-primary">$</span>
+</div>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                        Float down the Rapti river in the early morning mist. A quiet, immersive way to spot rhinos and exotic birdlife in the subtropical lowlands.
+                    </p>
+</div>
+</article>
+<!-- Card 5 (Wide banner style) -->
+<article class="group flex flex-col gap-5 md:col-span-2 lg:col-span-2">
+<div class="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden rounded-[1.5rem] bg-surface-container-lowest">
+<img alt="Mustang Desert" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" data-alt="Barren, dramatic arid landscape of Upper Mustang with deep canyons, layered colorful rock formations, and clear vast sky, raw and remote" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAByD9bNv6-8S6BqRTkk4JR-_rh3mBHP0GMOw5ba0G8jqunh8amqYGXd9rUheqPXGrgb8swBXbqpoaV_pDT66VLSwLrogykAALRd11O7paklI9uYrTaAE3XWJWmKGTqtYVdmIc9uOY5mSMO_Xtrt2VQMLpHQST9Ac6KgNhVrCtqX9WRZk3mzNm2SBVIQ7RwUNhzpn17yr3vf6BcXCvUK3VXBf_DgrEuJMcS9aNgjA4a5v738tWfukXUHA_prxc2QrivBnDjzmwiIdkE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="absolute top-6 left-6 bg-surface/80 backdrop-blur-md px-4 py-1.5 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined text-[1rem] text-primary">terrain</span>
+<span class="font-label text-xs font-semibold text-primary tracking-wide">Trans-Himalaya</span>
+</div>
+</div>
+<div class="flex flex-col gap-2 px-2">
+<div class="flex justify-between items-start">
+<h2 class="font-headline text-3xl font-bold text-on-surface tracking-tight">Upper Mustang Kingdom</h2>
+<span class="font-label text-lg font-medium text-secondary">$$$</span>
+</div>
+<p class="font-body text-on-surface-variant text-lg leading-relaxed max-w-3xl">
+                        Journey into the forbidden kingdom. A stark, beautiful high-altitude desert holding ancient Tibetan Buddhist culture, cave monasteries, and walled cities.
+                    </p>
+</div>
+</article>
+</section>
+<!-- Load More Action -->
+<div class="mt-20 flex justify-center">
+<button class="bg-surface-container-high text-primary font-label font-semibold px-8 py-4 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300">
+                Reveal More Destinations
+            </button>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full rounded-t-[1.5rem] mt-20 bg-surface-container-low shadow-[0_-4px_30px_rgba(11,28,48,0.03)] border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-7xl mx-auto">
+<!-- Brand & Philosophy -->
+<div class="md:col-span-1 flex flex-col gap-4">
+<span class="text-xl font-bold text-primary font-headline tracking-tighter">
+                    Ghumuan
+                </span>
+<p class="font-body text-sm text-on-surface-variant max-w-xs">
+                    Curating journeys inspired by the stillness of the Himalayas and the depth of ancient traditions.
+                </p>
+</div>
+<!-- Links Column -->
+<div class="md:col-span-2 flex flex-wrap gap-x-12 gap-y-4">
+<a class="font-label text-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all duration-200" href="#">About Nepal</a>
+<a class="font-label text-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all duration-200" href="#">Trekking Guide</a>
+<a class="font-label text-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all duration-200" href="#">Contact Us</a>
+<a class="font-label text-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all duration-200" href="#">Terms of Service</a>
+<a class="font-label text-md text-on-surface-variant hover:text-primary hover:translate-x-1 transition-all duration-200" href="#">Privacy Policy</a>
+</div>
+<!-- Copyright -->
+<div class="md:col-span-1 flex items-end md:justify-end">
+<span class="font-label text-xs text-outline">
+                    © 2024 Ghumuan. Inspired by the Stillness of the Himalayas.
+                </span>
+</div>
+</div>
+</footer>
+</body></html>

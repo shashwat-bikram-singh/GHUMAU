@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pokhara Reviews - Ghumuan</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#cbdbf5",
+                    "surface-container-low": "#eff4ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-fixed-variant": "#004b73",
+                    "on-primary-container": "#fdfcff",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#cce5ff",
+                    "primary-container": "#007bb9",
+                    "on-error-container": "#93000a",
+                    "background": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "secondary": "#516445",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#dce9ff",
+                    "inverse-surface": "#213145",
+                    "on-background": "#0b1c30",
+                    "secondary-fixed-dim": "#b7cda8",
+                    "on-primary-fixed": "#001d31",
+                    "tertiary-fixed-dim": "#bfc8ce",
+                    "outline-variant": "#bfc7d2",
+                    "on-tertiary-container": "#fbfdff",
+                    "inverse-primary": "#93ccff",
+                    "tertiary-fixed": "#dbe4ea",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-secondary-fixed": "#0f2008",
+                    "tertiary": "#545d62",
+                    "surface-tint": "#006398",
+                    "tertiary-container": "#6d767b",
+                    "surface-container": "#e5eeff",
+                    "on-surface": "#0b1c30",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "secondary-container": "#d0e7c0",
+                    "on-secondary-fixed-variant": "#394c2f",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#3f4850",
+                    "on-tertiary-fixed": "#141d21",
+                    "on-secondary-container": "#556849",
+                    "on-tertiary-fixed-variant": "#3f484d",
+                    "surface-variant": "#d3e4fe",
+                    "on-error": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "secondary-fixed": "#d3e9c3",
+                    "primary-fixed-dim": "#93ccff",
+                    "error-container": "#ffdad6",
+                    "primary": "#006194",
+                    "outline": "#707881"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body": [
+                            "Manrope"
+                    ],
+                    "label": [
+                            "Manrope"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        h1, h2, h3, h4, h5, h6, .font-headline {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-slate-950/70 backdrop-blur-xl border-b border-transparent shadow-none">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-sky-900 dark:text-sky-100 font-headline">
+                Ghumuan
+            </div>
+<!-- Web Nav Links -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-sky-700 dark:text-sky-400 font-bold border-b-2 border-sky-700 dark:border-sky-400 pb-1 font-body hover:bg-sky-50/50 dark:hover:bg-sky-900/20 transition-all duration-300" href="#">Explore</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-sky-600 dark:hover:text-sky-300 transition-colors font-body hover:bg-sky-50/50 dark:hover:bg-sky-900/20 duration-300" href="#">AI Planner</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-sky-600 dark:hover:text-sky-300 transition-colors font-body hover:bg-sky-50/50 dark:hover:bg-sky-900/20 duration-300" href="#">Saved Trips</a>
+</div>
+<!-- Actions -->
+<div class="flex items-center space-x-6">
+<button class="hidden md:block text-slate-600 dark:text-slate-400 font-medium hover:text-sky-600 dark:hover:text-sky-300 transition-colors font-body">Sign In</button>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full px-6 py-2.5 font-label font-medium hover:opacity-90 transition-opacity flex items-center space-x-2">
+<span>Plan My Trip</span>
+</button>
+<button class="md:hidden text-slate-600 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+<!-- Separation gradient -->
+<div class="h-4 w-full bg-gradient-to-b from-surface to-transparent opacity-50 absolute bottom-[-1rem] left-0 pointer-events-none"></div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto">
+<!-- Header Section -->
+<header class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-3xl">
+<p class="font-label text-sm text-primary uppercase tracking-widest mb-3">Destination Reviews</p>
+<h1 class="text-5xl md:text-6xl font-headline font-extrabold text-on-background mb-4">Pokhara</h1>
+<p class="text-xl font-body text-on-surface-variant opacity-80">Discover what travelers are saying about the city of lakes.</p>
+</div>
+<div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full px-8 py-4 font-label font-semibold hover:shadow-lg transition-shadow flex items-center space-x-3 shadow-sm">
+<span class="material-symbols-outlined" data-icon="edit_square" data-weight="fill">edit_square</span>
+<span>Write a review</span>
+</button>
+</div>
+</header>
+<!-- Rating Summary Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+<!-- Overall Score Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 lg:p-10 flex flex-col items-center justify-center text-center relative overflow-hidden group">
+<div class="absolute inset-0 bg-gradient-to-b from-surface-container-low/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="text-7xl font-headline font-extrabold text-primary mb-2">4.8</div>
+<div class="flex items-center space-x-1 justify-center mb-4 text-secondary">
+<span class="material-symbols-outlined text-2xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-2xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-2xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-2xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-2xl" data-weight="fill">star_half</span>
+</div>
+<p class="font-body text-on-surface-variant">Based on 1,245 reviews</p>
+</div>
+</div>
+<!-- Breakdown Card -->
+<div class="lg:col-span-2 bg-surface-container-low rounded-xl p-8 lg:p-10">
+<h3 class="text-2xl font-headline font-bold text-on-background mb-8">Score Breakdown</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-6">
+<!-- Breakdown Item -->
+<div>
+<div class="flex justify-between items-center mb-2 font-label text-on-surface">
+<span class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary/70 text-sm">cleaning_services</span>
+<span>Cleanliness</span>
+</span>
+<span class="font-bold">4.7</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 94%"></div>
+</div>
+</div>
+<!-- Breakdown Item -->
+<div>
+<div class="flex justify-between items-center mb-2 font-label text-on-surface">
+<span class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary/70 text-sm">security</span>
+<span>Safety</span>
+</span>
+<span class="font-bold">4.9</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 98%"></div>
+</div>
+</div>
+<!-- Breakdown Item -->
+<div>
+<div class="flex justify-between items-center mb-2 font-label text-on-surface">
+<span class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary/70 text-sm">landscape</span>
+<span>Natural Beauty</span>
+</span>
+<span class="font-bold">5.0</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<!-- Breakdown Item -->
+<div>
+<div class="flex justify-between items-center mb-2 font-label text-on-surface">
+<span class="flex items-center space-x-2">
+<span class="material-symbols-outlined text-primary/70 text-sm">restaurant</span>
+<span>Food &amp; Dining</span>
+</span>
+<span class="font-bold">4.5</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filters & Sort -->
+<div class="flex flex-col sm:flex-row justify-between items-center mb-10 pb-6 border-b border-surface-container-high/50">
+<div class="flex items-center space-x-4 overflow-x-auto w-full sm:w-auto pb-4 sm:pb-0 scrollbar-hide">
+<button class="px-5 py-2 rounded-full bg-primary/10 text-primary font-label font-medium whitespace-nowrap">All Reviews</button>
+<button class="px-5 py-2 rounded-full bg-transparent hover:bg-surface-container-low text-on-surface-variant font-label font-medium transition-colors whitespace-nowrap">Couples</button>
+<button class="px-5 py-2 rounded-full bg-transparent hover:bg-surface-container-low text-on-surface-variant font-label font-medium transition-colors whitespace-nowrap">Solo Travelers</button>
+<button class="px-5 py-2 rounded-full bg-transparent hover:bg-surface-container-low text-on-surface-variant font-label font-medium transition-colors whitespace-nowrap">Families</button>
+</div>
+<div class="w-full sm:w-auto mt-4 sm:mt-0 flex justify-end">
+<button class="flex items-center space-x-2 text-on-surface-variant hover:text-primary transition-colors font-label font-medium">
+<span class="material-symbols-outlined text-lg">sort</span>
+<span>Sort by: Newest</span>
+</button>
+</div>
+</div>
+<!-- Reviews List -->
+<div class="space-y-12">
+<!-- Review Card 1 -->
+<article class="bg-surface-container-lowest rounded-xl p-8 lg:p-10 transition-transform duration-300 hover:-translate-y-1 relative shadow-[0_4px_30px_rgba(11,28,48,0.03)] border border-outline-variant/10">
+<div class="flex flex-col md:flex-row gap-8">
+<!-- User Info Column -->
+<div class="md:w-1/4 flex-shrink-0 flex flex-row md:flex-col items-center md:items-start space-x-4 md:space-x-0 md:space-y-4">
+<img alt="Sarah J." class="w-16 h-16 rounded-full object-cover shadow-sm" data-alt="Portrait of a young woman smiling warmly against a blurred natural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoC0ZvpTNtZyvp0l1R5Yr_drwmYycoLKbNIGdF8ZzIxKqGNRo8J0m9KjyQJu0yMRSm0p4TYOsFR6GzdcV7g8uN-5FUn5nP5mSu3E1M0t6gw-TpO_D-tsh--bZMrEeIVVLkNB9rfLjR4SOmuE0yTYni07Wigb7x9amIwZM70ydNM2eLLBpxYSbRomKIZauPU1FTIEgjkv9Iz80ZHkegb8bsTDEdebVpOq5plVPDD15z957W4-Lt3IB4-k5J7RGIjIE9occpgX99WxuV"/>
+<div>
+<h4 class="font-headline font-bold text-lg text-on-background">Sarah J.</h4>
+<p class="font-label text-sm text-on-surface-variant mb-1">London, UK</p>
+<p class="font-label text-xs text-outline">Traveled Oct 2023</p>
+</div>
+</div>
+<!-- Review Content Column -->
+<div class="md:w-3/4">
+<div class="flex items-center space-x-1 mb-4 text-secondary">
+<span class="material-symbols-outlined text-xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xl" data-weight="fill">star</span>
+</div>
+<h5 class="text-xl font-headline font-semibold mb-3 text-on-background">"A piece of heaven on earth"</h5>
+<p class="font-body text-on-surface-variant leading-relaxed mb-6">
+                            Pokhara exceeded all my expectations. Waking up to the view of Machapuchare reflecting perfectly in Phewa Lake is a memory I'll cherish forever. The lakeside area is incredibly clean and feels very safe to walk around, even late at night. The balance of nature and comfortable amenities makes it the perfect base before a trek.
+                        </p>
+<!-- Mini Photo Gallery in Review -->
+<div class="flex space-x-3 overflow-x-auto pb-2 scrollbar-hide">
+<img alt="Phewa Lake view" class="h-24 w-36 object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity" data-alt="Serene view of Phewa Lake at sunrise with colorful wooden boats docked in the foreground" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtlhTwJYx1EnJP_jVyds9zUD8KUSMfaOsh6qr4QSelJy_Ej8Me_hvE8ckjss-H9EJUI9tC8aIkmStriVt83x7zGaKEdfbAkcHpjRwEzdbUUJetE_8s325Dv27NEgEcCkVkm4Z5YdpC3o0kNbVltt-ZnYn1UcfZ1glJQ4TtFEGbF6_aVhkQgJU42ofAKpUlccUbJdzKLYIlNPQpnWSmrqYT30yqwD3T1fez1RXpe2GUVzR0fONdiWon5PqraYPlxSub4jnkv3U_cqEN"/>
+<img alt="Mountain peak" class="h-24 w-36 object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity" data-alt="Snow-capped peak of Mount Machapuchare towering against a clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuiMP1ISx8pyAVpYx4hanKULtG_3BoOFr_VKrORIMqterwORj1Z-FsV1PxpDiu3S2pUs_bkw6oMS8P2Q5XCzTC2lMU1cuo__A3tRISvAh2RJ55P80G5Hgxlc6CLvOyrNiVhuC6wA2Gtnjv1Jv5J2_6IRUHgkgSQEEr06o1RHxGqplzmTehwHlm8Yw_C0zsLGyJFcHRCcMMqn4SYAuRf6BXfN4cuiMY3KaZI3PIEQ0HCD9Vxwk45S9UL2qKBrv5Yk5HlcNX7iMqxhbQ"/>
+</div>
+</div>
+</div>
+</article>
+<!-- Review Card 2 -->
+<article class="bg-surface-container-lowest rounded-xl p-8 lg:p-10 transition-transform duration-300 hover:-translate-y-1 relative shadow-[0_4px_30px_rgba(11,28,48,0.03)] border border-outline-variant/10">
+<div class="flex flex-col md:flex-row gap-8">
+<!-- User Info Column -->
+<div class="md:w-1/4 flex-shrink-0 flex flex-row md:flex-col items-center md:items-start space-x-4 md:space-x-0 md:space-y-4">
+<img alt="David M." class="w-16 h-16 rounded-full object-cover shadow-sm" data-alt="Portrait of a middle-aged man wearing round glasses outdoors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNL2AxFj1MICuR2gqqkzPaPIJnKvr-zwGfiSt3hFOwSceBmAJLo37oZxaPFKPuQ4nWdbBLZ_8Ty0ZRrL_14xe1albgGgAkKcsMuKZX4JNncGN-Ymkz-raJZGvO3OtGhTrT4BDB_12irIEZhTLY8zpMj1Sx5JOm2dCCyiyKieu53NMcDuQ-O_uq7vPcBcjTKsM2rqNuLkAAPQ7XVGombgpyuVyVt4DuCLMw67kFxM8I5gwVTq9kc7yPkzNLV33g3YXncQrW_ho1N49s"/>
+<div>
+<h4 class="font-headline font-bold text-lg text-on-background">David M.</h4>
+<p class="font-label text-sm text-on-surface-variant mb-1">Sydney, AU</p>
+<p class="font-label text-xs text-outline">Traveled Sep 2023</p>
+</div>
+</div>
+<!-- Review Content Column -->
+<div class="md:w-3/4">
+<div class="flex items-center space-x-1 mb-4 text-secondary">
+<span class="material-symbols-outlined text-xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xl text-outline-variant" data-weight="fill">star</span>
+</div>
+<h5 class="text-xl font-headline font-semibold mb-3 text-on-background">"Relaxing vibe, great food"</h5>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                            After finishing the Annapurna Base Camp trek, Pokhara was exactly what I needed. The cafe culture here is surprisingly robust, with excellent coffee and bakeries. Renting a scooter to visit the Peace Pagoda is a must-do. Deducting one star only because the main street can get a bit crowded with traffic during peak hours, but stepping down to the lakeside paths instantly solves that.
+                        </p>
+</div>
+</div>
+</article>
+<!-- Review Card 3 -->
+<article class="bg-surface-container-lowest rounded-xl p-8 lg:p-10 transition-transform duration-300 hover:-translate-y-1 relative shadow-[0_4px_30px_rgba(11,28,48,0.03)] border border-outline-variant/10">
+<div class="flex flex-col md:flex-row gap-8">
+<!-- User Info Column -->
+<div class="md:w-1/4 flex-shrink-0 flex flex-row md:flex-col items-center md:items-start space-x-4 md:space-x-0 md:space-y-4">
+<div class="w-16 h-16 rounded-full bg-surface-container-high flex items-center justify-center text-primary font-headline font-bold text-2xl shadow-sm">
+                            E
+                        </div>
+<div>
+<h4 class="font-headline font-bold text-lg text-on-background">Elena R.</h4>
+<p class="font-label text-sm text-on-surface-variant mb-1">Madrid, ES</p>
+<p class="font-label text-xs text-outline">Traveled Nov 2023</p>
+</div>
+</div>
+<!-- Review Content Column -->
+<div class="md:w-3/4">
+<div class="flex items-center space-x-1 mb-4 text-secondary">
+<span class="material-symbols-outlined text-xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xl" data-weight="fill">star</span>
+<span class="material-symbols-outlined text-xl" data-weight="fill">star</span>
+</div>
+<h5 class="text-xl font-headline font-semibold mb-3 text-on-background">"Paragliding was unforgettable"</h5>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                            The adventure sports scene here is world-class. I went paragliding from Sarangkot and the views of the valley and lake below, framed by the Himalayas, were breathtaking. The instructors felt very safe and professional. The town itself has a beautiful, slow pace compared to Kathmandu. Truly a sanctuary.
+                        </p>
+</div>
+</div>
+</article>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-16 flex justify-center">
+<button class="bg-transparent border border-outline-variant/30 text-primary rounded-full px-8 py-3 font-label font-medium hover:bg-surface-container-low transition-colors">
+                Load More Reviews
+            </button>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full rounded-t-[1.5rem] mt-20 bg-slate-50 dark:bg-slate-900/50">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-7xl mx-auto">
+<!-- Brand Column -->
+<div class="md:col-span-1">
+<h2 class="text-xl font-bold text-sky-900 dark:text-sky-100 font-headline mb-4">Ghumuan</h2>
+<p class="font-label text-sm text-slate-500 dark:text-slate-400">© 2024 Ghumuan. Inspired by the Stillness of the Himalayas.</p>
+</div>
+<!-- Links Columns -->
+<div class="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+<div class="flex flex-col space-y-3">
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-body transition-colors hover:translate-x-1 duration-200" href="#">About Nepal</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-body transition-colors hover:translate-x-1 duration-200" href="#">Trekking Guide</a>
+</div>
+<div class="flex flex-col space-y-3">
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-body transition-colors hover:translate-x-1 duration-200" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col space-y-3">
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-body transition-colors hover:translate-x-1 duration-200" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-body transition-colors hover:translate-x-1 duration-200" href="#">Privacy Policy</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

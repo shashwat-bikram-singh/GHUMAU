@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ghumuam - Hotel Booking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface": "#0b1c30",
+                        "tertiary-container": "#6d767b",
+                        "on-primary-fixed": "#001d31",
+                        "on-tertiary-fixed-variant": "#3f484d",
+                        "on-secondary-fixed-variant": "#394c2f",
+                        "on-primary-container": "#fdfcff",
+                        "on-background": "#0b1c30",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#93ccff",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-surface": "#213145",
+                        "secondary-container": "#d0e7c0",
+                        "surface-container-high": "#dce9ff",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed": "#dbe4ea",
+                        "outline": "#707881",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary": "#ffffff",
+                        "inverse-primary": "#93ccff",
+                        "background": "#f8f9ff",
+                        "tertiary-fixed-dim": "#bfc8ce",
+                        "tertiary": "#545d62",
+                        "surface-container-low": "#eff4ff",
+                        "secondary": "#516445",
+                        "on-secondary-fixed": "#0f2008",
+                        "surface-dim": "#cbdbf5",
+                        "surface-tint": "#006398",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#3f4850",
+                        "on-secondary-container": "#556849",
+                        "surface-variant": "#d3e4fe",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#b7cda8",
+                        "on-primary-fixed-variant": "#004b73",
+                        "on-tertiary-fixed": "#141d21",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#006194",
+                        "outline-variant": "#bfc7d2",
+                        "on-tertiary-container": "#fbfdff",
+                        "primary-container": "#007bb9",
+                        "on-secondary": "#ffffff",
+                        "surface-container": "#e5eeff",
+                        "secondary-fixed": "#d3e9c3",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-fixed": "#cce5ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: theme('colors.surface'); color: theme('colors.on-surface'); }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.02em; }
+        .mist-nav { backdrop-filter: blur(40px); }
+        .glass-panel { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(20px); border: 1px solid rgba(191, 199, 210, 0.15); }
+        .ambient-shadow { box-shadow: 0 4px 30px rgba(11, 28, 48, 0.06); }
+        /* Hide scrollbar for clean horizontal scrolling */
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-[40px] bg-gradient-to-t from-transparent via-white/80 to-white dark:via-slate-900/80 dark:to-slate-900 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none transition-all">
+<div class="flex justify-between items-center w-full px-12 py-6 max-w-[1920px] mx-auto">
+<div class="flex items-center gap-8">
+<a class="text-2xl font-bold text-sky-800 dark:text-sky-300 tracking-tighter font-headline" href="#">Ghumuam</a>
+<!-- Desktop Navigation Links -->
+<div class="hidden md:flex items-center gap-6 font-['Manrope'] text-lg">
+<a class="text-sky-700 dark:text-sky-300 font-semibold border-b-2 border-sky-600/20 pb-1 hover:text-sky-600 dark:hover:text-sky-300 transition-all duration-500 ease-out scale-95 active:scale-100" href="#">Explore</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-sky-600 dark:hover:text-sky-300 transition-all duration-500 ease-out scale-95 active:scale-100" href="#">AI Planner</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-sky-600 dark:hover:text-sky-300 transition-all duration-500 ease-out scale-95 active:scale-100" href="#">Saved Trips</a>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<button class="hidden md:block px-6 py-2.5 rounded-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-medium hover:opacity-90 transition-opacity">Plan a Trip</button>
+<button class="text-primary font-medium px-4 py-2 hover:bg-surface-container-low rounded-full transition-colors">Sign In</button>
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-grow pt-28 pb-12 px-4 md:px-8 max-w-[1920px] mx-auto w-full flex flex-col md:flex-row gap-8">
+<!-- Left Panel: Search, Filters, List -->
+<div class="w-full md:w-[60%] lg:w-[50%] flex flex-col gap-8">
+<!-- Search Header Bar -->
+<div class="bg-surface-container-lowest rounded-xl p-4 ambient-shadow flex flex-col sm:flex-row gap-4 items-center sticky top-28 z-40">
+<div class="flex-1 w-full relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-tertiary">location_on</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low focus:bg-surface-container-lowest focus:ring-0 focus:outline-none focus:border-outline-variant border border-transparent rounded-lg text-on-surface font-body" placeholder="Pokhara, Nepal" type="text" value="Pokhara, Nepal"/>
+</div>
+<div class="flex w-full sm:w-auto gap-4">
+<div class="relative flex-1 sm:w-40">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-tertiary">calendar_today</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low focus:bg-surface-container-lowest focus:ring-0 focus:outline-none border border-transparent rounded-lg text-on-surface font-body text-sm" placeholder="Oct 15 - Oct 20" type="text" value="Oct 15 - Oct 20"/>
+</div>
+<div class="relative flex-1 sm:w-32">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-tertiary">person</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low focus:bg-surface-container-lowest focus:ring-0 focus:outline-none border border-transparent rounded-lg text-on-surface font-body text-sm" placeholder="2 Guests" type="text" value="2 Guests"/>
+</div>
+</div>
+<button class="w-full sm:w-auto bg-primary text-on-primary p-3 rounded-xl hover:bg-primary-container transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<h1 class="font-headline text-3xl font-bold text-on-surface">Stays in Pokhara</h1>
+<p class="font-body text-on-surface-variant mt-1">85+ serene locations found</p>
+</div>
+<button class="flex items-center gap-2 text-primary font-medium hover:bg-surface-container-low px-4 py-2 rounded-full transition-colors">
+<span class="material-symbols-outlined text-[20px]">tune</span> Filters
+                </button>
+</div>
+<!-- Hotel List -->
+<div class="flex flex-col gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col sm:flex-row group transition-transform hover:-translate-y-1 duration-300">
+<div class="sm:w-2/5 h-64 sm:h-auto relative overflow-hidden">
+<img alt="Hotel Parkside Pokhara exterior with lake view" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHmFgxvQvFQFNunoO9GcuaojWaVdSi69OINr0W5wKw-91n5e-iPEAPLOttuOoz7PGhPwJx9zVGYAUHMp4xyFEjUvvCbGa67nz-Vi9rPhLb5jP9ZF34KJXnPVlu2nVnQGKnd7McJjzbz0jm6R8R7xvi2Mwtp5nu0YDEU93sRVIA8n7twxJP8lTrjMOhvjBafqKIOlALYPgolgd9S12o-9-eyBdyNUGOMAE0VHm-JqIQDppRdlHAPNG4nQ07PKw_VWxO9U3ZaaNuyb7T"/>
+<div class="absolute top-4 right-4 bg-surface/80 backdrop-blur-md p-2 rounded-full cursor-pointer hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-primary">favorite_border</span>
+</div>
+</div>
+<div class="p-6 sm:w-3/5 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline text-xl font-bold text-on-surface">Hotel Parkside</h2>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[16px] text-amber-500 fill-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label font-bold text-sm">4.0</span>
+</div>
+</div>
+<p class="font-body text-on-surface-variant text-sm mb-4">Lakeside, Pokhara • 2-Star Budget Hotel</p>
+<div class="flex gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary" title="Free Wifi">wifi</span>
+<span class="material-symbols-outlined text-tertiary" title="Restaurant">restaurant</span>
+</div>
+</div>
+<div class="flex justify-between items-end border-t border-outline-variant/15 pt-4">
+<div>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-wider">Per night</p>
+<p class="font-headline text-2xl font-bold text-primary">$35</p>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-medium hover:shadow-lg transition-all">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col sm:flex-row group transition-transform hover:-translate-y-1 duration-300">
+<div class="sm:w-2/5 h-64 sm:h-auto relative overflow-hidden">
+<img alt="Mount Kailash Resort Pokhara" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgs0Dhhq8nsTLDt_eoHizinegqJVrM2TyeMX0sfWFeN6quFc_NOrFeXCUfOePmqi8Jj-fgoZUkm41_97hF4sVOyZdQW5Z0pydPBpoLA6oAqAUCUN0psDDU1tzDGHToyYV24hfkTlyPk0MXvCCQ_PJofnfgNLCr5DsMElHbmSkbC0yOhIPDmmEbL5EwCP2gYPS9BoQFuR7vQE7Jt2afAQyil1ZIQxvvU2cQlAucmE6dj_mzLoste6WoSnKSY5-wh5I3umwCpUutySmN"/>
+<div class="absolute top-4 right-4 bg-surface/80 backdrop-blur-md p-2 rounded-full cursor-pointer hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-primary">favorite_border</span>
+</div>
+</div>
+<div class="p-6 sm:w-3/5 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline text-xl font-bold text-on-surface">Mount Kailash Resort</h2>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[16px] text-amber-500 fill-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label font-bold text-sm">4.5</span>
+</div>
+</div>
+<p class="font-body text-on-surface-variant text-sm mb-4">Lakeside, Pokhara • Lake View</p>
+<div class="flex gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary" title="Free Wifi">wifi</span>
+<span class="material-symbols-outlined text-tertiary" title="Spa">spa</span>
+<span class="material-symbols-outlined text-tertiary" title="Pool">pool</span>
+</div>
+</div>
+<div class="flex justify-between items-end border-t border-outline-variant/15 pt-4">
+<div>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-wider">Per night</p>
+<p class="font-headline text-2xl font-bold text-primary">$95</p>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-medium hover:shadow-lg transition-all">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col sm:flex-row group transition-transform hover:-translate-y-1 duration-300">
+<div class="sm:w-2/5 h-64 sm:h-auto relative overflow-hidden">
+<img alt="Pokhara Grande" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtzWGkjUB4SiKPd2nYkcOcnw2FwhiPwMD3wzoecvkbPF6eL8cRSdHyFBqqQasiPQiWmma-tJMfwXVp1GicaUg8w48HHWErFZRsKMjx3YXBNSgKes1E-xGctOPl2LbwiXG-V3Gc1_Lb9Tw4GIkqz28WT6Y6_dw9pSkeHo4vCKRNLDeqe5CVPofquw6rivD7YKDrN2h4Shp3nB8Pi-CzlKKVf0Fs1JJkgegN-w76shZijzBoRDmKcDnV2liaoEJ4D3ptTgYTitvkXDT1"/>
+<div class="absolute top-4 right-4 bg-surface/80 backdrop-blur-md p-2 rounded-full cursor-pointer hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-primary">favorite_border</span>
+</div>
+</div>
+<div class="p-6 sm:w-3/5 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline text-xl font-bold text-on-surface">Pokhara Grande</h2>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[16px] text-amber-500 fill-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label font-bold text-sm">4.8</span>
+</div>
+</div>
+<p class="font-body text-on-surface-variant text-sm mb-4">Pardi, Pokhara • Luxury</p>
+<div class="flex gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary" title="Free Wifi">wifi</span>
+<span class="material-symbols-outlined text-tertiary" title="Spa">spa</span>
+<span class="material-symbols-outlined text-tertiary" title="Restaurant">restaurant</span>
+<span class="material-symbols-outlined text-tertiary" title="Pool">pool</span>
+</div>
+</div>
+<div class="flex justify-between items-end border-t border-outline-variant/15 pt-4">
+<div>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-wider">Per night</p>
+<p class="font-headline text-2xl font-bold text-primary">$150</p>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-medium hover:shadow-lg transition-all">Book Now</button>
+</div>
+</div>
+</div>
+</div>
+<div class="flex justify-between items-end mt-12">
+<div>
+<h1 class="font-headline text-3xl font-bold text-on-surface">Stays in Chitwan</h1>
+<p class="font-body text-on-surface-variant mt-1">45+ jungle retreats found</p>
+</div>
+</div>
+<!-- Chitwan Hotel List -->
+<div class="flex flex-col gap-6 mt-6">
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col sm:flex-row group transition-transform hover:-translate-y-1 duration-300">
+<div class="sm:w-2/5 h-64 sm:h-auto relative overflow-hidden">
+<img alt="Royal Park Hotel Chitwan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCITwNPNCc9cpQY2pINZfBU0oxvHpy4pepdznu08J-2v96VT83AOrp5x5hP-B1dSxkhX4pwkbV5EKejN8blqVF4dpZUcLbhJyx0rpoNlTl62WONx2uq9dDhDTsh427bjh_Fe-L5h7b0qh6BUOG1ZQM1k7YuznSXTlVmUs_8D3pdaGUFwF60Vvz6sgiHY3Dr0sGm4DhJILp2m2nrdaUWerNRPONwEi1cZmFrfrjLVUsOUVKw9dAXjU6UnfaiK2UvzivML0dNmco112jY"/>
+<div class="absolute top-4 right-4 bg-surface/80 backdrop-blur-md p-2 rounded-full cursor-pointer hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-primary">favorite_border</span>
+</div>
+</div>
+<div class="p-6 sm:w-3/5 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline text-xl font-bold text-on-surface">Royal Park Hotel</h2>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[16px] text-amber-500 fill-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label font-bold text-sm">4.1</span>
+</div>
+</div>
+<p class="font-body text-on-surface-variant text-sm mb-4">Sauraha, Chitwan • 2-Star Jungle Lodge</p>
+<div class="flex gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary" title="Free Wifi">wifi</span>
+<span class="material-symbols-outlined text-tertiary" title="Restaurant">restaurant</span>
+</div>
+</div>
+<div class="flex justify-between items-end border-t border-outline-variant/15 pt-4">
+<div>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-wider">Per night</p>
+<p class="font-headline text-2xl font-bold text-primary">$40</p>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-medium hover:shadow-lg transition-all">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col sm:flex-row group transition-transform hover:-translate-y-1 duration-300">
+<div class="sm:w-2/5 h-64 sm:h-auto relative overflow-hidden">
+<img alt="Green Park Resort Chitwan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-oQO3yilF2Ky1G5v7aIi8OMGctt5xK3syDsqveMUlczhgnGOeaa0DsVfGLJ-BhztswvbJsVMupMf4y-adid7x_BkUu5R6Sbsef-aNGodaAqAkkQ6bJyUGOox3-GEhovtxRsdAnUbNe_H6wlx9gO12W1OgZ0PyIaoN1sbieWLiHgTm7b2EnBsDZiKDJDGiLvNbIHcO1A2nnQlEZ6RaUdKXUK_nXYbIixjmstGkaEB-iiBMsTheiT05y1-8Q4l08dooTVdCoberYIZX"/>
+<div class="absolute top-4 right-4 bg-surface/80 backdrop-blur-md p-2 rounded-full cursor-pointer hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-primary">favorite_border</span>
+</div>
+</div>
+<div class="p-6 sm:w-3/5 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline text-xl font-bold text-on-surface">Green Park Resort</h2>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[16px] text-amber-500 fill-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label font-bold text-sm">4.6</span>
+</div>
+</div>
+<p class="font-body text-on-surface-variant text-sm mb-4">Sauraha, Chitwan • Jungle Resort</p>
+<div class="flex gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary" title="Free Wifi">wifi</span>
+<span class="material-symbols-outlined text-tertiary" title="Pool">pool</span>
+<span class="material-symbols-outlined text-tertiary" title="Restaurant">restaurant</span>
+</div>
+</div>
+<div class="flex justify-between items-end border-t border-outline-variant/15 pt-4">
+<div>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-wider">Per night</p>
+<p class="font-headline text-2xl font-bold text-primary">$85</p>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-medium hover:shadow-lg transition-all">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden ambient-shadow flex flex-col sm:flex-row group transition-transform hover:-translate-y-1 duration-300">
+<div class="sm:w-2/5 h-64 sm:h-auto relative overflow-hidden">
+<img alt="Meghauli Serai Chitwan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEM7DZHK2ZZ1VILWF9AwzBkW3V4STy-JHCFJUq2-mhGzlKWtTUUPlzbx8Khq67gXqfy-Jij4GJZUXRkHtV0PstsKxV0JQmgxCArxGUIpDJiFoMfafnx7IpTHXCvCdDyLbKdV2xn-1AQOiVymn6O_FErDeskXUoy51sfpJ1YLxIUadGNAqaYZHJ7RbnWF-EmkgQo9DKm1LkZQgYNAoXAPAwM3UCck5AFySVhju3lrGtIiwu4nQ72up6C09cMGSrOigkcNbf94yurrX4"/>
+<div class="absolute top-4 right-4 bg-surface/80 backdrop-blur-md p-2 rounded-full cursor-pointer hover:bg-surface transition-colors">
+<span class="material-symbols-outlined text-primary">favorite_border</span>
+</div>
+</div>
+<div class="p-6 sm:w-3/5 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h2 class="font-headline text-xl font-bold text-on-surface">Meghauli Serai</h2>
+<div class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded-md">
+<span class="material-symbols-outlined text-[16px] text-amber-500 fill-amber-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label font-bold text-sm">4.9</span>
+</div>
+</div>
+<p class="font-body text-on-surface-variant text-sm mb-4">Meghauli, Chitwan • Luxury Lodge</p>
+<div class="flex gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary" title="Free Wifi">wifi</span>
+<span class="material-symbols-outlined text-tertiary" title="Spa">spa</span>
+<span class="material-symbols-outlined text-tertiary" title="Pool">pool</span>
+<span class="material-symbols-outlined text-tertiary" title="Restaurant">restaurant</span>
+</div>
+</div>
+<div class="flex justify-between items-end border-t border-outline-variant/15 pt-4">
+<div>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-wider">Per night</p>
+<p class="font-headline text-2xl font-bold text-primary">$350</p>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-full font-medium hover:shadow-lg transition-all">Book Now</button>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-4 text-primary font-medium hover:bg-surface-container-low rounded-xl transition-colors mt-4">Load More Retreats</button>
+</div>
+<!-- Right Panel: Interactive Map -->
+<div class="hidden md:block md:w-[40%] lg:w-[50%] h-[calc(100vh-140px)] sticky top-28 rounded-xl overflow-hidden ambient-shadow relative group bg-slate-200 flex items-center justify-center">
+<p class="text-tertiary font-medium">Interactive Map view of Nepal (Pokhara/Chitwan)</p>
+<!-- Interactive Map Pins (Simulated) -->
+<div class="absolute top-1/3 left-1/3 transform -translate-x-1/2 -translate-y-1/2 group-hover:scale-110 transition-transform cursor-pointer">
+<div class="bg-surface-container-lowest text-primary font-bold px-3 py-1.5 rounded-full shadow-lg border border-outline-variant/20 text-sm">$35</div>
+<div class="w-3 h-3 bg-surface-container-lowest rotate-45 absolute -bottom-1 left-1/2 -translate-x-1/2 border-r border-b border-outline-variant/20"></div>
+</div>
+<div class="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:scale-110 transition-transform cursor-pointer">
+<div class="bg-primary text-on-primary font-bold px-3 py-1.5 rounded-full shadow-lg text-sm">$95</div>
+<div class="w-3 h-3 bg-primary rotate-45 absolute -bottom-1 left-1/2 -translate-x-1/2"></div>
+</div>
+<div class="absolute top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:scale-110 transition-transform cursor-pointer">
+<div class="bg-primary text-on-primary font-bold px-3 py-1.5 rounded-full shadow-lg text-sm">$150</div>
+<div class="w-3 h-3 bg-primary rotate-45 absolute -bottom-1 left-1/2 -translate-x-1/2"></div>
+</div>
+<div class="absolute top-2/3 left-1/3 transform -translate-x-1/2 -translate-y-1/2 group-hover:scale-110 transition-transform cursor-pointer">
+<div class="bg-surface-container-lowest text-primary font-bold px-3 py-1.5 rounded-full shadow-lg border border-outline-variant/20 text-sm">$40</div>
+<div class="w-3 h-3 bg-surface-container-lowest rotate-45 absolute -bottom-1 left-1/2 -translate-x-1/2 border-r border-b border-outline-variant/20"></div>
+</div>
+<div class="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:scale-110 transition-transform cursor-pointer">
+<div class="bg-primary text-on-primary font-bold px-3 py-1.5 rounded-full shadow-lg text-sm">$85</div>
+<div class="w-3 h-3 bg-primary rotate-45 absolute -bottom-1 left-1/2 -translate-x-1/2"></div>
+</div>
+<div class="absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group-hover:scale-110 transition-transform cursor-pointer">
+<div class="bg-primary text-on-primary font-bold px-3 py-1.5 rounded-full shadow-lg text-sm">$350</div>
+<div class="w-3 h-3 bg-primary rotate-45 absolute -bottom-1 left-1/2 -translate-x-1/2"></div>
+</div>
+<!-- Floating Map Controls -->
+<div class="absolute bottom-6 right-6 flex flex-col gap-2">
+<button class="bg-surface-container-lowest p-3 rounded-full ambient-shadow text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="bg-surface-container-lowest p-3 rounded-full ambient-shadow text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="w-full mt-20 rounded-t-[2.5rem] bg-slate-50 dark:bg-slate-950 text-sky-700 dark:text-sky-400 font-['Manrope'] text-sm tracking-wide">
+<div class="max-w-7xl mx-auto px-12 py-20 flex flex-col md:flex-row justify-between items-center gap-12">
+<div class="flex flex-col gap-4 text-center md:text-left">
+<a class="text-xl font-bold text-sky-800 dark:text-sky-300" href="#">Ghumuam</a>
+<p class="text-slate-500">© 2024 Ghumuam. Inspired by the stillness of the Himalayas.</p>
+</div>
+<div class="flex gap-6 flex-wrap justify-center">
+<a class="text-slate-500 dark:text-slate-500 hover:text-sky-600 transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Destinations</a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-sky-600 transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Sustainability</a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-sky-600 transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Our Story</a>
+<a class="text-slate-500 dark:text-slate-500 hover:text-sky-600 transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Support</a>
+</div>
+</div>
+</footer>
+</body></html>

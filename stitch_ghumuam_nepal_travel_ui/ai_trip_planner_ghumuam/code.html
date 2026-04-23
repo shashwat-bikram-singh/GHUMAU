@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ghumuan - AI Trip Planner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#141d21",
+                    "on-primary-fixed": "#001d31",
+                    "on-surface-variant": "#3f4850",
+                    "on-secondary-fixed": "#0f2008",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#0b1c30",
+                    "on-secondary-container": "#556849",
+                    "surface-container-low": "#eff4ff",
+                    "secondary-fixed-dim": "#b7cda8",
+                    "secondary-container": "#d0e7c0",
+                    "surface-container-high": "#dce9ff",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#fdfcff",
+                    "on-primary": "#ffffff",
+                    "tertiary-fixed": "#dbe4ea",
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#d3e4fe",
+                    "inverse-primary": "#93ccff",
+                    "background": "#f8f9ff",
+                    "tertiary-fixed-dim": "#bfc8ce",
+                    "primary-fixed-dim": "#93ccff",
+                    "on-tertiary-container": "#fbfdff",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#006398",
+                    "on-tertiary-fixed-variant": "#3f484d",
+                    "inverse-on-surface": "#eaf1ff",
+                    "secondary": "#516445",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#6d767b",
+                    "surface": "#f8f9ff",
+                    "primary-fixed": "#cce5ff",
+                    "surface-variant": "#d3e4fe",
+                    "outline": "#707881",
+                    "secondary-fixed": "#d3e9c3",
+                    "surface-bright": "#f8f9ff",
+                    "tertiary": "#545d62",
+                    "on-error-container": "#93000a",
+                    "on-secondary-fixed-variant": "#394c2f",
+                    "on-primary-fixed-variant": "#004b73",
+                    "outline-variant": "#bfc7d2",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#cbdbf5",
+                    "on-surface": "#0b1c30",
+                    "surface-container": "#e5eeff",
+                    "primary-container": "#007bb9",
+                    "primary": "#006194",
+                    "inverse-surface": "#213145"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body": [
+                            "Manrope"
+                    ],
+                    "label": [
+                            "Manrope"
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: theme('colors.surface');
+            color: theme('colors.on-surface');
+        }
+        h1, h2, h3, h4, h5, h6, .font-headline {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            letter-spacing: -0.02em;
+        }
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col relative overflow-x-hidden">
+<!-- TopNavBar -->
+<nav aria-label="Top Navigation" class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-[40px] bg-gradient-to-t from-transparent to-surface">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-primary">
+                Ghumuan
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-slate-600 font-medium hover:text-primary transition-colors font-label text-sm" href="#">Explore</a>
+<a aria-current="page" class="text-primary font-bold border-b-2 border-primary pb-1 font-label text-sm" href="#">AI Planner</a>
+<a class="text-slate-600 font-medium hover:text-primary transition-colors font-label text-sm" href="#">Saved Trips</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-primary hover:bg-surface-container-low transition-all duration-300 px-4 py-2 rounded-full font-label text-sm">Sign In</button>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full px-6 py-2.5 font-label text-sm hover:opacity-90 transition-opacity flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-size: 18px;">magic_button</span>
+                    Plan My Trip
+                </button>
+<img alt="User profile" class="w-10 h-10 rounded-full object-cover ml-2 border border-outline-variant/15" data-alt="close up portrait of young man with short hair wearing blue shirt smiling gently against light background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnCZ4mOHrXqC2BmjACQTB98F-kHmhM65HyqGDFIWSpNGlg5f29bmTeoRDRVYmsDcvh1XHOUyqA5ByFNT7Oml8zlJJX5q1pPF4swHhTMfeQKLhAzwaV0_7mI9xKTB1ibDuRYreG6FdxCyU_WRCh85MpgUB98D9AQ7MYugaoNgqbGeLrXEeBowsNLZus2hhKYVNVnwVVPAI_c7OI_WVz-r3n4-HFEVTzkBTJ0mH7D4UhwCi3t0PjiXlzlx4fVjnt9KSQywl1TqAZQS3a"/>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-24 px-6 md:px-12 max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+<!-- Left Sidebar: Input Form -->
+<aside class="lg:col-span-4 lg:sticky lg:top-32 space-y-8">
+<div class="space-y-4">
+<h1 class="text-4xl md:text-5xl font-headline font-extrabold text-on-surface leading-tight">
+                    Shape your <br/><span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-container">sanctuary.</span>
+</h1>
+<p class="text-on-surface-variant font-body text-lg max-w-sm">
+                    Tell us your rhythm, and we'll compose the perfect Himalayan journey.
+                </p>
+</div>
+<form class="bg-surface-container-lowest rounded-xl p-8 space-y-6 relative border border-outline-variant/15">
+<!-- Decorative element -->
+<div class="absolute -top-4 -right-4 w-24 h-24 bg-surface-container-low rounded-full blur-2xl opacity-50 -z-10"></div>
+<!-- Destination -->
+<div class="space-y-2">
+<label class="font-label text-sm text-on-surface-variant block">Dream Destination</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 20px;">landscape</span>
+<input class="w-full bg-surface-container-low border-0 rounded-lg py-3 pl-12 pr-4 text-on-surface focus:ring-0 focus:bg-surface-container-lowest focus:border-surface-tint focus:border-2 transition-all font-body" placeholder="e.g., Annapurna Base Camp" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Days -->
+<div class="space-y-2">
+<label class="font-label text-sm text-on-surface-variant block">Duration</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 20px;">calendar_month</span>
+<input class="w-full bg-surface-container-low border-0 rounded-lg py-3 pl-12 pr-4 text-on-surface focus:ring-0 focus:bg-surface-container-lowest focus:border-surface-tint focus:border-2 transition-all font-body" placeholder="Days" type="number"/>
+</div>
+</div>
+<!-- Budget -->
+<div class="space-y-2">
+<label class="font-label text-sm text-on-surface-variant block">Budget</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-on-surface-variant" style="font-size: 20px;">payments</span>
+<select class="w-full bg-surface-container-low border-0 rounded-lg py-3 pl-12 pr-4 text-on-surface focus:ring-0 focus:bg-surface-container-lowest focus:border-surface-tint focus:border-2 transition-all font-body appearance-none">
+<option>Moderate</option>
+<option>Luxury</option>
+<option>Budget</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Preferences (Chips) -->
+<div class="space-y-3">
+<label class="font-label text-sm text-on-surface-variant block">Vibe</label>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-outline-variant/15 bg-surface text-on-surface font-label text-sm hover:bg-surface-container-low transition-colors" type="button">Peaceful</button>
+<button class="px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container font-label text-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined" style="font-size: 16px;">done</span> Adventure
+                        </button>
+<button class="px-4 py-2 rounded-full border border-outline-variant/15 bg-surface text-on-surface font-label text-sm hover:bg-surface-container-low transition-colors" type="button">Cultural</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant/15 bg-surface text-on-surface font-label text-sm hover:bg-surface-container-low transition-colors" type="button">Wellness</button>
+</div>
+</div>
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full py-3.5 font-label font-bold text-base hover:opacity-90 transition-opacity mt-4" type="button">
+                    Generate Itinerary
+                </button>
+</form>
+</aside>
+<!-- Right Content: AI Itinerary -->
+<section class="lg:col-span-8 space-y-12">
+<!-- Summary Banner -->
+<div class="bg-surface-container-low rounded-xl p-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&amp;fit=crop&amp;q=80&amp;w=1000')] bg-cover bg-center" data-alt="faint monochromatic texture of himalayan mountain peaks and clouds"></div>
+<div class="relative z-10">
+<p class="text-primary font-label text-sm font-semibold uppercase tracking-wider mb-1">Generated Plan</p>
+<h2 class="text-2xl font-headline font-bold text-on-surface">Annapurna Adventure &amp; Peace</h2>
+<p class="text-on-surface-variant font-body mt-1">7 Days • Moderate Pace • 2 Travelers</p>
+</div>
+<div class="relative z-10 bg-surface-container-lowest rounded-xl p-4 border border-outline-variant/15 flex items-center gap-4">
+<div class="bg-primary-container/10 p-3 rounded-full text-primary">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</div>
+<div>
+<p class="text-on-surface-variant font-label text-xs">Est. Total Cost</p>
+<p class="text-xl font-headline font-bold text-on-surface">$1,250</p>
+</div>
+</div>
+</div>
+<!-- Itinerary Timeline -->
+<div class="space-y-16 pl-4 md:pl-0 relative">
+<!-- Vertical Line (Desktop only, subtle) -->
+<div class="hidden md:block absolute left-[8.5rem] top-8 bottom-0 w-px bg-gradient-to-b from-primary/20 via-primary/10 to-transparent -z-10"></div>
+<!-- Day 1 -->
+<div class="flex flex-col md:flex-row gap-6 md:gap-12 relative group">
+<div class="md:w-32 flex-shrink-0 md:text-right pt-2 relative">
+<h3 class="text-2xl font-headline font-bold text-primary">Day 1</h3>
+<p class="text-on-surface-variant font-label text-sm">Arrival &amp; Acclimate</p>
+<!-- Node indicator -->
+<div class="hidden md:block absolute right-[-3rem] top-4 w-3 h-3 rounded-full bg-surface-container-lowest border-2 border-primary translate-x-1/2"></div>
+</div>
+<div class="flex-grow bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/15 hover:shadow-[0_8px_30px_rgb(11,28,48,0.06)] transition-all duration-500 transform hover:-translate-y-1">
+<img alt="Kathmandu Valley" class="w-full h-48 object-cover rounded-lg mb-6 hover:scale-[1.02] transition-transform duration-700 ease-in-out" data-alt="aerial view of kathmandu valley city layout with traditional temples mixed with modern buildings surrounded by hazy hills under blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCohbB2WgoInJwYMQg49ZUx5L5tsPvzt1ODMSBa9kHFhxgkLbaFBpo-c3j2CmpypUaBAhPuJCq1PQpqZspLfNA77fUmxdcPchalbfMzQZ-31rnbOWSX-J2ztEMWZp2WQHbFESaBqsvt_c0sJzYSZtCbcrHu3HCA2J2AjgEA7rQ4dF9zshIszTFR41f0LRS_ssc1Cs9tj3d0Xi3ouq1wINCPbcllJKVlLBNjvlGNXlqvxahuKpQN8RCPm_lw60UAX3dABGXwMzO1yIQT"/>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" style="font-size: 20px;">flight_land</span>
+<div>
+<h4 class="font-headline font-semibold text-lg text-on-surface">Touchdown in Kathmandu</h4>
+<p class="text-on-surface-variant font-body mt-1">Settle into your heritage boutique hotel in Patan. Take a slow evening walk around Durbar Square as the city lights up.</p>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-lg p-4 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-size: 18px;">restaurant</span>
+<p class="text-sm font-body text-on-surface-variant">Dinner suggestion: Traditional Newari feast at <span class="text-primary font-medium">Bhojan Griha</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Day 2 -->
+<div class="flex flex-col md:flex-row gap-6 md:gap-12 relative group">
+<div class="md:w-32 flex-shrink-0 md:text-right pt-2 relative">
+<h3 class="text-2xl font-headline font-bold text-primary">Day 2</h3>
+<p class="text-on-surface-variant font-label text-sm">Journey to Pokhara</p>
+<div class="hidden md:block absolute right-[-3rem] top-4 w-3 h-3 rounded-full bg-surface border-2 border-outline-variant translate-x-1/2"></div>
+</div>
+<div class="flex-grow bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/15 hover:shadow-[0_8px_30px_rgb(11,28,48,0.06)] transition-all duration-500 transform hover:-translate-y-1">
+<div class="grid grid-cols-2 gap-4 mb-6">
+<img alt="Phewa Lake" class="w-full h-32 object-cover rounded-lg hover:scale-[1.02] transition-transform duration-700 ease-in-out" data-alt="tranquil waters of phewa lake in pokhara reflecting the surrounding green hills and colorful wooden boats moored at the shore" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4WrnHjDb4lyV8RKPytObNtlSOV4FshRWshSDpHqMlLmYBlmvDnjzzc2Z60Pub5yTZSHa-FSRrB6Ijzg0sTJKB75FWjYtr01atD5kYWk0kvPs4lNZr51QlC81MSIIRH7k9fiQpPlQeKX9rw54GiZW6K_xc0IKMNSazdV5TXIpXS7807ShgdQCBe8geORF7vP6stqvY9aK_RH5R4nhLOoizXVJZ9SRImBN0yefFn3t5pWIyyY1oPpWJfU2-m0ALISJKV8lpUmJKLMF7"/>
+<img alt="Mountain View" class="w-full h-32 object-cover rounded-lg hover:scale-[1.02] transition-transform duration-700 ease-in-out" data-alt="majestic snow capped fishtail mountain peak poking through morning clouds lit by soft sunrise light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnh70CLxfYqu58v40YyW1bO1wc-1FNOEhPxIRlLkYwEDK42upyqFFuDuMGbTiyYu1Z6S0rBfvU9ygk1Iu2y7sC1h37momDbpmwyFKDXb464d3okSEKke7jGX_eK-izDKeo4DEb11KowDGr1dnAcihebC-hLasasShGCT0kxnjFwWg7KEvqGjuIpguU1PeJXP5ADWN5z3A7hizi7V53nZdewDSMVh9j1IxyNvYlFVINba_DkMQvUnpC7sgot0BC2vBp-A8vxfk83AGZ"/>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" style="font-size: 20px;">directions_bus</span>
+<div>
+<h4 class="font-headline font-semibold text-lg text-on-surface">Scenic Drive to the Lakes</h4>
+<p class="text-on-surface-variant font-body mt-1">A scenic tourist bus ride along the Trishuli river. Arrive in Pokhara and check into a lakeside retreat. Spend the afternoon boating on Phewa Lake.</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-2 mt-4">
+<span class="bg-surface-container-low text-on-surface-variant px-3 py-1 rounded-full text-xs font-label">6 Hours Travel</span>
+<span class="bg-surface-container-low text-on-surface-variant px-3 py-1 rounded-full text-xs font-label">Altitude: 822m</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Day 3 -->
+<div class="flex flex-col md:flex-row gap-6 md:gap-12 relative group">
+<div class="md:w-32 flex-shrink-0 md:text-right pt-2 relative">
+<h3 class="text-2xl font-headline font-bold text-primary">Day 3</h3>
+<p class="text-on-surface-variant font-label text-sm">The First Steps</p>
+<div class="hidden md:block absolute right-[-3rem] top-4 w-3 h-3 rounded-full bg-surface border-2 border-outline-variant translate-x-1/2"></div>
+</div>
+<div class="flex-grow bg-surface-container-lowest rounded-xl p-6 border border-outline-variant/15 hover:shadow-[0_8px_30px_rgb(11,28,48,0.06)] transition-all duration-500 transform hover:-translate-y-1">
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary mt-0.5" style="font-size: 20px;">hiking</span>
+<div>
+<h4 class="font-headline font-semibold text-lg text-on-surface">Trek to Tikhedhunga</h4>
+<p class="text-on-surface-variant font-body mt-1">Short drive to Nayapul to begin the trek. A gentle walk through subtropical valley forests, past rural villages and terraced fields.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center pt-8">
+<button class="bg-surface-container-lowest border border-outline-variant/15 text-primary rounded-full px-8 py-3 font-label font-bold text-sm hover:bg-surface-container-low transition-colors">
+                    Load Full Itinerary
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full rounded-t-[1.5rem] mt-20 relative">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-2 space-y-4">
+<div class="text-xl font-bold text-primary font-headline">
+                    Ghumuan
+                </div>
+<p class="text-on-surface-variant font-body max-w-sm">
+                    Designing serene and unforgettable Himalayan experiences. Find your stillness.
+                </p>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-on-surface mb-4">Explore</h4>
+<ul class="space-y-2">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-label text-sm transition-colors" href="#">About Nepal</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-label text-sm transition-colors" href="#">Trekking Guide</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline font-semibold text-on-surface mb-4">Legal</h4>
+<ul class="space-y-2">
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-label text-sm transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-label text-sm transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-label text-sm transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-outline-variant/10 px-12 py-6 text-center">
+<p class="text-slate-500 font-label text-sm">© 2024 Ghumuan. Inspired by the Stillness of the Himalayas.</p>
+</div>
+</footer>
+</body></html>

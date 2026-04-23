@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ghumuam - Local Eats Guide</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#cce5ff",
+                        "on-secondary-fixed-variant": "#394c2f",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-fixed-dim": "#b7cda8",
+                        "outline-variant": "#bfc7d2",
+                        "inverse-primary": "#93ccff",
+                        "on-primary-fixed": "#001d31",
+                        "primary": "#006194",
+                        "surface-container": "#e5eeff",
+                        "secondary-container": "#d0e7c0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "tertiary-fixed": "#dbe4ea",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#d3e9c3",
+                        "on-tertiary-fixed-variant": "#3f484d",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary-container": "#556849",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#bfc8ce",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary-fixed-variant": "#004b73",
+                        "surface": "#f8f9ff",
+                        "on-secondary-fixed": "#0f2008",
+                        "primary-fixed-dim": "#93ccff",
+                        "surface-tint": "#006398",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#007bb9",
+                        "surface-container-low": "#eff4ff",
+                        "surface-dim": "#cbdbf5",
+                        "secondary": "#516445",
+                        "tertiary-container": "#6d767b",
+                        "on-primary-container": "#fdfcff",
+                        "on-tertiary-fixed": "#141d21",
+                        "on-surface": "#0b1c30",
+                        "on-tertiary-container": "#fbfdff",
+                        "on-surface-variant": "#3f4850",
+                        "on-background": "#0b1c30",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "background": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "outline": "#707881",
+                        "tertiary": "#545d62"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .no-border { border: none !important; }
+        .text-shadow-sm { text-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+        .backdrop-blur-mist { backdrop-filter: blur(40px); }
+        .ghost-border { outline: 2px solid rgba(191, 199, 210, 0.15); }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-background antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl no-border bg-gradient-to-b from-white/10 to-transparent shadow-[0_8px_30px_rgb(0,0,0,0.04)] font-['Plus_Jakarta_Sans'] font-medium tracking-tight">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<a class="text-2xl font-extrabold tracking-tighter text-sky-900 dark:text-sky-100 text-sky-700 dark:text-sky-400" href="#">
+                Ghumuam
+            </a>
+<div class="hidden md:flex space-x-8">
+<a class="text-sky-800 dark:text-sky-200 font-bold border-b-2 border-sky-600 dark:border-sky-400 pb-1 hover:bg-sky-50/50 dark:hover:bg-sky-900/30 transition-all duration-300 scale-98 active:scale-95 transition-transform" href="#">Explore</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-sky-700 transition-colors hover:bg-sky-50/50 dark:hover:bg-sky-900/30 transition-all duration-300 scale-98 active:scale-95 transition-transform" href="#">AI Planner</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-sky-700 transition-colors hover:bg-sky-50/50 dark:hover:bg-sky-900/30 transition-all duration-300 scale-98 active:scale-95 transition-transform" href="#">Saved Trips</a>
+</div>
+<div class="flex items-center space-x-6">
+<div class="hidden md:flex space-x-4">
+<button class="text-slate-600 dark:text-slate-400 hover:text-sky-700 transition-colors hover:bg-sky-50/50 dark:hover:bg-sky-900/30 transition-all duration-300 scale-98 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<button class="text-slate-600 dark:text-slate-400 hover:text-sky-700 transition-colors hover:bg-sky-50/50 dark:hover:bg-sky-900/30 transition-all duration-300 scale-98 active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+<a class="text-sky-700 dark:text-sky-400 hover:bg-sky-50/50 dark:hover:bg-sky-900/30 transition-all duration-300 scale-98 active:scale-95 transition-transform font-bold" href="#">Sign In</a>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-28 pb-20 px-4 md:px-8 max-w-screen-2xl mx-auto w-full">
+<!-- Hero Section (Atmospheric Editorial) -->
+<header class="relative rounded-xl overflow-hidden h-[614px] md:h-[716px] mb-20 ghost-border flex items-end p-8 md:p-16">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="High-definition close-up of steaming Nepalese momos in a bamboo steamer basket, soft warm side lighting, dark textured background, atmospheric food photography" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAjp5aWUvOUAD-AKGpVn2Bs2lO_Nl6UvZDyg3Ko33QNdwlHZ57etVtV-RMySLt6Dux9yQqobFIDP-sisdi5jF5fmyyciZSJB5Om7i7WCqNUzkOiEueXwTAPnLVbliwj_rbRrli-SBWandKyDtwddA_Otue0YsGhvH1pKVgUOwGwCWDIiaS8ejT4pwko_UB1AcPWhVIGsX4Y_FQ4XDRhaRZThwKfE5P4Y_I5OIZTSQn8DoDbn0kQkvb2qjNMxMsrilavLF_s_rw8-8HK');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/90 via-surface/40 to-transparent"></div>
+<div class="relative z-10 max-w-3xl">
+<span class="font-label text-label-md tracking-wider text-primary uppercase mb-4 block">Low-Budget Guide</span>
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold tracking-[-0.02em] text-on-surface mb-6 leading-tight">
+                    Local Eats:<br/>Pokhara &amp; Chitwan
+                </h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant leading-relaxed">
+                    Discover the soul of Nepalese cuisine without breaking the bank. From steaming momos to hearty Thakali thalis, navigate the authentic flavors of the Himalayas.
+                </p>
+</div>
+</header>
+<!-- The List (Bento Grid Style) -->
+<section class="mb-24">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline text-3xl md:text-4xl font-bold text-on-background tracking-tight">Curated Spots (Ascending Budget)</h2>
+<div class="font-label text-sm text-on-surface-variant flex items-center space-x-2">
+<span class="material-symbols-outlined text-[18px]">sort</span>
+<span>Cheapest First</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Card 1: Honacha (Patan) - Featured Large -->
+<article class="col-span-1 md:col-span-8 bg-surface-container-lowest rounded-xl overflow-hidden group relative flex flex-col ghost-border">
+<div class="h-64 md:h-80 w-full overflow-hidden relative">
+<img alt="Rustic plate of Newari snacks including bara and chhoila on a traditional brass plate, dark atmospheric lighting" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Rustic plate of Newari snacks including bara and chhoila on a traditional brass plate, dark atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnE7uu4LR4bXFdvGdM82j0bJjIv-hyVX33uGE1IaoiIXeYjypJS4dIl2Z_vOJbyrhiDQG8YfsYH7bATBPO76HuMBHn1yaoVtffXAU5glXEDJ0nll4w4i_i9yTlDTsJbkRWnZlHRYGFvWRitzE5-4jNDTJmyDUJT35G2pjNye5aPYN-7NZPW0-9_tP0uv_u-JjdM6RHYEpkBdIlknTXIe3A1f81w6eBmKeZagvBAu-qcnDD1I3-9p3DCdX6u1grQ-FacFZ8OyE6PnR2"/>
+<div class="absolute top-4 right-4 bg-surface/80 backdrop-blur-md px-3 py-1 rounded-full font-label text-sm text-on-surface font-bold">
+                            $ (Under 300 NPR)
+                        </div>
+</div>
+<div class="p-8 flex-grow flex flex-col justify-between">
+<div>
+<div class="flex items-center space-x-2 mb-3">
+<span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+<span class="font-label text-sm text-primary uppercase tracking-wide">Patan (Kathmandu Valley)</span>
+</div>
+<h3 class="font-headline text-2xl font-bold text-on-surface mb-3">Honacha</h3>
+<p class="font-body text-lg text-on-surface-variant line-clamp-2">
+                                A legendary, no-frills Newari joint hidden behind the Krishna Mandir. Famous for its fiercely spicy chhoila, hearty bara (lentil pancakes), and local aila (rice wine). Expect shared tables and unapologetic local flavor.
+                            </p>
+</div>
+</div>
+</article>
+<!-- Card 2: Pumpernickel Bakery -->
+<article class="col-span-1 md:col-span-4 bg-surface-container-low rounded-xl overflow-hidden group relative flex flex-col ghost-border">
+<div class="h-48 w-full overflow-hidden relative">
+<img alt="Freshly baked breads and pastries on a wooden display in a rustic bakery, warm morning sunlight" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Freshly baked breads and pastries on a wooden display in a rustic bakery, warm morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4vL8YkPMfvffNfISOoHPiSL0Cd98NkedaQGIZYFtN8CdDBrXmif2xwl8n9tOIL466T7egcrpuhfncTp3_8tt_WBkQrtTFy4Uot8KLM5wzyXcJMynbuGku57I1q1YEqvZUFnU6hbjszYZirR_hFyK5iNcRvIjjUqjpjTeF1qeHQ04pYaQ085HuKD-h6WZz1RxWaBclhR2Sxqu-y9NnETwMwY_rql2GMmKeUC7AprVON2XmluxztVyH8U14XnyXs-u5ScWYoVeJZ4w3"/>
+<div class="absolute top-4 right-4 bg-surface/80 backdrop-blur-md px-3 py-1 rounded-full font-label text-sm text-on-surface font-bold">
+                            $$ (300-600 NPR)
+                        </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<div class="flex items-center space-x-2 mb-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">location_on</span>
+<span class="font-label text-xs text-secondary uppercase tracking-wide">Pokhara (Lakeside)</span>
+</div>
+<h3 class="font-headline text-xl font-bold text-on-surface mb-2">Pumpernickel Bakery</h3>
+<p class="font-body text-base text-on-surface-variant">
+                                A backpacker institution. Grab a strong local coffee, fresh yak cheese sandwiches, and enjoy the sunny garden courtyard before a trek.
+                            </p>
+</div>
+</div>
+</article>
+<!-- Card 3: Chitwan Thali House -->
+<article class="col-span-1 md:col-span-12 bg-surface-container-lowest rounded-xl overflow-hidden group relative flex flex-col md:flex-row ghost-border">
+<div class="h-64 md:h-auto md:w-2/5 overflow-hidden relative order-last md:order-first">
+<img alt="Elaborate traditional Nepalese Thakali Thali set served on a brass platter with rice, dal, curries, and pickles, vibrant colors" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Elaborate traditional Nepalese Thakali Thali set served on a brass platter with rice, dal, curries, and pickles, vibrant colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZ-XL2F0_S0PeQD2dZ_n5MTgMtsaYM0L_38tSssAsN1fnOG-A0rf6Kby-bVx_vX-RcQz4QdKH_InMwBdUcJfYnRYEdVUYEPkDse1gqqtCrsao2gAY1uMR3TzBveH-oTjVbWPVzVovhS9h4WD6_xDKXiwjGFcMDy5ljbdZNXiNrqUTOw1V5nK0Ow6L1d79Y34AYL91Moc-gZNndMI7yqmAEaNn4T4adUOsc_BeUGtQdy5uCJa8AneHgtX716JEPr2RuZfMxUQEYhRJ7"/>
+<div class="absolute top-4 left-4 bg-surface/80 backdrop-blur-md px-3 py-1 rounded-full font-label text-sm text-on-surface font-bold">
+                            $$ (400-700 NPR)
+                        </div>
+</div>
+<div class="p-8 md:p-12 md:w-3/5 flex flex-col justify-center bg-surface-container-low">
+<div class="flex items-center space-x-2 mb-4">
+<span class="material-symbols-outlined text-primary text-[18px]">location_on</span>
+<span class="font-label text-sm text-primary uppercase tracking-wide">Sauraha, Chitwan</span>
+</div>
+<h3 class="font-headline text-3xl font-bold text-on-surface mb-4">Chitwan Thali House</h3>
+<p class="font-body text-lg text-on-surface-variant mb-6">
+                            The ultimate post-jungle-safari feast. This spot offers arguably the best traditional Thali outside of Kathmandu. Endless refills of aromatic rice, earthy black dal, and spicy fermented mustard greens (gundruk).
+                        </p>
+<button class="self-start px-6 py-3 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full font-label font-bold tracking-wide hover:shadow-lg transition-shadow">
+                            View on Map
+                        </button>
+</div>
+</article>
+</div>
+</section>
+<!-- Strategic Dining Tips (Tonal Layering) -->
+<section class="bg-surface-container-low rounded-xl p-8 md:p-16 relative overflow-hidden ghost-border">
+<!-- Decorative blur element -->
+<div class="absolute -top-24 -right-24 w-96 h-96 bg-primary-fixed-dim/20 rounded-full blur-[80px] pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="md:col-span-1">
+<h2 class="font-headline text-3xl md:text-4xl font-bold text-on-surface mb-4">Strategic Dining</h2>
+<p class="font-body text-lg text-on-surface-variant">
+                        How to stretch your rupees further while eating better in Nepal.
+                    </p>
+</div>
+<div class="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
+<!-- Tip 1 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl ghost-border">
+<span class="material-symbols-outlined text-primary text-3xl mb-4" data-weight="fill">local_dining</span>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-2">The "Dal Bhat Power" Rule</h4>
+<p class="font-body text-base text-on-surface-variant">
+                            Dal Bhat is rarely a single serving. Expect unlimited refills on rice, dal, and vegetable curries. It's the most economical way to fill up for the day.
+                        </p>
+</div>
+<!-- Tip 2 -->
+<div class="bg-surface-container-lowest p-6 rounded-xl ghost-border">
+<span class="material-symbols-outlined text-secondary text-3xl mb-4" data-weight="fill">schedule</span>
+<h4 class="font-headline text-xl font-bold text-on-surface mb-2">Follow the Locals</h4>
+<p class="font-body text-base text-on-surface-variant">
+                            If a tiny, hole-in-the-wall spot is packed with locals around 11 AM or 6 PM, sit down immediately. High turnover means fresh food and local prices.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 bg-slate-50 dark:bg-slate-950 font-['Manrope'] text-sm tracking-wide tonal-shift bg-sky-50/50 dark:bg-sky-900/10 flat no-shadows mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<div class="col-span-1 md:col-span-2 lg:col-span-1">
+<div class="text-xl font-bold text-sky-900 dark:text-sky-100 text-sky-700 dark:text-sky-400 mb-4">
+                    Ghumuam
+                </div>
+<p class="text-slate-500 dark:text-slate-400">
+                    © 2024 Ghumuam Nepal. Atmospheric Editorial Travel.
+                </p>
+</div>
+<div class="col-span-1 lg:col-span-3 flex flex-col md:flex-row justify-end gap-6 md:gap-12">
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">About Us</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Responsible Trekking</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>
