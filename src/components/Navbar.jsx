@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Plane, Compass, Heart, User, Menu, X, Moon, Sun } from 'lucide-react';
+import { Plane, Menu, X, User } from 'lucide-react';
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -17,56 +17,42 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    // Check initial dark mode preference
-    if (document.documentElement.classList.contains('dark')) {
-      setIsDarkMode(true);
-    }
-  }, []);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    if (!isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  };
-
   const navLinks = [
-    { name: 'Home', path: '/' },
     { name: 'Explore', path: '/explore' },
     { name: 'Trip Planner', path: '/planner' },
-    { name: 'Saved Trips', path: '/dashboard' },
+    { name: 'Bookings', path: '/bookings' },
+    { name: 'Activities', path: '/activities' },
+    { name: 'Community', path: '/community' },
+    { name: 'Dining', path: '/dining' },
   ];
 
   return (
     <header 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'glass py-3' : 'bg-transparent py-5'
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        isScrolled ? 'glass-nav py-4' : 'bg-transparent py-6'
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="bg-primary-500 text-white p-1.5 rounded-lg group-hover:bg-primary-600 transition-colors">
-              <Plane size={24} className="transform -rotate-45" />
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="text-primary group-hover:text-primary-container transition-colors">
+              <Plane size={28} className="transform -rotate-45" strokeWidth={1.5} />
             </div>
-            <span className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+            <span className="text-2xl font-display font-bold tracking-tight text-on-surface">
               Ghumuam
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-primary-500 ${
+                className={`text-[0.9375rem] transition-colors ${
                   location.pathname === link.path 
-                    ? 'text-primary-600 dark:text-primary-400 font-semibold' 
-                    : 'text-gray-600 dark:text-gray-300'
+                    ? 'text-primary font-semibold' 
+                    : 'text-on-surface-variant hover:text-primary'
                 }`}
               >
                 {link.name}
@@ -74,32 +60,20 @@ const Navbar = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
-            <button 
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-300"
-            >
-              {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-            <Link to="/dashboard" className="flex items-center gap-2 bg-gray-900 dark:bg-white dark:text-gray-900 text-white px-4 py-2 rounded-full hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors text-sm font-medium shadow-md hover:shadow-lg">
-              <User size={16} />
+          <div className="hidden md:flex items-center">
+            <Link to="/login" className="btn-primary flex items-center gap-2 px-6 py-2.5 text-[0.9375rem] font-medium">
+              <User size={18} strokeWidth={1.5} />
               <span>Login</span>
             </Link>
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="flex items-center gap-3 md:hidden">
+          <div className="flex items-center md:hidden">
             <button 
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-300"
-            >
-              {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-            <button 
-              className="text-gray-900 dark:text-white p-1"
+              className="text-on-surface p-2"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
+              {isOpen ? <X size={28} strokeWidth={1.5} /> : <Menu size={28} strokeWidth={1.5} />}
             </button>
           </div>
         </div>
@@ -109,34 +83,36 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden glass border-t border-gray-200 dark:border-gray-700/50 mt-3"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="md:hidden absolute top-full left-0 w-full bg-surface-container-lowest/95 backdrop-blur-xl shadow-lg border-t ghost-border"
           >
-            <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+            <div className="px-6 py-8 flex flex-col gap-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
                   onClick={() => setIsOpen(false)}
-                  className={`block text-base font-medium py-2 border-b border-gray-100 dark:border-gray-800 ${
+                  className={`block text-lg font-medium transition-colors ${
                     location.pathname === link.path 
-                      ? 'text-primary-600 dark:text-primary-400' 
-                      : 'text-gray-700 dark:text-gray-300'
+                      ? 'text-primary' 
+                      : 'text-on-surface-variant hover:text-primary'
                   }`}
                 >
                   {link.name}
                 </Link>
               ))}
-              <Link 
-                to="/dashboard"
-                onClick={() => setIsOpen(false)}
-                className="mt-2 w-full flex justify-center items-center gap-2 bg-primary-600 text-white px-4 py-3 rounded-xl font-medium shadow-md"
-              >
-                <User size={18} />
-                <span>Login to Dashboard</span>
-              </Link>
+              <div className="pt-4 mt-2 border-t ghost-border">
+                <Link 
+                  to="/login"
+                  onClick={() => setIsOpen(false)}
+                  className="btn-primary w-full flex justify-center items-center gap-2 px-6 py-3.5 text-lg font-medium"
+                >
+                  <User size={20} strokeWidth={1.5} />
+                  <span>Login to Dashboard</span>
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}

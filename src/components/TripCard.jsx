@@ -1,52 +1,48 @@
 import React from 'react';
-import { Calendar, User, Clock } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Calendar, Clock } from 'lucide-react';
 
 const TripCard = ({ trip }) => {
   const isUpcoming = trip.status === 'Upcoming';
 
   return (
-    <motion.div 
-      whileHover={{ y: -4 }}
-      className="bg-white dark:bg-dark-800 rounded-2xl border border-gray-100 dark:border-gray-700 overflow-hidden shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row relative"
-    >
-      <div className="w-full md:w-1/3 h-48 md:h-auto overflow-hidden relative">
+    <div className="card-borderless flex flex-col md:flex-row relative">
+      <div className="w-full md:w-1/3 h-56 md:h-auto overflow-hidden relative group">
         <img 
           src={trip.image} 
           alt={trip.destination} 
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
         />
-        <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-sm ${isUpcoming ? 'bg-green-500/90 text-white' : 'bg-blue-500/90 text-white'}`}>
+        <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-md shadow-sm ${isUpcoming ? 'bg-secondary/90 text-white' : 'bg-primary/90 text-white'}`}>
           {trip.status}
         </div>
       </div>
       
-      <div className="p-6 md:w-2/3 flex flex-col justify-center">
-        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+      <div className="p-6 md:p-8 md:w-2/3 flex flex-col justify-center bg-surface-container-lowest">
+        <h3 className="text-2xl font-display font-bold text-on-surface mb-4">
           {trip.destination}
         </h3>
         
-        <div className="space-y-2 mb-6">
-          <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400 text-sm">
-            <Calendar size={16} className="text-primary-500" />
+        <div className="space-y-3 mb-8">
+          <div className="flex items-center gap-3 text-on-surface-variant text-[0.9375rem]">
+            <Calendar size={18} className="text-primary" strokeWidth={1.5} />
             <span>{trip.date}</span>
           </div>
-          <div className="flex items-center gap-3 text-gray-600 dark:text-gray-400 text-sm">
-            <Clock size={16} className="text-primary-500" />
+          <div className="flex items-center gap-3 text-on-surface-variant text-[0.9375rem]">
+            <Clock size={18} className="text-primary" strokeWidth={1.5} />
             <span>4 Days, 3 Nights</span>
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3 mt-auto">
-          <button className="bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white px-5 py-2 rounded-lg font-medium transition-colors text-sm">
+        <div className="flex flex-wrap items-center gap-4 mt-auto">
+          <button className="btn-primary px-6 py-2.5 text-[0.9375rem]">
             View Itinerary
           </button>
-          <button className="border border-gray-200 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300 px-5 py-2 rounded-lg font-medium transition-colors text-sm">
+          <button className="btn-secondary px-6 py-2.5 text-[0.9375rem]">
             Edit
           </button>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
