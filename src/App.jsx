@@ -18,6 +18,7 @@ import LocalEats from './pages/LocalEats';
 import PackingList from './pages/PackingList';
 import Activities from './pages/Activities';
 import Reviews from './pages/Reviews';
+import Profile from './pages/Profile';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -48,6 +49,7 @@ function App() {
             <Route path="/packing-list" element={<PackingList />} />
             <Route path="/activities" element={<Activities />} />
             <Route path="/reviews" element={<Reviews />} />
+            <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

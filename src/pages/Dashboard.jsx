@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { User, Settings, LogOut, Heart, Map, CreditCard } from 'lucide-react';
 import TripCard from '../components/TripCard';
+import { Link } from 'react-router-dom';
 import { savedTrips } from '../data/mockData';
 
 const Dashboard = () => {
@@ -31,9 +32,9 @@ const Dashboard = () => {
                 <button className="flex items-center gap-4 px-5 py-3.5 hover:bg-surface-container-low text-on-surface-variant rounded-xl font-medium transition-colors w-full text-left text-[0.9375rem]">
                   <CreditCard size={20} strokeWidth={1.5} /> Payments
                 </button>
-                <button className="flex items-center gap-4 px-5 py-3.5 hover:bg-surface-container-low text-on-surface-variant rounded-xl font-medium transition-colors w-full text-left text-[0.9375rem]">
+                <Link to="/profile" className="flex items-center gap-4 px-5 py-3.5 hover:bg-surface-container-low text-on-surface-variant rounded-xl font-medium transition-colors w-full text-left text-[0.9375rem]">
                   <Settings size={20} strokeWidth={1.5} /> Settings
-                </button>
+                </Link>
                 <button className="flex items-center gap-4 px-5 py-3.5 hover:bg-red-50 text-red-600 rounded-xl font-medium transition-colors mt-4 w-full text-left text-[0.9375rem]">
                   <LogOut size={20} strokeWidth={1.5} /> Logout
                 </button>
