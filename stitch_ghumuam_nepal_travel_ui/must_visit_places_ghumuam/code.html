@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ghumuan - Must Visit Places</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#cbdbf5",
+                    "surface-container-low": "#eff4ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "on-primary-fixed-variant": "#004b73",
+                    "on-primary-container": "#fdfcff",
+                    "error": "#ba1a1a",
+                    "primary-fixed": "#cce5ff",
+                    "primary-container": "#007bb9",
+                    "on-error-container": "#93000a",
+                    "background": "#f8f9ff",
+                    "on-primary": "#ffffff",
+                    "secondary": "#516445",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#dce9ff",
+                    "inverse-surface": "#213145",
+                    "on-background": "#0b1c30",
+                    "secondary-fixed-dim": "#b7cda8",
+                    "on-primary-fixed": "#001d31",
+                    "tertiary-fixed-dim": "#bfc8ce",
+                    "outline-variant": "#bfc7d2",
+                    "on-tertiary-container": "#fbfdff",
+                    "inverse-primary": "#93ccff",
+                    "tertiary-fixed": "#dbe4ea",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-secondary-fixed": "#0f2008",
+                    "tertiary": "#545d62",
+                    "surface-tint": "#006398",
+                    "tertiary-container": "#6d767b",
+                    "surface-container": "#e5eeff",
+                    "on-surface": "#0b1c30",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-bright": "#f8f9ff",
+                    "secondary-container": "#d0e7c0",
+                    "on-secondary-fixed-variant": "#394c2f",
+                    "on-secondary": "#ffffff",
+                    "on-surface-variant": "#3f4850",
+                    "on-tertiary-fixed": "#141d21",
+                    "on-secondary-container": "#556849",
+                    "on-tertiary-fixed-variant": "#3f484d",
+                    "surface-variant": "#d3e4fe",
+                    "on-error": "#ffffff",
+                    "surface": "#f8f9ff",
+                    "secondary-fixed": "#d3e9c3",
+                    "primary-fixed-dim": "#93ccff",
+                    "error-container": "#ffdad6",
+                    "primary": "#006194",
+                    "outline": "#707881"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Plus Jakarta Sans", "sans-serif"
+                    ],
+                    "body": [
+                            "Manrope", "sans-serif"
+                    ],
+                    "label": [
+                            "Manrope", "sans-serif"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f8f9ff; color: #0b1c30; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.02em; }
+        .text-display-lg { font-size: 3.5rem; line-height: 1.1; font-weight: 700; }
+        .text-display-md { font-size: 2.75rem; line-height: 1.2; font-weight: 700; }
+        .text-headline-lg { font-size: 2rem; line-height: 1.3; font-weight: 600; }
+        .text-body-lg { font-size: 1.125rem; line-height: 1.6; }
+        .text-label-md { font-size: 0.875rem; line-height: 1.4; font-weight: 500; }
+        
+        .bg-mist {
+            background: linear-gradient(to bottom, rgba(248, 249, 255, 0) 0%, rgba(248, 249, 255, 0.9) 100%);
+            backdrop-filter: blur(40px);
+        }
+        .bg-mountain-gradient {
+            background: linear-gradient(135deg, #006194 0%, #007bb9 100%);
+        }
+        .ghost-border {
+            box-shadow: inset 0 0 0 2px rgba(191, 199, 210, 0.15);
+        }
+        .ambient-shadow {
+            box-shadow: 0 8px 30px rgba(11, 28, 48, 0.06);
+        }
+        .hover-zoom:hover img {
+            transform: scale(1.05);
+            transition: transform 1s ease;
+        }
+        .hover-zoom img {
+            transition: transform 1s ease;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 dark:bg-slate-950/70 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-sky-900 dark:text-sky-100 font-headline">Ghumuan</div>
+<div class="hidden md:flex space-x-8">
+<a class="text-sky-700 dark:text-sky-400 font-bold border-b-2 border-sky-700 dark:border-sky-400 pb-1 font-label text-label-md" href="#">Explore</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-sky-600 dark:hover:text-sky-300 transition-colors font-label text-label-md" href="#">AI Planner</a>
+<a class="text-slate-600 dark:text-slate-400 font-medium hover:text-sky-600 dark:hover:text-sky-300 transition-colors font-label text-label-md" href="#">Saved Trips</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-sky-700 dark:text-sky-400 font-medium hover:bg-sky-50/50 dark:hover:bg-sky-900/20 transition-all duration-300 px-4 py-2 rounded-full font-label text-label-md">Sign In</button>
+<button class="bg-mountain-gradient text-on-primary px-6 py-2 rounded-full font-label text-label-md font-medium hover:opacity-90 transition-opacity">Plan My Trip</button>
+</div>
+</div>
+<div class="h-8 bg-mist w-full absolute bottom-[-2rem] left-0 pointer-events-none"></div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24">
+<div class="max-w-7xl mx-auto px-8">
+<!-- Hero Section -->
+<div class="mb-20">
+<h1 class="text-display-lg text-primary font-headline mb-4">Annapurna Region</h1>
+<p class="text-body-lg text-on-surface-variant max-w-2xl">Discover the majestic peaks, ancient villages, and serene trails that make this region a sanctuary for the soul. Curated experiences for the mindful traveler.</p>
+</div>
+<!-- Bento Grid Layout for Attractions -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Featured Highlight (Full Width) -->
+<div class="md:col-span-12 rounded-xl overflow-hidden bg-surface-container-lowest ghost-border relative group hover-zoom">
+<div class="absolute inset-0 z-10 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent"></div>
+<img alt="Ghandruk Village" class="w-full h-[600px] object-cover" data-alt="panoramic view of traditional stone houses in Ghandruk village with towering snow-capped Annapurna peaks in the background under a clear blue sky" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Ghandruk_HDR6.jpg/3840px-Ghandruk_HDR6.jpg"/>
+<div class="absolute bottom-0 left-0 right-0 p-12 z-20 flex justify-between items-end">
+<div>
+<div class="flex items-center space-x-2 text-on-primary mb-3">
+<span class="material-symbols-outlined text-sm">calendar_today</span>
+<span class="text-label-md">Best time: Oct - Nov</span>
+</div>
+<h2 class="text-display-md text-on-primary font-headline mb-4">Ghandruk Village</h2>
+<p class="text-body-lg text-on-primary/90 max-w-2xl">A living museum of Gurung culture. Wander through labyrinthine stone paths, enjoy sweeping views of Machapuchare, and experience genuine Himalayan hospitality in traditional teahouses.</p>
+</div>
+<button aria-label="Save to Trip" class="bg-surface/20 backdrop-blur-md p-4 rounded-full text-on-primary hover:bg-surface/40 transition-colors">
+<span class="material-symbols-outlined" data-weight="fill">favorite_border</span>
+</button>
+</div>
+</div>
+<!-- Secondary Highlight (Half Width) -->
+<div class="md:col-span-6 rounded-xl overflow-hidden bg-surface-container-lowest ghost-border relative group hover-zoom">
+<img alt="Poon Hill" class="w-full h-[450px] object-cover" data-alt="spectacular golden hour sunrise illuminating the massive Dhaulagiri mountain range viewed from Poon Hill viewpoint with silhouettes of trekkers" src="https://upload.wikimedia.org/wikipedia/commons/1/14/Poon_hill_sunrise.jpg"/>
+<div class="absolute bottom-0 left-0 right-0 p-8 z-20 bg-gradient-to-t from-inverse-surface/90 to-transparent">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-headline-lg text-on-primary font-headline mb-2">Poon Hill Sunrise</h3>
+<p class="text-label-md text-on-primary/80 mb-4 flex items-center"><span class="material-symbols-outlined text-sm mr-1">schedule</span> Pre-dawn hike required</p>
+<p class="text-body-lg text-on-primary/90 line-clamp-2">Witness the Himalayas catch the first light of day. A panoramic spectacle of Dhaulagiri and Annapurna ranges bathed in golden hues.</p>
+</div>
+<button aria-label="Save to Trip" class="text-on-primary hover:scale-110 transition-transform ml-4">
+<span class="material-symbols-outlined">bookmark_add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Tertiary Highlight (Half Width) -->
+<div class="md:col-span-6 rounded-xl overflow-hidden bg-surface-container-lowest ghost-border relative group hover-zoom">
+<img alt="Annapurna Base Camp" class="w-full h-[450px] object-cover" data-alt="close up view of the sheer ice walls and rocky faces of the Annapurna sanctuary surrounded by high altitude clouds" src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Annapurna_Massif-IMG_5221-Pano.jpg"/>
+<div class="absolute bottom-0 left-0 right-0 p-8 z-20 bg-gradient-to-t from-inverse-surface/90 to-transparent">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-headline-lg text-on-primary font-headline mb-2">The Sanctuary</h3>
+<p class="text-label-md text-on-primary/80 mb-4 flex items-center"><span class="material-symbols-outlined text-sm mr-1">landscape</span> Altitude: 4130m</p>
+<p class="text-body-lg text-on-primary/90 line-clamp-2">Stand in the heart of a glacial basin surrounded by a ring of towering 7000m+ peaks. An intensely humbling and awe-inspiring environment.</p>
+</div>
+<button aria-label="Save to Trip" class="text-on-primary hover:scale-110 transition-transform ml-4">
+<span class="material-symbols-outlined">bookmark_add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Smaller Highlights List -->
+<div class="md:col-span-12 mt-12">
+<h3 class="text-headline-lg text-primary font-headline mb-8">Hidden Gems</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-low rounded-xl p-6 hover:-translate-y-1 transition-transform duration-300">
+<div class="h-48 rounded-lg overflow-hidden mb-6 relative group hover-zoom">
+<img alt="Jhinu Danda Hot Springs" class="w-full h-full object-cover" data-alt="natural stone hot spring pools beside a rushing glacial river surrounded by dense green forest foliage" src="https://source.unsplash.com/1600x900/?Jhinu%20Danda%20hot%20spring%20Nepal"/>
+<button class="absolute top-4 right-4 text-on-primary bg-inverse-surface/30 p-2 rounded-full hover:bg-inverse-surface/50 transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm">favorite_border</span>
+</button>
+</div>
+<h4 class="text-xl font-headline font-bold text-on-surface mb-2">Jhinu Hot Springs</h4>
+<p class="text-body-lg text-on-surface-variant mb-4 text-sm">Soothe weary muscles in natural geothermal pools set alongside the Modi Khola river.</p>
+<span class="text-label-md text-secondary font-medium">Best after a trek</span>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 ghost-border hover:-translate-y-1 transition-transform duration-300">
+<div class="h-48 rounded-lg overflow-hidden mb-6 relative group hover-zoom">
+<img alt="Mardi Himal Ridge" class="w-full h-full object-cover" data-alt="narrow trekking trail along a high altitude ridge line with dramatic drop offs and the pointed peak of Machapuchare ahead" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Poh092-Treking_na_Mardi_Himal.jpg/3840px-Poh092-Treking_na_Mardi_Himal.jpg"/>
+<button class="absolute top-4 right-4 text-on-primary bg-inverse-surface/30 p-2 rounded-full hover:bg-inverse-surface/50 transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm">favorite_border</span>
+</button>
+</div>
+<h4 class="text-xl font-headline font-bold text-on-surface mb-2">Mardi Ridge</h4>
+<p class="text-body-lg text-on-surface-variant mb-4 text-sm">A quieter, dramatic trail offering unparalleled, close-up views of the iconic Machapuchare peak.</p>
+<span class="text-label-md text-secondary font-medium">For avoiding crowds</span>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low rounded-xl p-6 hover:-translate-y-1 transition-transform duration-300">
+<div class="h-48 rounded-lg overflow-hidden mb-6 relative group hover-zoom">
+<img alt="Chhomrong Village" class="w-full h-full object-cover" data-alt="terraced agricultural fields stepping down a steep mountainside with small scattered stone dwellings in the Himalayas" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Chhomrong_Village_View.jpg"/>
+<button class="absolute top-4 right-4 text-on-primary bg-inverse-surface/30 p-2 rounded-full hover:bg-inverse-surface/50 transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined text-sm">favorite_border</span>
+</button>
+</div>
+<h4 class="text-xl font-headline font-bold text-on-surface mb-2">Chhomrong Terraces</h4>
+<p class="text-body-lg text-on-surface-variant mb-4 text-sm">The gateway to the Sanctuary. Famous for its steep stone steps and sweeping agricultural terraces.</p>
+<span class="text-label-md text-secondary font-medium">Cultural immersion</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900/50 w-full rounded-t-[1.5rem] mt-20 tonal-layering surface-container-low flat no-shadows">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-7xl mx-auto">
+<div class="md:col-span-1">
+<div class="text-xl font-bold text-sky-900 dark:text-sky-100 font-headline mb-4">Ghumuan</div>
+<p class="text-label-md text-slate-500 dark:text-slate-400 font-label">© 2024 Ghumuan. Inspired by the Stillness of the Himalayas.</p>
+</div>
+<div class="md:col-span-3 flex flex-wrap gap-8 justify-end">
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 hover:translate-x-1 transition-transform duration-200 font-body text-body-lg" href="#">About Nepal</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 hover:translate-x-1 transition-transform duration-200 font-body text-body-lg" href="#">Trekking Guide</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 hover:translate-x-1 transition-transform duration-200 font-body text-body-lg" href="#">Contact Us</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 hover:translate-x-1 transition-transform duration-200 font-body text-body-lg" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 hover:translate-x-1 transition-transform duration-200 font-body text-body-lg" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>

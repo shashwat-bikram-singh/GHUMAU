@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ghumuan - Nepal Tourism</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#141d21",
+                        "on-primary-fixed": "#001d31",
+                        "on-surface-variant": "#3f4850",
+                        "on-secondary-fixed": "#0f2008",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#0b1c30",
+                        "on-secondary-container": "#556849",
+                        "surface-container-low": "#eff4ff",
+                        "secondary-fixed-dim": "#b7cda8",
+                        "secondary-container": "#d0e7c0",
+                        "surface-container-high": "#dce9ff",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#fdfcff",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#dbe4ea",
+                        "error-container": "#ffdad6",
+                        "surface-container-highest": "#d3e4fe",
+                        "inverse-primary": "#93ccff",
+                        "background": "#f8f9ff",
+                        "tertiary-fixed-dim": "#bfc8ce",
+                        "primary-fixed-dim": "#93ccff",
+                        "on-tertiary-container": "#fbfdff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#006398",
+                        "on-tertiary-fixed-variant": "#3f484d",
+                        "inverse-on-surface": "#eaf1ff",
+                        "secondary": "#516445",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#6d767b",
+                        "surface": "#f8f9ff",
+                        "primary-fixed": "#cce5ff",
+                        "surface-variant": "#d3e4fe",
+                        "outline": "#707881",
+                        "secondary-fixed": "#d3e9c3",
+                        "surface-bright": "#f8f9ff",
+                        "tertiary": "#545d62",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed-variant": "#394c2f",
+                        "on-primary-fixed-variant": "#004b73",
+                        "outline-variant": "#bfc7d2",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#cbdbf5",
+                        "on-surface": "#0b1c30",
+                        "surface-container": "#e5eeff",
+                        "primary-container": "#007bb9",
+                        "primary": "#006194",
+                        "inverse-surface": "#213145"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-xl transition-all duration-300">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+<a class="text-2xl font-bold tracking-tighter text-sky-900 font-headline" href="#">Ghumuan</a>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-sky-700 font-bold border-b-2 border-sky-700 pb-1 font-headline tracking-tight" href="#">Explore</a>
+<a class="text-slate-600 font-medium hover:text-sky-600 transition-colors font-headline tracking-tight" href="#">AI Planner</a>
+<a class="text-slate-600 font-medium hover:text-sky-600 transition-colors font-headline tracking-tight" href="#">Saved Trips</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="hidden md:block text-slate-600 font-medium hover:text-sky-600 transition-colors font-headline">Sign In</button>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2 rounded-full font-headline font-semibold hover:opacity-90 transition-opacity">Plan My Trip</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-[921px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Majestic Mount Everest and surrounding Himalayan peaks bathed in soft golden hour light with a clear blue sky" class="w-full h-full object-cover object-center" data-alt="Majestic Mount Everest and surrounding Himalayan peaks bathed in soft golden hour light with a clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3AwOxt_YV4RLon0Ff8CfM51q-qgCyM2X7kDM4gj5bTjml5qGMucuwyDRIJ9-UuzFyh88ZcYgGFH1jEN5MlG8ceIZXJeEsjM3hrNRamLrLfKeFhVAB8NnEu3kZAzK6qo2MVkQvXb6iML3WDDS7TFc3otbNsewilS4_3MsK0xS1QGtVHzppUWpxaqqpcuB1qtKmuY90Q7Ng8qV3zTc_5ivnhqI1HeT92L4CxnrODLqOm0tBi517KrEVqSssUzdwpmCOMEle8FgcEQmk"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-surface/20 to-surface"></div>
+</div>
+<div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-20">
+<h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-primary drop-shadow-lg tracking-tight mb-6 leading-tight">
+                Plan your perfect Nepal trip based on your budget
+            </h1>
+<p class="font-body text-xl md:text-2xl text-on-primary/90 mb-12 drop-shadow-md">
+                Experience the stillness of the Himalayas.
+            </p>
+<!-- Search/Filter Bar -->
+<div class="bg-surface/80 backdrop-blur-2xl p-4 md:p-6 rounded-xl flex flex-col md:flex-row items-center gap-4 max-w-3xl mx-auto shadow-[0_8px_30px_rgba(11,28,48,0.06)] border border-outline-variant/15">
+<div class="flex-1 w-full relative">
+<label class="block text-left text-on-surface-variant font-label text-sm mb-1 ml-1">Budget ($)</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">payments</span>
+<input class="w-full bg-surface-container-lowest border-0 focus:ring-2 focus:ring-surface-tint rounded-lg py-3 pl-10 pr-4 text-on-surface font-body transition-shadow" placeholder="e.g. 1500" type="number"/>
+</div>
+</div>
+<div class="flex-1 w-full relative">
+<label class="block text-left text-on-surface-variant font-label text-sm mb-1 ml-1">Duration</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">calendar_today</span>
+<select class="w-full bg-surface-container-lowest border-0 focus:ring-2 focus:ring-surface-tint rounded-lg py-3 pl-10 pr-4 text-on-surface font-body appearance-none">
+<option>1-3 Days</option>
+<option>4-7 Days</option>
+<option>1-2 Weeks</option>
+<option>2+ Weeks</option>
+</select>
+</div>
+</div>
+<div class="flex-1 w-full relative">
+<label class="block text-left text-on-surface-variant font-label text-sm mb-1 ml-1">Travel Type</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">group</span>
+<select class="w-full bg-surface-container-lowest border-0 focus:ring-2 focus:ring-surface-tint rounded-lg py-3 pl-10 pr-4 text-on-surface font-body appearance-none">
+<option>Solo Adventure</option>
+<option>Couple's Retreat</option>
+<option>Friends Trip</option>
+<option>Family Vacation</option>
+</select>
+</div>
+</div>
+<div class="mt-6 md:mt-0 md:self-end w-full md:w-auto">
+<button class="w-full md:w-auto bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-headline font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2">
+<span>Generate</span>
+<span class="material-symbols-outlined">auto_awesome</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Popular Destinations (Bento Grid) -->
+<section class="py-24 px-6 max-w-7xl mx-auto">
+<div class="mb-16">
+<h2 class="font-headline text-4xl md:text-5xl font-extrabold text-on-surface tracking-tight mb-4">Iconic Destinations</h2>
+<p class="font-body text-lg text-on-surface-variant max-w-2xl">Discover places that resonate with the stillness of the high altitudes.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
+<!-- Large Item -->
+<div class="md:col-span-2 md:row-span-2 relative rounded-xl overflow-hidden group cursor-pointer">
+<img alt="Kathmandu Durbar Square ancient architecture with intricate wood carvings under a clear sky" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Kathmandu Durbar Square ancient architecture with intricate wood carvings under a clear sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD04yL7nqJv5X0gdaeHnzr1ltGuGUEMLbjpVupXJQpkpYt80TNaaAp732_P22KWC4-lobW1RD1u7BZeG8_q1YogzNL6CwjPU94BsJfGB11erOaajUlY3ag-MCDHjLx6RJw3fmuuWWHvWeChWpsrRSkGCjIoaTpV_u7rg2Kf4YVGtQCk8UYLFYRWfrVCr_HWoJWT4DLhdXg1Zhh8NN6dPZUzDBqSLGPx9rL46CICxeb5iXZY0u2ppOyVccoJe-TWAdg5Q-vobk6vuBzX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<span class="bg-surface-container-lowest/20 backdrop-blur-md text-on-primary px-3 py-1 rounded-full text-sm font-label mb-3 inline-block">Culture &amp; Heritage</span>
+<h3 class="font-headline text-3xl font-bold text-on-primary mb-2">Kathmandu Valley</h3>
+<p class="font-body text-on-primary/80">The ancient heart of Nepal, where history lives.</p>
+</div>
+</div>
+<!-- Small Item 1 -->
+<div class="relative rounded-xl overflow-hidden group cursor-pointer bg-surface-container-low">
+<img alt="Tranquil Phewa Lake in Pokhara reflecting the Annapurna mountain range at dawn" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Tranquil Phewa Lake in Pokhara reflecting the Annapurna mountain range at dawn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB11zDbRnVUJOaBL1qRZ3seG9ZcY7GvokAeeeQqGGrKWmoLeYtYmWusZLMlkXrRA1uaK2HMY8F7jv8duM9lpJdwmGdEJ1JbP1wUMi6vLKtwcPxT7xBEkWfej3s_czKehQecQs-PR-E73LviHmnB6smMs3BD5eWOwcIHaYqG-_fcy2RH-jiROBSTAmZhxx1urMtHesZ0P9ahNnq-vwC_jpHq7h_OqaHVuFB1NxRuQLwx5llGiPOGIDlpTfHycwOaBM9z2-fzIFNI0s0C"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="font-headline text-xl font-bold text-on-primary mb-1">Pokhara</h3>
+<p class="font-body text-sm text-on-primary/80">Lakeside serenity.</p>
+</div>
+</div>
+<!-- Small Item 2 -->
+<div class="relative rounded-xl overflow-hidden group cursor-pointer bg-surface-container-low">
+<img alt="Chitwan National Park lush green jungle scenery with a rhinoceros in the distance" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Chitwan National Park lush green jungle scenery with a rhinoceros in the distance" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvneNa8WquUz3WN7DPCs147JhpTRa8K7ggD3BWP8PmmoceX11N1h6Gw1mSz1xGcTUTAIRsLG9SE-kdXu7_I_VzS8ASwLGl-vt83fUFQL446otZp7eN5kk6jsMOlclppoI4T7KuuHBZnLTG9WZ4XUjOgclvZJnp5tzH9MjA_wa_Sy6N2QWzzqz3gmB6n6JFl6eGC9GuHWy5PgKSDDSTy6kx30yL82SH3kQBiYifpLBSAS47_l2sv6hISbjzZqxybzPQcAwuF2e5dslu"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/70 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="font-headline text-xl font-bold text-on-primary mb-1">Chitwan</h3>
+<p class="font-body text-sm text-on-primary/80">Wildlife encounters.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full rounded-t-[1.5rem] mt-20 bg-surface-container-low py-16 px-12 relative overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+<div>
+<a class="text-xl font-bold text-sky-900 font-headline mb-4 block" href="#">Ghumuan</a>
+<p class="font-body text-on-surface-variant text-sm">© 2024 Ghumuan. Inspired by the Stillness of the Himalayas.</p>
+</div>
+<div class="flex flex-col space-y-3">
+<a class="text-slate-500 hover:text-sky-600 font-body transition-colors" href="#">About Nepal</a>
+<a class="text-slate-500 hover:text-sky-600 font-body transition-colors" href="#">Trekking Guide</a>
+</div>
+<div class="flex flex-col space-y-3">
+<a class="text-slate-500 hover:text-sky-600 font-body transition-colors" href="#">Contact Us</a>
+<a class="text-slate-500 hover:text-sky-600 font-body transition-colors" href="#">Terms of Service</a>
+<a class="text-slate-500 hover:text-sky-600 font-body transition-colors" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>

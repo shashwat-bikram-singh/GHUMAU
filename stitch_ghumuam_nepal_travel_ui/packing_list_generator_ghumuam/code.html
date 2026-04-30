@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ghumuam - Packing List Generator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#bfc8ce",
+                    "secondary": "#516445",
+                    "on-surface-variant": "#3f4850",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#cce5ff",
+                    "surface-dim": "#cbdbf5",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#93ccff",
+                    "secondary-fixed-dim": "#b7cda8",
+                    "tertiary-fixed": "#dbe4ea",
+                    "secondary-fixed": "#d3e9c3",
+                    "primary": "#006194",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface": "#0b1c30",
+                    "on-tertiary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#6d767b",
+                    "on-tertiary-fixed": "#141d21",
+                    "on-tertiary-container": "#fbfdff",
+                    "secondary-container": "#d0e7c0",
+                    "on-secondary-fixed": "#0f2008",
+                    "on-background": "#0b1c30",
+                    "on-secondary-fixed-variant": "#394c2f",
+                    "on-secondary-container": "#556849",
+                    "surface-container-high": "#dce9ff",
+                    "background": "#f8f9ff",
+                    "on-primary-container": "#fdfcff",
+                    "outline": "#707881",
+                    "outline-variant": "#bfc7d2",
+                    "on-tertiary-fixed-variant": "#3f484d",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#e5eeff",
+                    "surface-bright": "#f8f9ff",
+                    "inverse-surface": "#213145",
+                    "surface-container-low": "#eff4ff",
+                    "on-primary-fixed": "#001d31",
+                    "inverse-on-surface": "#eaf1ff",
+                    "error-container": "#ffdad6",
+                    "tertiary": "#545d62",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container-highest": "#d3e4fe",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#006398",
+                    "surface": "#f8f9ff",
+                    "primary-container": "#007bb9",
+                    "primary-fixed-dim": "#93ccff",
+                    "on-primary-fixed-variant": "#004b73"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {},
+            "fontFamily": {
+                    "headline": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body": [
+                            "Manrope"
+                    ],
+                    "label": [
+                            "Manrope"
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-primary/20">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-[20px] bg-gradient-to-b from-white/10 to-transparent shadow-[0_4px_30px_rgba(0,0,0,0.03)] flex justify-between items-center h-20 px-8 max-w-screen-2xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-sky-900 dark:text-sky-50 font-['Plus_Jakarta_Sans'] tracking-tight">
+            Alpine Sanctuary
+        </div>
+<div class="hidden md:flex gap-8">
+<a class="text-slate-500 dark:text-slate-400 font-medium pb-1 hover:text-sky-600 dark:hover:text-sky-200 transition-all duration-500 font-['Plus_Jakarta_Sans'] tracking-tight scale-100 active:scale-95 transition-transform duration-200" href="#">Feed</a>
+<a aria-current="page" class="text-sky-700 dark:text-sky-300 font-bold border-b-2 border-sky-700 dark:border-sky-300 pb-1 hover:text-sky-600 dark:hover:text-sky-200 transition-all duration-500 font-['Plus_Jakarta_Sans'] tracking-tight scale-100 active:scale-95 transition-transform duration-200" href="#">Packing Lists</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium pb-1 hover:text-sky-600 dark:hover:text-sky-200 transition-all duration-500 font-['Plus_Jakarta_Sans'] tracking-tight scale-100 active:scale-95 transition-transform duration-200" href="#">Destinations</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium pb-1 hover:text-sky-600 dark:hover:text-sky-200 transition-all duration-500 font-['Plus_Jakarta_Sans'] tracking-tight scale-100 active:scale-95 transition-transform duration-200" href="#">Community</a>
+</div>
+<div class="flex gap-4 items-center text-sky-700 dark:text-sky-400">
+<button class="hover:text-sky-600 dark:hover:text-sky-200 transition-all duration-500 scale-100 active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<button class="hover:text-sky-600 dark:hover:text-sky-200 transition-all duration-500 scale-100 active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-24 px-6 max-w-screen-xl mx-auto">
+<!-- Header -->
+<header class="mb-16 max-w-2xl">
+<h1 class="text-5xl md:text-6xl font-headline font-bold tracking-tight text-on-surface mb-6">Curate Your Journey.</h1>
+<p class="text-lg md:text-xl font-body text-on-surface-variant leading-relaxed">Select your destination and parameters to generate a comprehensive packing list tailored to the Himalayan conditions.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+<!-- Selection Form (Left Column) -->
+<section class="lg:col-span-4 sticky top-32 space-y-8">
+<div class="bg-surface-container-lowest rounded-xl p-8 outline outline-1 outline-outline-variant/15 shadow-[0_8px_30px_rgba(11,28,48,0.04)]">
+<h2 class="text-2xl font-headline font-bold text-on-surface mb-6">Trip Details</h2>
+<form class="space-y-6">
+<!-- Destination -->
+<div>
+<label class="block text-sm font-label text-on-surface-variant mb-2" for="destination">Destination</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low text-on-surface border-none rounded-lg py-3 pl-4 pr-10 focus:ring-2 focus:ring-surface-tint focus:bg-surface-container-lowest appearance-none transition-colors duration-200 font-body" id="destination">
+<option disabled="" selected="" value="">Select region...</option>
+<option value="annapurna">Annapurna Circuit</option>
+<option value="everest">Everest Base Camp</option>
+<option value="langtang">Langtang Valley</option>
+<option value="chitwan">Chitwan National Park</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-xl">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Duration -->
+<div>
+<label class="block text-sm font-label text-on-surface-variant mb-2" for="duration">Duration (Days)</label>
+<input class="w-full bg-surface-container-low text-on-surface border-none rounded-lg py-3 px-4 focus:ring-2 focus:ring-surface-tint focus:bg-surface-container-lowest transition-colors duration-200 font-body" id="duration" max="60" min="1" placeholder="e.g. 14" type="number"/>
+</div>
+<!-- Activity Type -->
+<div>
+<label class="block text-sm font-label text-on-surface-variant mb-2" for="activity">Activity Focus</label>
+<div class="relative">
+<select class="w-full bg-surface-container-low text-on-surface border-none rounded-lg py-3 pl-4 pr-10 focus:ring-2 focus:ring-surface-tint focus:bg-surface-container-lowest appearance-none transition-colors duration-200 font-body" id="activity">
+<option disabled="" selected="" value="">Select activity...</option>
+<option value="trekking">High-Altitude Trekking</option>
+<option value="cultural">Cultural Exploration</option>
+<option value="safari">Jungle Safari</option>
+<option value="mixed">Mixed Itinerary</option>
+</select>
+<div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-on-surface-variant">
+<span class="material-symbols-outlined text-xl">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Season -->
+<div>
+<label class="block text-sm font-label text-on-surface-variant mb-2" for="season">Season</label>
+<div class="grid grid-cols-2 gap-3">
+<label class="cursor-pointer">
+<input class="peer sr-only" name="season" type="radio" value="spring"/>
+<div class="bg-surface-container-low peer-checked:bg-primary-container peer-checked:text-on-primary text-center py-2 rounded-lg font-body text-sm transition-all duration-200">Spring</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="season" type="radio" value="autumn"/>
+<div class="bg-surface-container-low peer-checked:bg-primary-container peer-checked:text-on-primary text-center py-2 rounded-lg font-body text-sm transition-all duration-200">Autumn</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="season" type="radio" value="monsoon"/>
+<div class="bg-surface-container-low peer-checked:bg-primary-container peer-checked:text-on-primary text-center py-2 rounded-lg font-body text-sm transition-all duration-200">Monsoon</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="season" type="radio" value="winter"/>
+<div class="bg-surface-container-low peer-checked:bg-primary-container peer-checked:text-on-primary text-center py-2 rounded-lg font-body text-sm transition-all duration-200">Winter</div>
+</label>
+</div>
+</div>
+<button class="w-full mt-4 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold py-4 rounded-full hover:opacity-90 transition-opacity duration-300 font-headline text-lg shadow-[0_4px_20px_rgba(0,97,148,0.2)]" type="button">
+                            Generate List
+                        </button>
+</form>
+</div>
+</section>
+<!-- Output: Categorized Checklist (Right Column) -->
+<section class="lg:col-span-8">
+<div class="flex justify-between items-end mb-8">
+<div>
+<p class="text-sm font-label text-primary font-semibold uppercase tracking-wider mb-1">Generated Draft</p>
+<h2 class="text-3xl font-headline font-bold text-on-surface">Annapurna Circuit • 14 Days</h2>
+</div>
+<button class="hidden md:flex items-center gap-2 bg-surface-container-highest text-primary px-6 py-3 rounded-full font-bold hover:bg-surface-variant transition-colors duration-300">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">bookmark_add</span>
+                        Save to Trip
+                    </button>
+</div>
+<!-- Bento Grid Layout for Categories -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Essentials -->
+<div class="bg-surface-container-lowest rounded-xl p-6 outline outline-1 outline-outline-variant/15 h-full flex flex-col">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">luggage</span>
+</div>
+<h3 class="text-xl font-headline font-semibold text-on-surface">Essentials</h3>
+</div>
+<ul class="space-y-4 flex-grow font-body text-on-surface-variant">
+<li class="flex items-start gap-3 group">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox"/>
+<span class="group-hover:text-on-surface transition-colors">Valid Passport (min 6 months) &amp; Visa</span>
+</li>
+<li class="flex items-start gap-3 group">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox"/>
+<span class="group-hover:text-on-surface transition-colors">TIMS Card &amp; Conservation Permits</span>
+</li>
+<li class="flex items-start gap-3 group">
+<input checked="" class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox"/>
+<span class="line-through opacity-60">Cash (Nepalese Rupees)</span>
+</li>
+<li class="flex items-start gap-3 group">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox"/>
+<span class="group-hover:text-on-surface transition-colors">Travel Insurance (with helicopter evac)</span>
+</li>
+</ul>
+</div>
+<!-- Gear -->
+<div class="bg-surface-container-lowest rounded-xl p-6 outline outline-1 outline-outline-variant/15 h-full flex flex-col">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">hiking</span>
+</div>
+<h3 class="text-xl font-headline font-semibold text-on-surface">Hardware &amp; Gear</h3>
+</div>
+<ul class="space-y-4 flex-grow font-body text-on-surface-variant">
+<li class="flex items-start gap-3 group">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox"/>
+<span class="group-hover:text-on-surface transition-colors">40-50L Trekking Backpack with rain cover</span>
+</li>
+<li class="flex items-start gap-3 group">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox"/>
+<span class="group-hover:text-on-surface transition-colors">Four-season sleeping bag (-10°C to -15°C)</span>
+</li>
+<li class="flex items-start gap-3 group">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox"/>
+<span class="group-hover:text-on-surface transition-colors">Trekking poles (collapsible)</span>
+</li>
+<li class="flex items-start gap-3 group">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox"/>
+<span class="group-hover:text-on-surface transition-colors">Headlamp with spare lithium batteries</span>
+</li>
+</ul>
+</div>
+<!-- Clothing -->
+<div class="bg-surface-container-lowest rounded-xl p-6 outline outline-1 outline-outline-variant/15 h-full flex flex-col md:col-span-2">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">checkroom</span>
+</div>
+<h3 class="text-xl font-headline font-semibold text-on-surface">Apparel (Layering System)</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 flex-grow font-body text-on-surface-variant">
+<li class="flex items-start gap-3 group">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox"/>
+<span class="group-hover:text-on-surface transition-colors">Moisture-wicking base layers (merino wool) x3</span>
+</li>
+<li class="flex items-start gap-3 group">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox"/>
+<span class="group-hover:text-on-surface transition-colors">Fleece mid-layer jacket</span>
+</li>
+<li class="flex items-start gap-3 group">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox"/>
+<span class="group-hover:text-on-surface transition-colors">Down or synthetic insulated jacket (Heavy)</span>
+</li>
+<li class="flex items-start gap-3 group">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox"/>
+<span class="group-hover:text-on-surface transition-colors">Gore-Tex hard shell jacket (Waterproof)</span>
+</li>
+<li class="flex items-start gap-3 group">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox"/>
+<span class="group-hover:text-on-surface transition-colors">Sturdy, broken-in trekking boots</span>
+</li>
+<li class="flex items-start gap-3 group">
+<input class="mt-1 w-5 h-5 rounded border-outline-variant text-primary focus:ring-primary bg-surface-container-low cursor-pointer" type="checkbox"/>
+<span class="group-hover:text-on-surface transition-colors">Merino wool hiking socks x4</span>
+</li>
+</div>
+</div>
+</div>
+<!-- Mobile CTA -->
+<div class="mt-8 md:hidden">
+<button class="w-full flex justify-center items-center gap-2 bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-4 rounded-full font-bold shadow-[0_4px_20px_rgba(0,97,148,0.2)]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+                        Save Full List to Profile
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-20 bg-slate-50 dark:bg-slate-900/50 bg-gradient-to-t from-slate-100 to-transparent pt-16 pb-8 flex flex-col md:flex-row justify-between items-center px-12 border-t border-slate-200/10">
+<div class="text-lg font-semibold text-slate-900 dark:text-slate-100 font-['Manrope'] tracking-wide mb-6 md:mb-0">
+            Alpine Sanctuary
+        </div>
+<div class="flex gap-6 mb-6 md:mb-0">
+<a class="text-slate-500 dark:text-slate-400 font-['Manrope'] text-sm tracking-wide hover:text-sky-600 dark:hover:text-sky-300 transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Sustainability</a>
+<a class="text-slate-500 dark:text-slate-400 font-['Manrope'] text-sm tracking-wide hover:text-sky-600 dark:hover:text-sky-300 transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Guidebook</a>
+<a class="text-slate-500 dark:text-slate-400 font-['Manrope'] text-sm tracking-wide hover:text-sky-600 dark:hover:text-sky-300 transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Mountain Safety</a>
+<a class="text-slate-500 dark:text-slate-400 font-['Manrope'] text-sm tracking-wide hover:text-sky-600 dark:hover:text-sky-300 transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+<div class="text-slate-500 dark:text-slate-400 font-['Manrope'] text-sm tracking-wide text-center md:text-right">
+            © 2024 The Alpine Sanctuary. Journeys into the stillness.
+        </div>
+</footer>
+</body></html>

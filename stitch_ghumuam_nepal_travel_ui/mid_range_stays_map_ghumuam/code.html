@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ghumuam - Mid-Range Stays</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-variant": "#d3e4fe",
+                        "surface": "#f8f9ff",
+                        "primary-fixed-dim": "#93ccff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#cce5ff",
+                        "on-secondary-container": "#556849",
+                        "on-primary-fixed": "#001d31",
+                        "on-primary-container": "#fdfcff",
+                        "background": "#f8f9ff",
+                        "primary": "#006194",
+                        "error-container": "#ffdad6",
+                        "on-background": "#0b1c30",
+                        "on-secondary-fixed-variant": "#394c2f",
+                        "surface-dim": "#cbdbf5",
+                        "secondary-fixed-dim": "#b7cda8",
+                        "on-error": "#ffffff",
+                        "surface-container-highest": "#d3e4fe",
+                        "tertiary-container": "#6d767b",
+                        "on-secondary-fixed": "#0f2008",
+                        "outline-variant": "#bfc7d2",
+                        "on-error-container": "#93000a",
+                        "on-tertiary-container": "#fbfdff",
+                        "secondary": "#516445",
+                        "tertiary": "#545d62",
+                        "surface-container-high": "#dce9ff",
+                        "outline": "#707881",
+                        "tertiary-fixed-dim": "#bfc8ce",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "inverse-primary": "#93ccff",
+                        "secondary-fixed": "#d3e9c3",
+                        "on-primary-fixed-variant": "#004b73",
+                        "on-tertiary-fixed": "#141d21",
+                        "surface-tint": "#006398",
+                        "secondary-container": "#d0e7c0",
+                        "inverse-surface": "#213145",
+                        "on-surface-variant": "#3f4850",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#007bb9",
+                        "surface-container": "#e5eeff",
+                        "tertiary-fixed": "#dbe4ea",
+                        "on-tertiary-fixed-variant": "#3f484d",
+                        "on-surface": "#0b1c30"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="hidden md:flex flex-col bg-white/70 backdrop-blur-2xl text-sky-800 font-['Plus_Jakarta_Sans'] tracking-tight docked full-width top-0 no-border bg-gradient-to-b from-white/10 to-transparent flat no-shadows fixed z-50 w-full transition-all duration-300">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold text-sky-900 tracking-tighter">Ghumuam</div>
+<div class="flex items-center space-x-6">
+<a class="text-slate-500 hover:text-sky-600 transition-all duration-300 hover:opacity-80" href="#">Explore</a>
+<a class="text-sky-700 border-b-2 border-sky-600 pb-1 transition-all duration-300 hover:opacity-80 Active: subtle scale-95 duration-200" href="#">Stays</a>
+<a class="text-slate-500 hover:text-sky-600 transition-all duration-300 hover:opacity-80" href="#">Cuisine</a>
+<a class="text-slate-500 hover:text-sky-600 transition-all duration-300 hover:opacity-80" href="#">Deals</a>
+</div>
+<div class="flex items-center space-x-4">
+<button aria-label="Notifications" class="text-sky-800 transition-all duration-300 hover:opacity-80">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-transparent hover:border-sky-600 transition-all duration-300 cursor-pointer">
+<img alt="Trekker profile" class="w-full h-full object-cover" data-alt="close-up portrait of a young traveler with a gentle smile against a soft mountain backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCylpnOiPWN07Rchsx5af4heV7fnqf3S2QTLJ5XyEkgjjGZlpNDK-tHNg5UebOBybI10Qg8e4Ybe4LIwVC8H3a9Mlmoh67d9kfbumTg5UqSBunevV736APOOOxCjooSYN5OZGvz7PrJXONTD3MZAiqNYFo4DCCeZctq9uDuGpTZf6zOCOFLmSi0SMG9Jg4Kq-t6hbATopd5tK4IvJVKPGtu6qN5njMFmPZvs8hGylurDzY0fzhQ_chWTdLywIGqPVFhI7rH8A13IMup"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Layout -->
+<main class="flex flex-col md:flex-row min-h-screen pt-4 md:pt-24 pb-24 md:pb-0">
+<!-- Left Column: Curated Stays -->
+<section class="w-full md:w-[55%] lg:w-[45%] flex flex-col p-6 md:p-10 space-y-8 overflow-y-auto z-10 bg-surface">
+<header class="mb-6">
+<h1 class="text-4xl md:text-5xl font-headline font-bold text-on-background tracking-tight mb-3">Curated Mid-Range Stays</h1>
+<p class="text-lg font-body text-on-surface-variant max-w-md">Discover exceptional comfort nestled in Nepal's stunning landscapes, perfectly balanced for value and quality.</p>
+</header>
+<!-- Filters -->
+<div class="flex space-x-3 overflow-x-auto pb-4 scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0">
+<button class="px-5 py-2.5 rounded-full bg-primary-container text-on-primary font-label text-sm font-semibold whitespace-nowrap shadow-sm">All Stays</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors font-label text-sm font-medium whitespace-nowrap outline-none outline-[0.5px] outline-outline-variant/30">Chitwan</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors font-label text-sm font-medium whitespace-nowrap outline-none outline-[0.5px] outline-outline-variant/30">Annapurna Region</button>
+<button class="px-5 py-2.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high transition-colors font-label text-sm font-medium whitespace-nowrap outline-none outline-[0.5px] outline-outline-variant/30">Lumbini</button>
+</div>
+<!-- Stay Cards -->
+<div class="space-y-8">
+<!-- Card 1: Chitwan -->
+<article class="flex flex-col md:flex-row bg-surface-container-lowest rounded-[1.5rem] overflow-hidden group shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.06)] transition-all duration-500 transform hover:-translate-y-1 outline outline-[0.5px] outline-outline-variant/15 relative">
+<div class="w-full md:w-2/5 h-64 md:h-auto overflow-hidden relative">
+<img alt="Resort in Chitwan" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="luxury boutique resort hidden within lush tropical greenery of chitwan national park warm evening lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1WzzkRkmfh3AhzISiqGkFcW409Bs9QtkmoGrRPxqH_3yoI_e349a2pXNEVULcVDclN_y2VOFAsTZ5b_lLbzO8_MM77AnMRc9LdbaJODbpMKxpx_mBL3WVkWF3SCjiB3ACX1-OO4nR44tL012cxBw5xrq_u2g3YByap2RBZCzAxukHvLyfCQh5FdKTXOPbZL6VtaU_AMi8g1QMySayIg01NuVUjFOwAFM1DHVUrVOnZPdCVZGm8V8eGh1F-gueUNymVVnUSoUW1NJb"/>
+<div class="absolute top-4 left-4 bg-surface/80 backdrop-blur-md px-3 py-1 rounded-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label text-xs font-bold text-on-surface">4.5</span>
+</div>
+</div>
+<div class="w-full md:w-3/5 p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h2 class="text-xl font-headline font-bold text-on-background leading-tight">Rhino Retreat Resort</h2>
+<button class="text-tertiary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<p class="font-label text-sm text-on-surface-variant mb-4 flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span> Sauraha, Chitwan
+                            </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-surface-container-low text-primary text-xs font-label rounded-full border border-surface-variant/50">Jungle Safari</span>
+<span class="px-3 py-1 bg-surface-container-low text-primary text-xs font-label rounded-full border border-surface-variant/50">Pool</span>
+<span class="px-3 py-1 bg-surface-container-low text-primary text-xs font-label rounded-full border border-surface-variant/50">Spa</span>
+</div>
+</div>
+<div class="flex justify-between items-end mt-4 pt-4 border-t border-surface-variant/30">
+<div>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-wider mb-1">Mid-Range</p>
+<p class="font-headline text-2xl font-bold text-on-background">$85<span class="text-sm font-normal text-on-surface-variant">/night</span></p>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-3 rounded-full font-label font-bold text-sm hover:shadow-lg transition-shadow duration-300">Book Now</button>
+</div>
+</div>
+</article>
+<!-- Card 2: Ghandruk -->
+<article class="flex flex-col md:flex-row bg-surface-container-lowest rounded-[1.5rem] overflow-hidden group shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.06)] transition-all duration-500 transform hover:-translate-y-1 outline outline-[0.5px] outline-outline-variant/15 relative">
+<div class="w-full md:w-2/5 h-64 md:h-auto overflow-hidden relative">
+<img alt="Tea House in Ghandruk" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="premium stone teahouse in ghandruk village with clear view of annapurna snow peaks at dawn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxZt2q0Ttpjn41vJBJ9TgThuSxYepN4VW0d13En4GUwpStbNpCwVeEHyb4cd1_JpAdgUFhXlfwJoGS3bIVSNdWWN9tJNH3WNwECDseAUqXs_vTl-8y2PkEUf9x4hWewtBrZ3EEf97vjxyJpbGf1CYlxZDSaV16X-DLizE9kDdqrMLQf5NIiH9LBN3tRMsyjTjV8yEqRUDANsrpwYU2iKtKG9TFKgxJsq6nO5K01v67cgZyLEQavsAjp8POx54RWbd3OD1YJFeKp5YF"/>
+<div class="absolute top-4 left-4 bg-surface/80 backdrop-blur-md px-3 py-1 rounded-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label text-xs font-bold text-on-surface">4.8</span>
+</div>
+</div>
+<div class="w-full md:w-3/5 p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h2 class="text-xl font-headline font-bold text-on-background leading-tight">Annapurna Heritage Lodge</h2>
+<button class="text-tertiary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<p class="font-label text-sm text-on-surface-variant mb-4 flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span> Ghandruk Village
+                            </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-surface-container-low text-primary text-xs font-label rounded-full border border-surface-variant/50">Mountain View</span>
+<span class="px-3 py-1 bg-surface-container-low text-primary text-xs font-label rounded-full border border-surface-variant/50">Hot Shower</span>
+<span class="px-3 py-1 bg-surface-container-low text-primary text-xs font-label rounded-full border border-surface-variant/50">Wi-Fi</span>
+</div>
+</div>
+<div class="flex justify-between items-end mt-4 pt-4 border-t border-surface-variant/30">
+<div>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-wider mb-1">Mid-Range</p>
+<p class="font-headline text-2xl font-bold text-on-background">$45<span class="text-sm font-normal text-on-surface-variant">/night</span></p>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-3 rounded-full font-label font-bold text-sm hover:shadow-lg transition-shadow duration-300">Book Now</button>
+</div>
+</div>
+</article>
+<!-- Card 3: Lumbini -->
+<article class="flex flex-col md:flex-row bg-surface-container-lowest rounded-[1.5rem] overflow-hidden group shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_12px_40px_rgb(0,0,0,0.06)] transition-all duration-500 transform hover:-translate-y-1 outline outline-[0.5px] outline-outline-variant/15 relative">
+<div class="w-full md:w-2/5 h-64 md:h-auto overflow-hidden relative">
+<img alt="Hotel in Lumbini" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="peaceful garden courtyard of a boutique hotel in lumbini softly lit by early morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhUNIpdp7yLIsdA-0artRuUqVdrz8cOY10dU6sazkme49CdUC8nL5dzVR-gckS0w-k4pSK5R3R8yZIgGhHKSgQZ7SWr3H84_LS498hOKtirmLKJE9EgJUqmK4LttpPQvwmNTPCtQNFRCuGCm4eo9hlAvnGTneVtMwsZK-QLHs2sDoVbmy0CbTfDzDCMVm5rSLHT692W1mi_dfthw2YSk4Lt1o-2wMGKoE9gosDMY4WDFzAFMTjcBEYYgI7eX6AmxyuCmrbGpJZlWl8"/>
+<div class="absolute top-4 left-4 bg-surface/80 backdrop-blur-md px-3 py-1 rounded-full flex items-center space-x-1">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label text-xs font-bold text-on-surface">4.2</span>
+</div>
+</div>
+<div class="w-full md:w-3/5 p-6 flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h2 class="text-xl font-headline font-bold text-on-background leading-tight">Bodhi Zen Hotel</h2>
+<button class="text-tertiary hover:text-primary transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+<p class="font-label text-sm text-on-surface-variant mb-4 flex items-center">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span> Lumbini Garden Area
+                            </p>
+<div class="flex flex-wrap gap-2 mb-6">
+<span class="px-3 py-1 bg-surface-container-low text-primary text-xs font-label rounded-full border border-surface-variant/50">Meditation Garden</span>
+<span class="px-3 py-1 bg-surface-container-low text-primary text-xs font-label rounded-full border border-surface-variant/50">AC Rooms</span>
+<span class="px-3 py-1 bg-surface-container-low text-primary text-xs font-label rounded-full border border-surface-variant/50">Veg Dining</span>
+</div>
+</div>
+<div class="flex justify-between items-end mt-4 pt-4 border-t border-surface-variant/30">
+<div>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-wider mb-1">Mid-Range</p>
+<p class="font-headline text-2xl font-bold text-on-background">$60<span class="text-sm font-normal text-on-surface-variant">/night</span></p>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-3 rounded-full font-label font-bold text-sm hover:shadow-lg transition-shadow duration-300">Book Now</button>
+</div>
+</div>
+</article>
+</div>
+<div class="py-8 text-center">
+<button class="bg-surface-container-high text-primary px-8 py-3 rounded-full font-label font-bold text-sm hover:bg-surface-variant transition-colors duration-300">Load More Stays</button>
+</div>
+</section>
+<!-- Right Column: Map -->
+<section class="hidden md:block w-[45%] lg:w-[55%] fixed right-0 top-0 h-screen z-0 border-l border-outline-variant/20">
+<div class="w-full h-full relative bg-surface-container-low">
+<!-- Fallback Map Image -->
+<img alt="Map of Nepal" class="w-full h-full object-cover opacity-80 mix-blend-multiply" data-alt="stylized topographical map of nepal focusing on chitwan annapurna and lumbini regions in soft blue and green tones" data-location="Nepal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBW7T6MjPNxJSs1Pq2XiUr5y-EpsiHWISRdmbPb5H1MBDJDWfDEUsVesCLPv3pd8GBVKkFy91p9_TELkVyOc_GnQP4KTvNR3PSNh57cFkExx6IOUzPvA9w8K-B_iRwvZEpb_FGr42TG2kJINI0dSjViprpaXdOgY94cOrsDWsQ2a01dGleNhopCjJVh1ms5muOftnWj7dRNxVN2aTi5azeQrKjxy3jenfQZAEf4hbyTsZDVPYdd3f3YU93jWOovyg4QHTZqNwUD_O_f"/>
+<!-- Map Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/40 to-transparent pointer-events-none"></div>
+<!-- Custom Map Pins (Simulated) -->
+<div class="absolute top-[45%] left-[60%] group cursor-pointer">
+<div class="w-4 h-4 bg-primary rounded-full shadow-[0_0_15px_rgba(0,97,148,0.6)] border-2 border-surface group-hover:scale-125 transition-transform"></div>
+<div class="absolute -top-12 -left-16 bg-surface-container-lowest px-3 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none outline outline-[0.5px] outline-outline-variant/20">
+<p class="font-headline text-sm font-bold text-on-background">Ghandruk</p>
+<p class="font-label text-xs text-on-surface-variant">$45 - $75</p>
+</div>
+</div>
+<div class="absolute top-[70%] left-[50%] group cursor-pointer">
+<div class="w-4 h-4 bg-primary rounded-full shadow-[0_0_15px_rgba(0,97,148,0.6)] border-2 border-surface group-hover:scale-125 transition-transform"></div>
+<div class="absolute -top-12 -left-16 bg-surface-container-lowest px-3 py-2 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none outline outline-[0.5px] outline-outline-variant/20">
+<p class="font-headline text-sm font-bold text-on-background">Chitwan</p>
+<p class="font-label text-xs text-on-surface-variant">$80 - $120</p>
+</div>
+</div>
+<!-- Map Controls -->
+<div class="absolute bottom-10 right-10 flex flex-col space-y-2">
+<button class="w-10 h-10 bg-surface-container-lowest rounded-full flex items-center justify-center shadow-md text-on-surface-variant hover:text-primary transition-colors outline outline-[0.5px] outline-outline-variant/20">
+<span class="material-symbols-outlined text-xl">add</span>
+</button>
+<button class="w-10 h-10 bg-surface-container-lowest rounded-full flex items-center justify-center shadow-md text-on-surface-variant hover:text-primary transition-colors outline outline-[0.5px] outline-outline-variant/20">
+<span class="material-symbols-outlined text-xl">remove</span>
+</button>
+<button class="w-10 h-10 bg-surface-container-lowest rounded-full flex items-center justify-center shadow-md text-primary mt-4 outline outline-[0.5px] outline-outline-variant/20">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">my_location</span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden flex flex-col bg-white/80 backdrop-blur-3xl text-sky-800 font-['Manrope'] text-[11px] font-semibold fixed bottom-0 w-full z-50 rounded-t-[1.5rem] no-border shadow-[0_-4px_40px_rgba(0,0,0,0.04)] shadow-2xl shadow-sky-900/5 transition-transform">
+<div class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-8 pt-3">
+<a class="flex flex-col items-center justify-center text-slate-400 px-6 py-2 hover:bg-sky-50 transition-all" href="#">
+<span class="material-symbols-outlined mb-1">explore</span>
+<span>Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-sky-100 text-sky-900 rounded-full px-6 py-2 hover:bg-sky-50 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">map</span>
+<span>Trips</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-6 py-2 hover:bg-sky-50 transition-all" href="#">
+<span class="material-symbols-outlined mb-1">restaurant</span>
+<span>Eat</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 px-6 py-2 hover:bg-sky-50 transition-all" href="#">
+<span class="material-symbols-outlined mb-1">bookmark</span>
+<span>Saved</span>
+</a>
+</div>
+</nav>
+</body></html>

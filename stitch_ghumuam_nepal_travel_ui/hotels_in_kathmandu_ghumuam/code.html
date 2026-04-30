@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ghumuan - Popular Hotels in Kathmandu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-low": "#eff4ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary-fixed-variant": "#004b73",
+                        "on-primary-container": "#fdfcff",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#cce5ff",
+                        "primary-container": "#007bb9",
+                        "on-error-container": "#93000a",
+                        "background": "#f8f9ff",
+                        "on-primary": "#ffffff",
+                        "secondary": "#516445",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-high": "#dce9ff",
+                        "inverse-surface": "#213145",
+                        "on-background": "#0b1c30",
+                        "secondary-fixed-dim": "#b7cda8",
+                        "on-primary-fixed": "#001d31",
+                        "tertiary-fixed-dim": "#bfc8ce",
+                        "outline-variant": "#bfc7d2",
+                        "on-tertiary-container": "#fbfdff",
+                        "inverse-primary": "#93ccff",
+                        "tertiary-fixed": "#dbe4ea",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary-fixed": "#0f2008",
+                        "tertiary": "#545d62",
+                        "surface-tint": "#006398",
+                        "tertiary-container": "#6d767b",
+                        "surface-container": "#e5eeff",
+                        "on-surface": "#0b1c30",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "secondary-container": "#d0e7c0",
+                        "on-secondary-fixed-variant": "#394c2f",
+                        "on-secondary": "#ffffff",
+                        "on-surface-variant": "#3f4850",
+                        "on-tertiary-fixed": "#141d21",
+                        "on-secondary-container": "#556849",
+                        "on-tertiary-fixed-variant": "#3f484d",
+                        "surface-variant": "#d3e4fe",
+                        "on-error": "#ffffff",
+                        "surface": "#f8f9ff",
+                        "secondary-fixed": "#d3e9c3",
+                        "primary-fixed-dim": "#93ccff",
+                        "error-container": "#ffdad6",
+                        "primary": "#006194",
+                        "outline": "#707881"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Manrope", "sans-serif"],
+                        "label": ["Manrope", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.surface'); color: theme('colors.on-surface'); font-family: theme('fontFamily.body'); }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: theme('fontFamily.headline'); tracking: -0.02em; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; font-weight: normal; }
+        .text-shadow-ambient { text-shadow: 0 4px 30px rgba(11, 28, 48, 0.4); }
+        .gradient-text { background: linear-gradient(to right, theme('colors.primary'), theme('colors.primary-container')); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- TopNavBar (Semantic Shell) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/70 backdrop-blur-[40px] bg-gradient-to-b from-surface to-transparent pb-4 pt-6 px-8 no-line transition-all duration-300">
+<div class="flex justify-between items-center max-w-screen-2xl mx-auto">
+<!-- Brand -->
+<a class="text-2xl font-bold tracking-tighter text-primary font-headline flex items-center gap-2" href="#">
+                Ghumuan
+            </a>
+<!-- Nav Links (Desktop) -->
+<div class="hidden md:flex items-center space-x-8">
+<!-- Highlight 'Explore' as it aligns closest with searching for hotels -->
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label text-md transition-colors" href="#">Explore</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label text-md" href="#">AI Planner</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label text-md" href="#">Saved Trips</a>
+</div>
+<!-- Actions -->
+<div class="flex items-center space-x-6">
+<!-- Search Icon (Right) -->
+<button aria-label="Search" class="text-on-surface-variant hover:text-primary transition-colors p-2 rounded-full hover:bg-surface-container-low">
+<span class="material-symbols-outlined text-2xl">search</span>
+</button>
+<a class="hidden md:block text-on-surface font-medium hover:text-primary transition-colors font-label text-md" href="#">Sign In</a>
+<a class="hidden md:flex bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-3 rounded-full font-label text-md font-medium shadow-[0_8px_30px_rgba(11,28,48,0.15)] hover:scale-[1.02] transition-transform duration-300" href="#">Plan My Trip</a>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface p-2">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Canvas -->
+<main class="flex-grow pt-32 pb-24">
+<!-- Header Section (Atmospheric Editorial) -->
+<header class="max-w-screen-2xl mx-auto px-8 mb-16 md:mb-24 relative">
+<div class="max-w-3xl ml-0 md:ml-12 relative z-10">
+<p class="font-label text-primary font-medium tracking-wider uppercase mb-4 text-sm md:text-base">Curated Stays</p>
+<h1 class="font-headline text-5xl md:text-7xl font-bold text-on-surface leading-[1.1] tracking-tighter mb-6">
+                    Sanctuaries in <br/> <span class="gradient-text">Kathmandu</span>
+</h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl leading-relaxed">
+                    Discover premium retreats amidst the vibrant heart of Nepal. Handpicked for elegance, tranquility, and breathtaking views.
+                </p>
+</div>
+</header>
+<!-- Filters / Sort (Subtle Layering) -->
+<section class="max-w-screen-2xl mx-auto px-8 mb-12">
+<div class="flex flex-wrap items-center gap-4 p-4 rounded-xl bg-surface-container-low ml-0 md:ml-12 border border-outline-variant/15 w-fit">
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-lowest text-primary font-label text-sm shadow-[0_2px_10px_rgba(11,28,48,0.04)] hover:shadow-md transition-shadow">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+                    Filters
+                </button>
+<div class="h-6 w-px bg-outline-variant/30 hidden sm:block"></div>
+<div class="flex gap-2 overflow-x-auto pb-2 sm:pb-0 scrollbar-hide">
+<button class="px-5 py-2 rounded-full bg-primary/10 text-primary font-label text-sm whitespace-nowrap">Luxury (5 Star)</button>
+<button class="px-5 py-2 rounded-full bg-transparent border border-outline-variant/30 text-on-surface-variant font-label text-sm whitespace-nowrap hover:bg-surface-container-lowest transition-colors">Boutique</button>
+<button class="px-5 py-2 rounded-full bg-transparent border border-outline-variant/30 text-on-surface-variant font-label text-sm whitespace-nowrap hover:bg-surface-container-lowest transition-colors">Heritage</button>
+<button class="px-5 py-2 rounded-full bg-transparent border border-outline-variant/30 text-on-surface-variant font-label text-sm whitespace-nowrap hover:bg-surface-container-lowest transition-colors">Spa &amp; Wellness</button>
+</div>
+</div>
+</section>
+<!-- Hotel Grid (Asymmetrical / Bento feel) -->
+<section class="max-w-screen-2xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 md:gap-x-12 ml-0 md:ml-12">
+<!-- Card 1: Featured (Larger) -->
+<article class="col-span-1 md:col-span-2 lg:col-span-2 group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_30px_rgba(11,28,48,0.03)] border border-outline-variant/15 hover:shadow-[0_12px_40px_rgba(11,28,48,0.08)] transition-all duration-500">
+<div class="relative h-[400px] md:h-[500px] w-full overflow-hidden">
+<img alt="Luxury heritage hotel courtyard in Kathmandu" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out" data-alt="expansive luxury hotel courtyard in kathmandu featuring traditional newari architecture warm evening lighting glowing lanterns and lush green gardens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpnWjC0G0U5jMxjNGnFxPsJUx7W6nJz50H9Kb9ca4BMKfseY3Tzcd-1JE52oqT3LQ79IHyWbSukAyaeRqIXxURzlDNp4zt9S7wf6T1sA0g3-jzIMe-Fw-8GeeCHs74WWP2xYjlCvosfUGCOR2Nf1hb8WqnlNO_vfY-qVOhrnIJVEaPMbOU1MBgWw03dw4tKmuOD-UVWxTOQ95o8SyWtsPwwKs95Rej6SHCdcsy3-TtBnSHFDcy0UfOylvjxlm0H4_sOCsA5ss--C7F"/>
+<!-- Gradient Overlay for text readability -->
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
+<!-- Top Badges -->
+<div class="absolute top-6 left-6 flex gap-3">
+<span class="bg-surface/80 backdrop-blur-md text-primary px-3 py-1.5 rounded-full font-label text-xs tracking-wide uppercase shadow-sm">Featured</span>
+<span class="bg-surface/80 backdrop-blur-md text-on-surface flex items-center gap-1 px-3 py-1.5 rounded-full font-label text-xs shadow-sm">
+<span class="material-symbols-outlined text-[14px] text-[#f59e0b]" data-weight="fill">star</span>
+                                4.9 (124 Reviews)
+                            </span>
+</div>
+</div>
+<div class="p-8 md:p-10 relative bg-surface-container-lowest -mt-12 mx-6 mb-6 rounded-xl shadow-[0_8px_30px_rgba(11,28,48,0.05)] flex flex-col md:flex-row justify-between items-start md:items-end gap-6 z-10 border border-outline-variant/10">
+<div class="flex-1">
+<h2 class="font-headline text-3xl font-bold text-on-surface mb-2 tracking-tight group-hover:text-primary transition-colors">The Dwarika's Hotel</h2>
+<p class="font-label text-on-surface-variant text-sm flex items-center gap-1 mb-6">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                Battisputali, Kathmandu
+                            </p>
+<div class="flex gap-4">
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined font-light text-[22px]">wifi</span>
+<span class="font-label text-[10px] uppercase tracking-wider">Free Wifi</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined font-light text-[22px]">spa</span>
+<span class="font-label text-[10px] uppercase tracking-wider">Luxury Spa</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined font-light text-[22px]">pool</span>
+<span class="font-label text-[10px] uppercase tracking-wider">Outdoor Pool</span>
+</div>
+</div>
+</div>
+<div class="text-left md:text-right w-full md:w-auto flex flex-row md:flex-col justify-between md:justify-end items-center md:items-end">
+<div class="mb-0 md:mb-4">
+<p class="font-label text-on-surface-variant text-sm">starting from</p>
+<p class="font-headline text-3xl font-bold text-primary">$350<span class="text-lg text-on-surface-variant font-normal">/night</span></p>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-8 py-3 rounded-full font-label text-sm font-medium hover:scale-[1.02] transition-transform shadow-[0_4px_20px_rgba(0,97,148,0.3)] w-auto">
+                                Book Now
+                            </button>
+</div>
+</div>
+</article>
+<!-- Card 2: Standard -->
+<article class="col-span-1 group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_30px_rgba(11,28,48,0.03)] border border-outline-variant/15 hover:shadow-[0_12px_40px_rgba(11,28,48,0.08)] transition-all duration-500 flex flex-col">
+<div class="relative h-[300px] w-full overflow-hidden">
+<img alt="Modern luxury hotel pool in Kathmandu" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out" data-alt="serene rooftop infinity pool of a modern luxury hotel in kathmandu overlooking the city skyline under a clear blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ4Sofv4vm1hpVIM-yrNnbohK9B4OrVZ46fLRquqUyR40cDu7O0eZblICb6OTfphJxMlh3A6eRtliGJb7Q0buNUJxNaXIKL_-JTXDF7DEZySrIoz07dkuBNmHpYJpeldvWgxfihcthG3UV67E9BUQl8XIc_lB0tPOofIE3UkMLKQH_5p8s0Y5lpgdx_K_HLv-xlI69iYJdx9JD-wiDVVyS2aufZDKUXIJTr9IxXv1kNEqHVVlV4A1APOLfpa1qzsLlzwqnm14Z53Kq"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface/80 backdrop-blur-md text-on-surface flex items-center gap-1 px-2.5 py-1 rounded-full font-label text-[11px] shadow-sm">
+<span class="material-symbols-outlined text-[12px] text-[#f59e0b]" data-weight="fill">star</span>
+                                4.7
+                            </span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex-grow">
+<h3 class="font-headline text-xl font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Baber Mahal Vilas</h3>
+<p class="font-label text-on-surface-variant text-xs flex items-center gap-1 mb-5">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                Baber Mahal, Kathmandu
+                            </p>
+<div class="flex gap-4 mb-6">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" title="Free Wifi">wifi</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" title="Spa">spa</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" title="Restaurant">restaurant</span>
+</div>
+</div>
+<div class="flex justify-between items-end border-t border-outline-variant/15 pt-5 mt-auto">
+<div>
+<p class="font-headline text-xl font-bold text-primary">$180<span class="text-xs text-on-surface-variant font-normal">/night</span></p>
+</div>
+<button class="bg-surface-container-high text-primary px-5 py-2 rounded-full font-label text-sm font-medium hover:bg-surface-container-highest transition-colors">
+                                Details
+                            </button>
+</div>
+</div>
+</article>
+<!-- Card 3: Standard -->
+<article class="col-span-1 group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_30px_rgba(11,28,48,0.03)] border border-outline-variant/15 hover:shadow-[0_12px_40px_rgba(11,28,48,0.08)] transition-all duration-500 flex flex-col">
+<div class="relative h-[300px] w-full overflow-hidden">
+<img alt="Boutique hotel interior room" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out" data-alt="elegant minimalist boutique hotel room interior with soft natural light white linens wooden accents and a subtle mountain view through the window" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlDvHrfFWEELsfe4y5aYhKCnRnf-1k1nl8nwktiotqQxqeZXsIO-_sBYmUw8P16L_yyr25WCuR6LebmqrwhAeyrSC-CypwYI9b6Yral5mpO9uJar_r837xmS9LQ9LClgR1N_q-cRESZxcXTFrVZPcS8LtyRzTOmkFW1WNHDyCwlL9MjuKVExltj4ftfgJZMukLD6gJXd4RPNyISOHYLZukqGOnMhINl1dmBQJSL6as0yuvrpw7IKr_DbqIh7ivMJoSYqbmIwoBaobb"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface/80 backdrop-blur-md text-on-surface flex items-center gap-1 px-2.5 py-1 rounded-full font-label text-[11px] shadow-sm">
+<span class="material-symbols-outlined text-[12px] text-[#f59e0b]" data-weight="fill">star</span>
+                                4.8
+                            </span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex-grow">
+<h3 class="font-headline text-xl font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Traditional Comfort</h3>
+<p class="font-label text-on-surface-variant text-xs flex items-center gap-1 mb-5">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                Kamalpokhari, Kathmandu
+                            </p>
+<div class="flex gap-4 mb-6">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" title="Free Wifi">wifi</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" title="City View">location_city</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" title="Coffee Shop">local_cafe</span>
+</div>
+</div>
+<div class="flex justify-between items-end border-t border-outline-variant/15 pt-5 mt-auto">
+<div>
+<p class="font-headline text-xl font-bold text-primary">$120<span class="text-xs text-on-surface-variant font-normal">/night</span></p>
+</div>
+<button class="bg-surface-container-high text-primary px-5 py-2 rounded-full font-label text-sm font-medium hover:bg-surface-container-highest transition-colors">
+                                Details
+                            </button>
+</div>
+</div>
+</article>
+<!-- Card 4: Standard -->
+<article class="col-span-1 group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_30px_rgba(11,28,48,0.03)] border border-outline-variant/15 hover:shadow-[0_12px_40px_rgba(11,28,48,0.08)] transition-all duration-500 flex flex-col">
+<div class="relative h-[300px] w-full overflow-hidden">
+<img alt="Luxury spa area" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out" data-alt="tranquil luxury hotel spa area with warm ambient lighting massage tables rolled white towels and smooth stones indicating wellness and relaxation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2RSgk-LFHiPh932QOWFamIt1DvboUAEBH6m_jv-nrrXXvxEvPMWSEeMZbhT2nqw0aPGKttjtsOJdUk1v2xnWL8qmBEKNpHQGKqj4gL9Mqy7NTWhPMWB0v2P7wC-ZtvaDI-MF4PjDFHLhPoBCuh7XSXA4gvwWM_ePpQXdTa8FlddCk3TbMq8f96yIBdfaSAwxaUO5QbUPB6UWyq8JsgOp0xLuTPqNEJdDFHZ4G3kpGBtAVuEO7GtPFOPpgLQhxKPGeDsOQTl123LzY"/>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface/80 backdrop-blur-md text-on-surface flex items-center gap-1 px-2.5 py-1 rounded-full font-label text-[11px] shadow-sm">
+<span class="material-symbols-outlined text-[12px] text-[#f59e0b]" data-weight="fill">star</span>
+                                4.6
+                            </span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<div class="flex-grow">
+<h3 class="font-headline text-xl font-bold text-on-surface mb-1 group-hover:text-primary transition-colors">Kathmandu Marriott</h3>
+<p class="font-label text-on-surface-variant text-xs flex items-center gap-1 mb-5">
+<span class="material-symbols-outlined text-[14px]">location_on</span>
+                                Naxal, Kathmandu
+                            </p>
+<div class="flex gap-4 mb-6">
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" title="Free Wifi">wifi</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" title="Fitness Center">fitness_center</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]" title="Pool">pool</span>
+</div>
+</div>
+<div class="flex justify-between items-end border-t border-outline-variant/15 pt-5 mt-auto">
+<div>
+<p class="font-headline text-xl font-bold text-primary">$210<span class="text-xs text-on-surface-variant font-normal">/night</span></p>
+</div>
+<button class="bg-surface-container-high text-primary px-5 py-2 rounded-full font-label text-sm font-medium hover:bg-surface-container-highest transition-colors">
+                                Details
+                            </button>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer (Semantic Shell) -->
+<footer class="bg-slate-50 dark:bg-slate-900/50 w-full rounded-t-[1.5rem] mt-20 tonal-layering surface-container-low flat no-shadows pb-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-12 py-16 max-w-7xl mx-auto">
+<!-- Brand Column -->
+<div class="col-span-1 md:col-span-1 flex flex-col">
+<span class="text-xl font-bold text-sky-900 dark:text-sky-100 font-headline mb-4">Ghumuan</span>
+<p class="font-label text-sm text-slate-500 dark:text-slate-400 mt-auto">
+                    © 2024 Ghumuan. Inspired by the Stillness of the Himalayas.
+                </p>
+</div>
+<!-- Links Columns - Implementing JSON requirements -->
+<div class="col-span-1 md:col-span-3 flex flex-wrap gap-x-12 gap-y-6">
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-body text-lg transition-transform duration-200 hover:translate-x-1" href="#">About Nepal</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-body text-lg transition-transform duration-200 hover:translate-x-1" href="#">Trekking Guide</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-body text-lg transition-transform duration-200 hover:translate-x-1" href="#">Contact Us</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-body text-lg transition-transform duration-200 hover:translate-x-1" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 font-body text-lg transition-transform duration-200 hover:translate-x-1" href="#">Privacy Policy</a>
+</div>
+</div>
+</footer>
+</body></html>

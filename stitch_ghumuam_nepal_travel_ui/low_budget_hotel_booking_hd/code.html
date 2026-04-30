@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ghumuam Nepal - Budget Stays</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#cce5ff",
+                        "on-secondary-fixed-variant": "#394c2f",
+                        "surface-container-high": "#dce9ff",
+                        "secondary-fixed-dim": "#b7cda8",
+                        "outline-variant": "#bfc7d2",
+                        "inverse-primary": "#93ccff",
+                        "on-primary-fixed": "#001d31",
+                        "primary": "#006194",
+                        "surface-container": "#e5eeff",
+                        "secondary-container": "#d0e7c0",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "tertiary-fixed": "#dbe4ea",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed": "#d3e9c3",
+                        "on-tertiary-fixed-variant": "#3f484d",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-secondary-container": "#556849",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#bfc8ce",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary-fixed-variant": "#004b73",
+                        "surface": "#f8f9ff",
+                        "on-secondary-fixed": "#0f2008",
+                        "primary-fixed-dim": "#93ccff",
+                        "surface-tint": "#006398",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#007bb9",
+                        "surface-container-low": "#eff4ff",
+                        "surface-dim": "#cbdbf5",
+                        "secondary": "#516445",
+                        "tertiary-container": "#6d767b",
+                        "on-primary-container": "#fdfcff",
+                        "on-tertiary-fixed": "#141d21",
+                        "on-surface": "#0b1c30",
+                        "on-tertiary-container": "#fbfdff",
+                        "on-surface-variant": "#3f4850",
+                        "on-background": "#0b1c30",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#213145",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "background": "#f8f9ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "outline": "#707881",
+                        "tertiary": "#545d62"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Manrope', sans-serif; background-color: #f8f9ff; color: #0b1c30; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: -0.02em; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        
+        /* Subtle Ken Burns Effect for Images */
+        .img-zoom-container { overflow: hidden; border-radius: 1.5rem; }
+        .img-zoom { transition: transform 0.7s ease; }
+        .img-zoom-container:hover .img-zoom { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-gradient-to-b from-white/10 to-transparent">
+<div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto font-['Plus_Jakarta_Sans'] font-medium tracking-tight">
+<div class="text-2xl font-extrabold tracking-tighter text-sky-900 dark:text-sky-100 text-sky-700 dark:text-sky-400">
+                Ghumuam
+            </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-sky-800 dark:text-sky-200 font-bold border-b-2 border-sky-600 dark:border-sky-400 pb-1" href="#">Explore</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-sky-700 transition-colors" href="#">AI Planner</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-sky-700 transition-colors" href="#">Saved Trips</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-slate-600 dark:text-slate-400 hover:text-sky-700 transition-colors hover:bg-sky-50/50 dark:hover:bg-sky-900/30 transition-all duration-300 p-2 rounded-full scale-98 active:scale-95 transition-transform flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<button class="text-slate-600 dark:text-slate-400 hover:text-sky-700 transition-colors hover:bg-sky-50/50 dark:hover:bg-sky-900/30 transition-all duration-300 p-2 rounded-full scale-98 active:scale-95 transition-transform flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+<button class="hidden md:block bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2 rounded-full font-bold hover:opacity-90 transition-opacity">
+                    Sign In
+                </button>
+</div>
+</div>
+</nav>
+<!-- Main Content Layout -->
+<main class="flex-grow pt-28 pb-12 px-4 md:px-8 max-w-screen-2xl mx-auto w-full flex flex-col lg:flex-row gap-8">
+<!-- Left Column: Search Results -->
+<div class="w-full lg:w-3/5 xl:w-2/3 flex flex-col gap-8">
+<header class="mb-4">
+<h1 class="text-4xl md:text-5xl font-headline font-bold text-on-surface mb-3 leading-tight tracking-tight">Tranquil Escapes in Nepal</h1>
+<p class="text-lg font-body text-on-surface-variant max-w-2xl">Discover serene, budget-friendly homestays and monastic guest houses nestled in the Himalayas.</p>
+</header>
+<!-- Filters Bar (Glassy) -->
+<div class="bg-surface-container-low rounded-full py-3 px-6 flex items-center justify-between overflow-x-auto gap-4 hide-scrollbar">
+<div class="flex gap-4 min-w-max">
+<button class="px-4 py-2 rounded-full bg-surface-container-highest text-primary font-label text-sm border border-outline-variant/15 hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span> Dates
+                     </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-highest text-primary font-label text-sm border border-outline-variant/15 hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">group</span> Guests
+                     </button>
+<button class="px-4 py-2 rounded-full bg-surface-container-highest text-primary font-label text-sm border border-outline-variant/15 hover:bg-surface-variant transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">tune</span> Filters
+                     </button>
+</div>
+<span class="text-sm font-label text-on-surface-variant whitespace-nowrap hidden sm:block">12 Places to stay</span>
+</div>
+<!-- Stays List -->
+<div class="flex flex-col gap-10 mt-4">
+<!-- Stay Card 1 -->
+<div class="flex flex-col md:flex-row gap-6 group">
+<div class="w-full md:w-2/5 aspect-[4/3] img-zoom-container relative bg-surface-container-low shrink-0">
+<img alt="Monastic Guest house" class="w-full h-full object-cover img-zoom" data-alt="peaceful monastic guest house courtyard in nepal with traditional architecture, prayer flags, surrounded by misty mountains at dawn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCObA-Z0BzXExRpsxWKAJIm0gwmd_MRguETM3ZXZq8Ogu8o4R-wfKTgFzSIQ9Tgd4wLvNg7WeZWVFuZwSe0KZf9P5ShVPqhHB09Js4gUVU13ssEptolpT14BwY175zr0l_sqAlBbH2RBH7BqlZleSMkP7u4P-8DJwZoK2t-f0PxGotqXxMlTysENCCSmIwMIbmXlrf6zed5_cguHHjCrf5nveuh7_3dcUIhShKU2_qBWgFOk2E2Bb7p8x-jcLfgwCTJcrRtLlGcoCJd"/>
+<button class="absolute top-4 right-4 p-2 bg-surface/70 backdrop-blur-md rounded-full text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite_border">favorite_border</span>
+</button>
+</div>
+<div class="w-full md:w-3/5 flex flex-col justify-between py-2">
+<div>
+<div class="flex justify-between items-start mb-1">
+<span class="text-sm font-label text-on-surface-variant uppercase tracking-wider">Kavrepalanchok</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px] fill-current" data-weight="fill">star</span>
+<span class="font-bold text-sm">4.9</span>
+</div>
+</div>
+<h3 class="text-2xl font-headline font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">Namobuddha Monastic Guest House</h3>
+<p class="text-on-surface-variant font-body mb-4 line-clamp-2">Experience absolute tranquility staying alongside monks. Wake up to the sound of chanting and panoramic views of the Himalayas.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-surface-container-low rounded-md text-xs font-label text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">wifi</span> Free WiFi</span>
+<span class="px-3 py-1 bg-surface-container-low rounded-md text-xs font-label text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">restaurant</span> Veg Meals</span>
+<span class="px-3 py-1 bg-surface-container-low rounded-md text-xs font-label text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">self_improvement</span> Meditation</span>
+</div>
+</div>
+<div class="flex justify-between items-end mt-auto pt-4 border-t border-outline-variant/15">
+<div>
+<span class="text-2xl font-headline font-bold text-on-surface">$20</span>
+<span class="text-sm font-label text-on-surface-variant"> / night</span>
+</div>
+<button class="px-6 py-2.5 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full font-label font-semibold hover:opacity-90 transition-opacity">
+                                View Details
+                            </button>
+</div>
+</div>
+</div>
+<!-- Stay Card 2 -->
+<div class="flex flex-col md:flex-row gap-6 group">
+<div class="w-full md:w-2/5 aspect-[4/3] img-zoom-container relative bg-surface-container-low shrink-0">
+<img alt="Antu Homestay" class="w-full h-full object-cover img-zoom" data-alt="cozy wooden traditional nepali homestay in a lush tea garden setting with morning mist rolling over the green hills" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOXZRYrpDNKtCNpVB3OprqToDv971P9KLasdsUOffBFbsubEdw5YmT40Kdzlwh4deROuWva7w78oAp5lTBFmmVXZWNrnbGhw2Vswko5JSHivyZ-2dUl-K_esp-IAxz0PoKdvoNF9T2rERpNA8_tNU-K17nq-XT85JKNuusGeUySB54UYnv7GtFz1STFHqyvJPpkNZ0t7iO76_Aa4r-nKZhFrtmvh8C6VeyjK_V281ZWzsNhTaUuFn4evgmHUwTsbMAsue3ViJuKYo6"/>
+<button class="absolute top-4 right-4 p-2 bg-surface/70 backdrop-blur-md rounded-full text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite_border">favorite_border</span>
+</button>
+</div>
+<div class="w-full md:w-3/5 flex flex-col justify-between py-2">
+<div>
+<div class="flex justify-between items-start mb-1">
+<span class="text-sm font-label text-on-surface-variant uppercase tracking-wider">Ilam</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px] fill-current" data-weight="fill">star</span>
+<span class="font-bold text-sm">4.8</span>
+</div>
+</div>
+<h3 class="text-2xl font-headline font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">Antu Community Homestays</h3>
+<p class="text-on-surface-variant font-body mb-4 line-clamp-2">Immerse yourself in local culture amidst sprawling tea gardens. Perfect for catching the spectacular sunrise over Kanchenjunga.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-surface-container-low rounded-md text-xs font-label text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">local_cafe</span> Tea Garden</span>
+<span class="px-3 py-1 bg-surface-container-low rounded-md text-xs font-label text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">groups</span> Local Guide</span>
+</div>
+</div>
+<div class="flex justify-between items-end mt-auto pt-4 border-t border-outline-variant/15">
+<div>
+<span class="text-2xl font-headline font-bold text-on-surface">$15</span>
+<span class="text-sm font-label text-on-surface-variant"> / night</span>
+</div>
+<button class="px-6 py-2.5 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full font-label font-semibold hover:opacity-90 transition-opacity">
+                                View Details
+                            </button>
+</div>
+</div>
+</div>
+<!-- Stay Card 3 -->
+<div class="flex flex-col md:flex-row gap-6 group">
+<div class="w-full md:w-2/5 aspect-[4/3] img-zoom-container relative bg-surface-container-low shrink-0">
+<img alt="Sparkling Turtle" class="w-full h-full object-cover img-zoom" data-alt="vibrant backpacker hostel courtyard in kathmandu nepal with colorful prayer flags, relaxed seating areas, and warm evening lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbq3953xEjN3gmyfExP5i9wkyDnyVK_UVp38HOnQ5azMI8pLb4_jkVCD-dPtbaFTog0yW5nD4TXoVC2JY8aNHEnUuk6VpOIW1UCa4-jfYxblT0-guYIjz4wCMFky8l5EbkiYLLiSokrxe9TEZw2jCCKslOnmhT9zHfjtnsl9GHJUcETbU2wFQ1AwoWUVZv7VD-hlJ1QR8sJrAAorzTJwQXVgdsIVllPS6vRi1uc0DYt2MSrXm0aroZmTMrIDXFwEc613HsBK7Srglv"/>
+<button class="absolute top-4 right-4 p-2 bg-surface/70 backdrop-blur-md rounded-full text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite_border">favorite_border</span>
+</button>
+</div>
+<div class="w-full md:w-3/5 flex flex-col justify-between py-2">
+<div>
+<div class="flex justify-between items-start mb-1">
+<span class="text-sm font-label text-on-surface-variant uppercase tracking-wider">Swayambhu</span>
+<div class="flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px] fill-current" data-weight="fill">star</span>
+<span class="font-bold text-sm">4.6</span>
+</div>
+</div>
+<h3 class="text-2xl font-headline font-semibold text-on-surface mb-2 group-hover:text-primary transition-colors">Sparkling Turtle Backpackers</h3>
+<p class="text-on-surface-variant font-body mb-4 line-clamp-2">A vibrant, social hub just steps away from the Monkey Temple. Ideal for solo travelers looking to meet fellow adventurers.</p>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-surface-container-low rounded-md text-xs font-label text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">local_bar</span> Bar/Lounge</span>
+<span class="px-3 py-1 bg-surface-container-low rounded-md text-xs font-label text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">wifi</span> Fast WiFi</span>
+<span class="px-3 py-1 bg-surface-container-low rounded-md text-xs font-label text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">luggage</span> Storage</span>
+</div>
+</div>
+<div class="flex justify-between items-end mt-auto pt-4 border-t border-outline-variant/15">
+<div>
+<span class="text-2xl font-headline font-bold text-on-surface">$12</span>
+<span class="text-sm font-label text-on-surface-variant"> / night</span>
+</div>
+<button class="px-6 py-2.5 bg-gradient-to-r from-primary to-primary-container text-on-primary rounded-full font-label font-semibold hover:opacity-90 transition-opacity">
+                                View Details
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Interactive Map -->
+<div class="hidden lg:block lg:w-2/5 xl:w-1/3 relative h-[calc(100vh-8rem)] sticky top-28 rounded-xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-surface-container-low border border-outline-variant/15">
+<!-- Map Placeholder -->
+<img alt="Map of Nepal" class="w-full h-full object-cover opacity-80" data-alt="top down view of a detailed topographical map of nepal featuring the himalayas with subtle digital interface elements overlaying it" data-location="Nepal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrUeGDmyUl2RrbKb2v0bwybQu7uf6MMcLXamblmr-t6WcwgxD6Ov0hIxidJ4TKMMUfVOOmRah-GzEywQ8Y1T9Tz7-5VggVg4oL8IVM783a5cbnAICGvjj5dxpr5sV87s32m9pk05LIT0C67NS5j3A0lDrJA_-2olq_CUZ8IRi31nFIoeJ-tZCR7lnYNSVrr49nALhfkKC4TTgqMGN-Q4t0Utj4SY49Bfpwr8_hSZAH7zEbtad197DVb8kDhWgS83IHuadk-XteuYCx"/>
+<!-- Floating Map Controls -->
+<div class="absolute top-4 right-4 flex flex-col gap-2">
+<button class="w-10 h-10 bg-surface rounded-full flex items-center justify-center shadow-lg text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<button class="w-10 h-10 bg-surface rounded-full flex items-center justify-center shadow-lg text-on-surface hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+</div>
+<!-- Map Pins (Static Representation) -->
+<div class="absolute top-[40%] left-[60%] flex flex-col items-center group cursor-pointer">
+<div class="bg-surface text-primary font-bold px-3 py-1 rounded-full shadow-lg text-sm mb-1 group-hover:bg-primary group-hover:text-on-primary transition-colors">$20</div>
+<div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(0,97,148,0.8)]"></div>
+</div>
+<div class="absolute top-[30%] left-[80%] flex flex-col items-center group cursor-pointer">
+<div class="bg-surface text-primary font-bold px-3 py-1 rounded-full shadow-lg text-sm mb-1 group-hover:bg-primary group-hover:text-on-primary transition-colors">$15</div>
+<div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(0,97,148,0.8)]"></div>
+</div>
+<div class="absolute top-[60%] left-[40%] flex flex-col items-center group cursor-pointer">
+<div class="bg-primary text-on-primary font-bold px-3 py-1 rounded-full shadow-lg text-sm mb-1 scale-110">$12</div>
+<div class="w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(0,97,148,0.8)]"></div>
+</div>
+<!-- Floating Toggle (Mobile only, hidden here but good practice) -->
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 lg:hidden">
+<button class="px-6 py-3 bg-surface text-on-surface rounded-full shadow-xl font-label font-bold flex items-center gap-2">
+<span class="material-symbols-outlined">list</span> Show List
+                </button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-950 text-sky-700 dark:text-sky-400 font-['Manrope'] text-sm tracking-wide w-full py-12 px-8 tonal-shift bg-sky-50/50 dark:bg-sky-900/10 flat no-shadows mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+<div class="flex flex-col gap-4">
+<div class="text-xl font-bold text-sky-900 dark:text-sky-100">
+                    Ghumuam
+                </div>
+<p class="text-slate-500 dark:text-slate-400 mt-2">© 2024 Ghumuam Nepal. Atmospheric Editorial Travel.</p>
+</div>
+<div class="flex flex-col gap-3">
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">About Us</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Responsible Trekking</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Contact</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+</div>
+<div class="flex flex-col gap-3 lg:col-span-2">
+<p class="text-slate-500 dark:text-slate-400">Subscribe to our newsletter for travel inspiration.</p>
+<div class="flex gap-2 mt-2">
+<input class="bg-surface-container-lowest border-outline-variant/30 rounded-lg px-4 py-2 focus:ring-primary focus:border-primary w-full max-w-xs text-on-surface" placeholder="Your email address" type="email"/>
+<button class="bg-surface-container-high text-primary px-4 py-2 rounded-lg font-bold hover:bg-surface-variant transition-colors">Subscribe</button>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

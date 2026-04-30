@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Community Stories - Alpine Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Hide scrollbar for clean horizontal scrolls */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#bfc8ce",
+                        "secondary": "#516445",
+                        "on-surface-variant": "#3f4850",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#cce5ff",
+                        "surface-dim": "#cbdbf5",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#93ccff",
+                        "secondary-fixed-dim": "#b7cda8",
+                        "tertiary-fixed": "#dbe4ea",
+                        "secondary-fixed": "#d3e9c3",
+                        "primary": "#006194",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface": "#0b1c30",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#6d767b",
+                        "on-tertiary-fixed": "#141d21",
+                        "on-tertiary-container": "#fbfdff",
+                        "secondary-container": "#d0e7c0",
+                        "on-secondary-fixed": "#0f2008",
+                        "on-background": "#0b1c30",
+                        "on-secondary-fixed-variant": "#394c2f",
+                        "on-secondary-container": "#556849",
+                        "surface-container-high": "#dce9ff",
+                        "background": "#f8f9ff",
+                        "on-primary-container": "#fdfcff",
+                        "outline": "#707881",
+                        "outline-variant": "#bfc7d2",
+                        "on-tertiary-fixed-variant": "#3f484d",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#e5eeff",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-surface": "#213145",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed": "#001d31",
+                        "inverse-on-surface": "#eaf1ff",
+                        "error-container": "#ffdad6",
+                        "tertiary": "#545d62",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-highest": "#d3e4fe",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#006398",
+                        "surface": "#f8f9ff",
+                        "primary-container": "#007bb9",
+                        "primary-fixed-dim": "#93ccff",
+                        "on-primary-fixed-variant": "#004b73"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-950/70 backdrop-blur-[20px] shadow-[0_4px_30px_rgba(0,0,0,0.03)] bg-gradient-to-b from-white/10 to-transparent">
+<div class="flex justify-between items-center h-20 px-8 max-w-screen-2xl mx-auto">
+<a class="text-2xl font-bold tracking-tighter text-sky-900 dark:text-sky-50 font-['Plus_Jakarta_Sans'] tracking-tight" href="#">Alpine Sanctuary</a>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-sky-700 dark:text-sky-300 font-bold border-b-2 border-sky-700 dark:border-sky-300 pb-1 font-['Plus_Jakarta_Sans'] tracking-tight hover:text-sky-600 dark:hover:text-sky-200 transition-all duration-500 scale-100 active:scale-95 transition-transform duration-200" href="#">Feed</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium pb-1 font-['Plus_Jakarta_Sans'] tracking-tight hover:text-sky-600 dark:hover:text-sky-200 transition-all duration-500 scale-100 active:scale-95 transition-transform duration-200" href="#">Packing Lists</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium pb-1 font-['Plus_Jakarta_Sans'] tracking-tight hover:text-sky-600 dark:hover:text-sky-200 transition-all duration-500 scale-100 active:scale-95 transition-transform duration-200" href="#">Destinations</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium pb-1 font-['Plus_Jakarta_Sans'] tracking-tight hover:text-sky-600 dark:hover:text-sky-200 transition-all duration-500 scale-100 active:scale-95 transition-transform duration-200" href="#">Community</a>
+</div>
+<div class="flex space-x-4 items-center">
+<button class="text-sky-700 dark:text-sky-400 hover:text-sky-600 dark:hover:text-sky-200 transition-all duration-500 scale-100 active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-sky-700 dark:text-sky-400 hover:text-sky-600 dark:hover:text-sky-200 transition-all duration-500 scale-100 active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-28 pb-20 px-6 md:px-12 max-w-screen-2xl mx-auto flex flex-col md:flex-row gap-12">
+<!-- Left Column: Sticky Sidebar -->
+<aside class="w-full md:w-1/4 hidden md:block flex-shrink-0">
+<div class="sticky top-32 space-y-8">
+<!-- Share Action -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0_8px_30px_rgba(11,28,48,0.06)] border border-outline-variant/15">
+<h2 class="font-headline text-xl font-bold tracking-tight text-on-surface mb-4">Share Your Journey</h2>
+<p class="text-on-surface-variant font-body mb-6">Inspire others with your stories from the high passes and hidden valleys.</p>
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-body font-semibold py-3 px-6 rounded-full hover:opacity-90 transition-opacity flex justify-center items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_a_photo</span>
+                        Post a Story
+                    </button>
+</div>
+<!-- Popular Tags -->
+<div class="bg-surface-container-low p-6 rounded-xl border border-outline-variant/15">
+<h3 class="font-headline text-lg font-bold tracking-tight text-on-surface mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">trending_up</span>
+                        Trending Tags
+                    </h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-4 py-2 bg-surface-container-lowest text-primary rounded-full text-sm font-label cursor-pointer hover:bg-surface-container-high transition-colors shadow-[0_2px_10px_rgba(11,28,48,0.03)] border border-outline-variant/15">#AnnapurnaCircuit</span>
+<span class="px-4 py-2 bg-surface-container-lowest text-primary rounded-full text-sm font-label cursor-pointer hover:bg-surface-container-high transition-colors shadow-[0_2px_10px_rgba(11,28,48,0.03)] border border-outline-variant/15">#SoloTrek</span>
+<span class="px-4 py-2 bg-surface-container-lowest text-primary rounded-full text-sm font-label cursor-pointer hover:bg-surface-container-high transition-colors shadow-[0_2px_10px_rgba(11,28,48,0.03)] border border-outline-variant/15">#KathmanduEats</span>
+<span class="px-4 py-2 bg-surface-container-lowest text-primary rounded-full text-sm font-label cursor-pointer hover:bg-surface-container-high transition-colors shadow-[0_2px_10px_rgba(11,28,48,0.03)] border border-outline-variant/15">#EverestBaseCamp</span>
+<span class="px-4 py-2 bg-surface-container-lowest text-primary rounded-full text-sm font-label cursor-pointer hover:bg-surface-container-high transition-colors shadow-[0_2px_10px_rgba(11,28,48,0.03)] border border-outline-variant/15">#TeaHouseLife</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Right Column: Masonry Feed -->
+<section class="w-full md:w-3/4">
+<div class="mb-8 md:hidden">
+<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-body font-semibold py-4 px-6 rounded-full hover:opacity-90 transition-opacity shadow-[0_8px_30px_rgba(11,28,48,0.06)] flex justify-center items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add_a_photo</span>
+                    Post a Story
+                </button>
+</div>
+<!-- Page Header -->
+<div class="mb-12">
+<h1 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tight text-on-surface mb-4">Community Stories</h1>
+<p class="font-body text-lg text-on-surface-variant max-w-2xl">Echoes from the trails. Discover raw, unfiltered moments captured by fellow travelers in the Himalayas.</p>
+</div>
+<!-- Feed Grid -->
+<div class="columns-1 sm:columns-2 gap-8 space-y-8">
+<!-- Story Card 1 -->
+<article class="break-inside-avoid bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(11,28,48,0.04)] border border-outline-variant/15 group">
+<div class="relative overflow-hidden aspect-[4/5]">
+<img alt="Mountain peak" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Majestic snow-capped Himalayan mountain peak breaking through soft morning clouds with golden sunrise light hitting the summit against a deep blue sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKhxSMdbMFAUNPiuiSkRXYvFN74T--xBPcAW6biHINRIuM_bjArSCF5LxpRK0upjH4LOr5wOK6NXDAsyfxk8GqietHGyj9TDOSMYtakq16DtaT9n0kF_bIYyHS9sWEATVHrhriOaj2b0yTT1hfSQkbogHOzLmF7YuIVTIEVB28ekre_xop0z20-dXACbC1zn1Kxk18ICNWWx42Dme1OPR6njsyKAyutl4yLRtk4Tj7dOg4bnLT1cSHbc7lwOP2BveIqF-3a7ec8rGB"/>
+<div class="absolute top-4 left-4 bg-surface/80 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span class="font-label text-sm text-on-surface font-semibold">Machapuchare Base Camp</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-3 mb-4">
+<img alt="User avatar" class="w-10 h-10 rounded-full object-cover" data-alt="Close up portrait of a young male trekker with a subtle smile, wearing a warm beanie." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA13qPuiVbvvBA3835_l-iW6-6AupyNALMPw18sSQULqbZAtBlTGyALl_1OtGhjuQhc-QFiZk71PfV3MRX2qyLDwhGv4AQ_K7XkTwypWjkxnM3z_gpPdp6Y_56xDZtOxe-UEBood1erMsx4izuGi2cUN8RTQvy7831icPeCWpFGvJfCElSgkjTOjtwZWxrPgCPqfBvjPx0NUTYuWwBBYpIpK-dmrhG_qK7-iivOS4iWeW3Qua7T25xsPmVl63Mi10c8RxmtMQcaSYiJ"/>
+<div>
+<p class="font-body font-semibold text-on-surface text-sm">Alex Chen</p>
+<p class="font-label text-xs text-on-surface-variant">2 days ago</p>
+</div>
+</div>
+<h3 class="font-headline text-xl font-bold tracking-tight text-on-surface mb-2">The Fishtail at Dawn</h3>
+<p class="font-body text-on-surface-variant line-clamp-3 mb-4">Waking up at 4 AM was brutal in the cold, but watching the first rays of light hit the sacred Machapuchare made every frozen toe worth it. The silence up here is absolute.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-4 mt-2">
+<div class="flex gap-4">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+<span class="font-label text-sm">124</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+<span class="font-label text-sm">18</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Story Card 2 -->
+<article class="break-inside-avoid bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(11,28,48,0.04)] border border-outline-variant/15 group">
+<div class="relative overflow-hidden aspect-[3/2]">
+<img alt="Tea house" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Cozy interior of a Himalayan tea house with a glowing iron wood stove in the center, trekkers resting around it, warm yellow light." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABEOWCwTJezxEedLwsFCP-A1eCUuuJw2cYFtVGmse7YXwGHw_5C8F1mAp7FIa11jbDRlYNnSoUeznzSn7K1D7i1BPe_-Sp0kNhG_DuQXnjZfPEYuTQ4LstSdKl2knyoUr9wd8IIbrk_FWV2LRNVc6vIkEoi-reKnra8TIfpGhRv1gLipGCD8-0h4uP2BvDVtxy5uGyuaMICqXG_-1mCxon29LeJk3Sk5mxXzz22lMy4JyYOPNWQhWqTfwMvqiegFlAr-9YbtKqYyFm"/>
+<div class="absolute top-4 left-4 bg-surface/80 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span class="font-label text-sm text-on-surface font-semibold">Dingboche, 4410m</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-3 mb-4">
+<img alt="User avatar" class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a smiling woman with windblown hair against a blurred mountain background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJNSIuOc_HCAvgFQKIss5E-2CkRfRha_sTDYYEHYeHfbgY0E2-gclKvvOGN7kmQavjDUxaUPaLAaFOZVcijxc4-jDo61Bd55ia-e3n7POlevW1hNvgrITRuofSRD4SLWvYNanhFL_gL9eDMPeMbjRD7h9A2cf-kalX3iIwUwITIB4mi6q2n1UaOhK_5mEpZ6Sk_852dDLrOySIzIGfC1STYND3dVPpEu7cOI3-ZVmhU5czm5HLE-d9mNu-tBSRfld_G2XL2cihQULr"/>
+<div>
+<p class="font-body font-semibold text-on-surface text-sm">Sarah Jenkins</p>
+<p class="font-label text-xs text-on-surface-variant">4 days ago</p>
+</div>
+</div>
+<h3 class="font-headline text-xl font-bold tracking-tight text-on-surface mb-2">Warmth on the Khumbu</h3>
+<p class="font-body text-on-surface-variant line-clamp-3 mb-4">There is no feeling quite like the dry heat of a yak-dung stove after 8 hours of trekking in freezing winds. Dal bhat is on the way, and stories are being swapped across tables.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-4 mt-2">
+<div class="flex gap-4">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+<span class="font-label text-sm">89</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+<span class="font-label text-sm">5</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">bookmark</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Story Card 3 -->
+<article class="break-inside-avoid bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_20px_rgba(11,28,48,0.04)] border border-outline-variant/15 group">
+<div class="relative overflow-hidden aspect-square">
+<img alt="Prayer flags" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="Close up of vibrant Tibetan prayer flags fluttering in a strong breeze against a stark grey rocky mountain face." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa4KS5q_pkHFldDvjPbA3AtYogYsEsU4EvFpltBVH2GebYEURZrYjcp_KjxYHxzyCmahUuXtk3r9yq37ELJ4uHN2IQc8Nrhr80-GX2dAHp1QtKhI96TBB3nhLoQ5cqRKHZ2qQYmSu1xLUsr_6FaShUTP0BBV-3L156vhT04mK7yBRqSJpn_Ya_J2SIEBSTce4oDVeiFH31OIRB4U4ObiNKLtjNIt84swyNKBMatrQJ-UErvdc2fWIMxRHgxir7yYzoVJAly5rinyy1"/>
+<div class="absolute top-4 left-4 bg-surface/80 backdrop-blur-md px-3 py-1.5 rounded-full flex items-center gap-1.5 shadow-[0_2px_10px_rgba(0,0,0,0.1)]">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span class="font-label text-sm text-on-surface font-semibold">Thorong La Pass</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex items-center gap-3 mb-4">
+<img alt="User avatar" class="w-10 h-10 rounded-full object-cover" data-alt="Black and white portrait of an older man with a weathered face looking thoughtfully off camera." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8TbyjA7gYu1IDlZ3Xcz28o6MILyh7toFy6g_Q0VYDtFoW8osGYVy5ZeKI5dGttwCWe8LYXRXjp1KKu0Bf9soydhGrcRa9gcch3F2wYFTZR0zLLkfGSJTn64TXjUCds-SIKDW0A2Rv5HfXDlSyyJKD1Jr-YGI_utpzAI-dC3p6QAEr5FSAv710oIgGJ5-_VJ6mKXMJLaC48lo9444QDXIudZmJ5hgOWKkMXdUdccRaTe4xpObzItUYJlV9sYykXB72Nkj08KZWK5Vn"/>
+<div>
+<p class="font-body font-semibold text-on-surface text-sm">David M.</p>
+<p class="font-label text-xs text-on-surface-variant">1 week ago</p>
+</div>
+</div>
+<h3 class="font-headline text-xl font-bold tracking-tight text-on-surface mb-2">5416 Meters</h3>
+<p class="font-body text-on-surface-variant line-clamp-3 mb-4">We made it. The air is thin, the wind is howling, but the sense of achievement at the top of the pass is indescribable. Sending prayers to the wind.</p>
+<div class="flex items-center justify-between border-t border-outline-variant/20 pt-4 mt-2">
+<div class="flex gap-4">
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1; color: #ba1a1a;">favorite</span>
+<span class="font-label text-sm">312</span>
+</button>
+<button class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+<span class="font-label text-sm">42</span>
+</button>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+<div class="mt-12 flex justify-center">
+<button class="bg-surface-container-high text-primary font-body font-semibold py-3 px-8 rounded-full hover:bg-surface-variant transition-colors border border-outline-variant/15">
+                    Load More Stories
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-20 bg-slate-50 dark:bg-slate-900/50 font-['Manrope'] text-sm tracking-wide bg-gradient-to-t from-slate-100 to-transparent pt-16 pb-8 flat no-shadows flex flex-col md:flex-row justify-between items-center px-12 border-t border-slate-200/10">
+<div class="mb-6 md:mb-0">
+<span class="text-lg font-semibold text-slate-900 dark:text-slate-100">Alpine Sanctuary</span>
+<p class="text-slate-500 dark:text-slate-400 mt-2">© 2024 The Alpine Sanctuary. Journeys into the stillness.</p>
+</div>
+<div class="flex space-x-6">
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Sustainability</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Guidebook</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Mountain Safety</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 dark:hover:text-sky-300 transition-colors duration-300 opacity-80 hover:opacity-100" href="#">Contact</a>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Activity Categories - Budget Travel - The Alpine Sanctuary</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#3f4850",
+                        "on-secondary-fixed": "#0f2008",
+                        "primary": "#006194",
+                        "surface-bright": "#f8f9ff",
+                        "on-primary-fixed-variant": "#004b73",
+                        "on-tertiary-fixed": "#141d21",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "surface": "#f8f9ff",
+                        "outline": "#707881",
+                        "surface-container": "#e5eeff",
+                        "outline-variant": "#bfc7d2",
+                        "on-tertiary-fixed-variant": "#3f484d",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-dim": "#cbdbf5",
+                        "on-surface": "#0b1c30",
+                        "surface-tint": "#006398",
+                        "surface-container-high": "#dce9ff",
+                        "on-tertiary-container": "#fbfdff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#dbe4ea",
+                        "primary-container": "#007bb9",
+                        "secondary": "#516445",
+                        "primary-fixed-dim": "#93ccff",
+                        "surface-container-highest": "#d3e4fe",
+                        "secondary-fixed": "#d3e9c3",
+                        "on-secondary-container": "#556849",
+                        "on-background": "#0b1c30",
+                        "on-secondary": "#ffffff",
+                        "tertiary": "#545d62",
+                        "background": "#f8f9ff",
+                        "on-secondary-fixed-variant": "#394c2f",
+                        "tertiary-container": "#6d767b",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#001d31",
+                        "primary-fixed": "#cce5ff",
+                        "inverse-primary": "#93ccff",
+                        "secondary-fixed-dim": "#b7cda8",
+                        "secondary-container": "#d0e7c0",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#fdfcff",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#d3e4fe",
+                        "inverse-surface": "#213145",
+                        "tertiary-fixed-dim": "#bfc8ce",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f8f9ff;
+            color: #0b1c30;
+        }
+        h1, h2, h3, h4, h5, h6, .font-headline {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .text-display-lg { font-size: 3.5rem; line-height: 1.1; letter-spacing: -0.02em; }
+        .text-headline-lg { font-size: 2rem; line-height: 1.2; letter-spacing: -0.02em; }
+        .text-body-lg { font-size: 1.125rem; line-height: 1.5; }
+        .text-label-md { font-size: 0.875rem; line-height: 1.25; font-weight: 500; }
+        
+        /* Atmospheric UI Utilities */
+        .glass-nav {
+            background-color: rgba(248, 249, 255, 0.7);
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0, 97, 148, 0.9) 0%, rgba(0, 123, 185, 0.8) 100%);
+        }
+        .soft-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .soft-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(11, 28, 48, 0.08);
+        }
+        .ambient-shadow {
+            box-shadow: 0 8px 30px rgba(11, 28, 48, 0.06);
+        }
+        .ghost-border {
+            border: 1px solid rgba(191, 199, 210, 0.15);
+        }
+        .ken-burns {
+            transition: transform 0.7s ease;
+        }
+        .group:hover .ken-burns {
+            transform: scale(1.03);
+        }
+        
+        /* Hide scrollbar for horizontal scrolling areas */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex flex-col pb-24 md:pb-0">
+<!-- TopNavBar (Web & Mobile Hybrid) -->
+<header class="fixed top-0 w-full z-50 glass-nav shadow-[0_8px_30px_rgb(0,0,0,0.04)] bg-gradient-to-b from-white/20 to-transparent">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4 text-sky-900 dark:text-white font-extrabold tracking-tighter font-['Plus_Jakarta_Sans'] text-2xl">
+<span>The Alpine Sanctuary</span>
+</div>
+<!-- Web Navigation (Hidden on Mobile) -->
+<nav class="hidden md:flex items-center gap-8 font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-lg">
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-colors px-2 py-1" href="#">Explore</a>
+<a class="text-sky-700 dark:text-sky-400 font-semibold px-2 py-1" href="#">Activities</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-sky-600 transition-colors px-2 py-1" href="#">Stays</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-sky-700 dark:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-900/20 transition-colors p-2 rounded-full scale-95 active:scale-90 transition-transform duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<button class="text-sky-700 dark:text-sky-400 hover:bg-sky-50 dark:hover:bg-sky-900/20 transition-colors p-2 rounded-full scale-95 active:scale-90 transition-transform duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">favorite</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden ghost-border cursor-pointer scale-95 active:scale-90 transition-transform duration-300">
+<img alt="User profile portrait" class="w-full h-full object-cover" data-alt="close-up portrait of young woman with natural makeup in soft daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXqx4uBeqaHOQo35Dl1QnPkyzFOQhwQpm-W1Gba8Hm_F4_c1FyzJaHQVQyV2IYGPsXzRqRu-p3PSgz4hqk8tAQkDomTGR4jVsaixfm0aCjlkByF-v3zWOhKcQY1PwlJhp0F8i5MSitUUQNz83MFJ-wAg217t3p0T5kavFSA5TYx706lyJXWBf6k0qSXOEj5X7L-Fb08QdJaymk9BKJdGmEIYB-wBBgW9tGq-E2yasEW4zjtpP4pkk3pS6C-zBUYfSJJPla2e_cFfF1"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-28 px-4 md:px-8 lg:px-12 max-w-7xl mx-auto w-full">
+<!-- Header Section -->
+<section class="mb-12 mt-8 md:mt-12 flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div class="max-w-2xl">
+<h1 class="text-display-lg font-headline text-on-surface mb-4">Budget Travel</h1>
+<p class="text-body-lg text-on-surface-variant max-w-xl">
+                    Discover the breathtaking beauty of Nepal without breaking the bank. From serene monasteries to historic hilltop towns, experience authentic culture and stunning landscapes on a budget.
+                </p>
+</div>
+</section>
+<!-- Filters Section (Minimalist & Asymmetric) -->
+<section class="mb-16 bg-surface-container-low rounded-xl p-6 md:p-8 flex flex-col md:flex-row gap-6 md:gap-12 items-start md:items-center ghost-border">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">filter_list</span>
+<span class="text-label-md text-on-surface-variant uppercase tracking-wider">Refine Journey</span>
+</div>
+<div class="flex flex-wrap gap-4 w-full">
+<!-- Activity Filter (Pre-selected) -->
+<div class="flex flex-col gap-2">
+<label class="text-label-md text-on-surface-variant">Activity Focus</label>
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest text-primary font-medium px-6 py-3 pr-12 rounded-full ghost-border focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer shadow-sm">
+<option selected="" value="budget">Budget Travel</option>
+<option value="trekking">Trekking</option>
+<option value="culture">Cultural Immersion</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Price Range Filter (Pre-selected) -->
+<div class="flex flex-col gap-2">
+<label class="text-label-md text-on-surface-variant">Price Range</label>
+<div class="relative">
+<select class="appearance-none bg-surface-container-lowest text-primary font-medium px-6 py-3 pr-12 rounded-full ghost-border focus:outline-none focus:ring-2 focus:ring-primary/20 cursor-pointer shadow-sm">
+<option selected="" value="budget">$ (Budget)</option>
+<option value="moderate">$$ (Moderate)</option>
+<option value="luxury">$$$ (Luxury)</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-primary pointer-events-none">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Destinations Bento Grid -->
+<section class="mb-24 grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[400px]">
+<!-- Destination 1: Dhulikhel/Namobuddha (Large Feature) -->
+<article class="md:col-span-8 rounded-xl overflow-hidden relative group bg-surface-container-lowest ghost-border soft-lift flex flex-col justify-end">
+<img alt="Thrangu Tashi Yangtse Monastery" class="absolute inset-0 w-full h-full object-cover ken-burns z-0" data-alt="wide shot of colorful Thrangu Tashi Yangtse Monastery in Namobuddha hills with prayer flags and hazy sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBt0R6BZ_GlwiRDoSHH5CKJAfY3qxEOyC-EAe2A3Hx3GAcy-r258_A-uWpNLwq5VaK28M5sKeFIrtPymqHhm8h4GYzS0KNNgvdMffgXNvZr6dVDzZ6KlUfMVppXiWiCvCKfhRxarQIXmbkBcJAHTmoKjzzAeTXQYCzIOW1TUexRyZxW-l-lyPX60G-gZyn3bk4ho6SJjYx7xefSiJ1B_eN4FGHcmJadSm0GFifhKsaSvybbSHhVaFq5W6ibJ1DcHmSb2ehZCZtLgU6f"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/40 to-transparent z-10"></div>
+<div class="relative z-20 p-8 md:p-10 w-full md:w-3/4">
+<div class="flex items-center gap-2 mb-3">
+<span class="material-symbols-outlined text-secondary-container text-sm">location_on</span>
+<span class="text-label-md text-surface-bright uppercase tracking-widest">Dhulikhel &amp; Namobuddha</span>
+</div>
+<h2 class="text-headline-lg font-headline text-on-primary mb-3">Spiritual Serenity on a Shoestring</h2>
+<p class="text-surface-bright text-body-lg mb-6 line-clamp-2">
+                        Escape the valley's hustle to these peaceful hilltop towns offering spectacular Himalayan panoramas and deep spiritual roots, perfectly suited for budget-conscious travelers.
+                    </p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4 bg-surface/10 backdrop-blur-md px-4 py-2 rounded-full border border-surface/20">
+<span class="material-symbols-outlined text-secondary-container">star</span>
+<span class="text-surface font-medium text-sm">Must Visit: Thrangu Tashi Yangtse Monastery</span>
+</div>
+<button class="bg-primary/90 hover:bg-primary text-on-primary rounded-full p-3 transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Destination 2: Tansen (Tall Card) -->
+<article class="md:col-span-4 rounded-xl overflow-hidden relative group bg-surface-container-lowest ghost-border soft-lift flex flex-col justify-end">
+<img alt="Rani Mahal Tansen" class="absolute inset-0 w-full h-full object-cover ken-burns z-0" data-alt="historic Rani Mahal palace building on the banks of Kali Gandaki river in Nepal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBp_El5jiQaUuY9xZueF5LLnT2fiRz7JxsKHFfL8SwflN2AlBF9UFDPd7yokVPJ_6JKLW2UwULKAyxIIcECclwrKr8a7Nx_BREI20itAWcrl-TgLKbBBOWRCx98pt-uCwegYeDiBN6uLpdDOzduNuO9lS4l9fNFIPC5eRQIMYJVtZNuznv-zt8RR1Apkh2Q8dlwkL4Avzvaw9R1jyIad2s7sHClQ1yTVFkvU19OLM-_APUb0EIsbROXz7aGPwKaOAvVmxDPtHIKw0fq"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/90 via-on-surface/30 to-transparent z-10"></div>
+<div class="relative z-20 p-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-secondary-container text-sm">location_on</span>
+<span class="text-label-md text-surface-bright uppercase tracking-widest">Tansen, Palpa</span>
+</div>
+<h3 class="text-2xl font-headline text-on-primary font-bold mb-2">Hill Station Heritage</h3>
+<p class="text-surface-bright text-sm mb-4 line-clamp-3">
+                        A historic hilltop town known for its unique Newari architecture, Dhaka fabric, and affordable guesthouses. Wander steep, narrow alleys untouched by mass tourism.
+                    </p>
+<div class="bg-surface/10 backdrop-blur-md px-3 py-2 rounded-lg border border-surface/20 inline-block">
+<p class="text-surface text-xs font-medium"><span class="text-secondary-container font-bold">Must Visit:</span> Rani Mahal (Taj Mahal of Nepal)</p>
+</div>
+</div>
+</article>
+<!-- Destination 3: Ilam (Square Card) -->
+<article class="md:col-span-6 rounded-xl overflow-hidden relative group bg-surface-container-low ghost-border soft-lift flex">
+<div class="w-1/2 relative overflow-hidden rounded-l-xl">
+<img alt="Ilam Tea Gardens" class="absolute inset-0 w-full h-full object-cover ken-burns" data-alt="lush green rolling hills of tea gardens in Ilam Nepal with soft misty morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0CKErzwjQzNt6myCsbyrSPemcRvysEtiJU7iYu7vP9n8pgmJXjBJtrEUD49aOncY-aES6WLzN8VTFpDjD46X-EtILSlMEo7qp44hKIR3WFD00VcYuLtNe5GW0c0jg5qCJ9wlTwQAVSDlzQgBH0f8hN39hfZN7-yOY_XMHGdXTa8S5qnbeg-nbAk0SCaJQ3fawYXXjgkZ5tHcY3DQVlD77QdSs8JRPKu_2BSHG5CZ3S9BCPGOoXUE6gAhPjNgfnqK9NFsSpsPwaKih"/>
+</div>
+<div class="w-1/2 p-6 flex flex-col justify-center">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span class="text-label-md text-primary font-bold uppercase tracking-widest">Ilam</span>
+</div>
+<h3 class="text-xl font-headline text-on-surface font-bold mb-3">Verdant Tea Estates</h3>
+<p class="text-on-surface-variant text-sm mb-4 line-clamp-3">
+                        Eastern Nepal's gem offers cheap homestays amidst rolling hills of tea gardens. Experience local hospitality and stunning sunrises at Kanyam and Antu Danda.
+                    </p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xs font-medium text-secondary bg-secondary-container px-2 py-1 rounded">Budget Homestays</span>
+<button class="text-primary hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Destination 4: Kathmandu (Square Card) -->
+<article class="md:col-span-6 rounded-xl overflow-hidden relative group bg-surface-container-low ghost-border soft-lift flex">
+<div class="w-1/2 p-6 flex flex-col justify-center order-2">
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span class="text-label-md text-primary font-bold uppercase tracking-widest">Kathmandu</span>
+</div>
+<h3 class="text-xl font-headline text-on-surface font-bold mb-3">Capital on a Dime</h3>
+<p class="text-on-surface-variant text-sm mb-4 line-clamp-3">
+                        The vibrant capital is incredibly budget-friendly if you know where to look. Explore ancient stupas, bustling local markets, and affordable eateries away from the tourist hubs.
+                    </p>
+<div class="mt-auto flex items-center justify-between">
+<span class="text-xs font-medium text-secondary bg-secondary-container px-2 py-1 rounded">Street Food &amp; Hostels</span>
+<button class="text-primary hover:text-primary-container transition-colors">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+<div class="w-1/2 relative overflow-hidden rounded-r-xl order-1">
+<img alt="Kathmandu Street" class="absolute inset-0 w-full h-full object-cover ken-burns" data-alt="narrow bustling street in Kathmandu with traditional brick architecture and colorful prayer flags" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWkPg-2UAy99mzfYr5JNy24c0TfDy-Q15FNNVzZA-5O4B_WnQEgaW121xTLyn9v3eYnNE_pYthfQScmfFP-8OWNXSvkVr_F76QtRyF-CAVbL6_RcVePh4v203RdGZEpfV3PGUbrJYltwGlwtf9rWXfpMVWztBMIZbPpGv9XMb8RbOY0qMAIvGVq93rYP_ZX0Jai8mzTQz8E5cKOCtG-3jIBvc4tl8B0p2d07l6by82l5ZDmB2WoXmkJ4Kpxjoo4BReWa48Oobje-0k"/>
+</div>
+</article>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-3xl fixed bottom-0 left-0 w-full flex justify-around items-center px-8 pt-4 pb-8 rounded-t-[2rem] z-50 tonal-shift-surface-container-low shadow-[0_-10px_40px_rgba(0,0,0,0.06)]">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:translate-y-1 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">explore</span>
+<span class="font-['Manrope'] text-[11px] font-medium uppercase tracking-widest">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-sky-700 dark:text-sky-300 relative after:content-[''] after:absolute after:-bottom-1 after:w-1 after:h-1 after:bg-sky-700 after:rounded-full active:translate-y-1 transition-all duration-300 hover:text-sky-600" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">hiking</span>
+<span class="font-['Manrope'] text-[11px] font-medium uppercase tracking-widest">Activities</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:translate-y-1 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">hotel</span>
+<span class="font-['Manrope'] text-[11px] font-medium uppercase tracking-widest">Stays</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-sky-600 transition-all active:translate-y-1 transition-all duration-300" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-['Manrope'] text-[11px] font-medium uppercase tracking-widest">Profile</span>
+</a>
+</nav>
+</body></html>
