@@ -1,0 +1,33 @@
+export const preservedRouteMap = [
+  { path: '/', key: 'homePage', title: 'Home' },
+  { path: '/explore', key: 'exploreDestinations', title: 'Explore Destinations' },
+  { path: '/destination/:id', key: 'destinationDetail', title: 'Destination Detail' },
+  { path: '/planner', key: 'aiTripPlanner', title: 'AI Trip Planner' },
+  { path: '/dashboard', key: 'mySavedTrips', title: 'My Saved Trips' },
+  { path: '/login', key: 'loginPage', title: 'Login' },
+  { path: '/register', key: 'createAccount', title: 'Create Account' },
+  { path: '/bookings', key: 'bookingsPokharaChitwanStays', title: 'Bookings' },
+  { path: '/community', key: 'communityStories', title: 'Community Stories' },
+  { path: '/dining', key: 'localEatsPokharaChitwanBudgetDining', title: 'Local Eats' },
+  { path: '/packing-list', key: 'packingListGenerator', title: 'Packing List Generator' },
+  { path: '/activities', key: 'activityCategoriesPokharaChitwan', title: 'Activity Categories' },
+  { path: '/reviews', key: 'destinationReviews', title: 'Destination Reviews' },
+  { path: '/profile', key: 'myProfile', title: 'My Profile' },
+];
+
+export const additionalStitchRoutes = [
+  { path: '/places/must-visit', key: 'mustVisitPlaces', title: 'Must Visit Places' },
+  { path: '/activities/all-categories', key: 'activityCategories', title: 'Activity Categories' },
+  { path: '/activities/price-filter', key: 'activityCategoriesWithPriceFilter', title: 'Activity Categories With Price Filter' },
+  { path: '/activities/budget', key: 'budgetActivityCategories', title: 'Budget Activity Categories' },
+  { path: '/activities/budget-hd', key: 'lowBudgetActivityCategoriesHd', title: 'Low Budget Activity Categories HD' },
+  { path: '/activities/mid-range', key: 'midRangeActivityCategories', title: 'Mid Range Activity Categories' },
+  { path: '/stays/book', key: 'bookYourStay', title: 'Book Your Stay' },
+  { path: '/stays/budget', key: 'budgetHotelBooking', title: 'Budget Hotel Booking' },
+  { path: '/stays/budget-hd', key: 'lowBudgetHotelBookingHd', title: 'Low Budget Hotel Booking HD' },
+  { path: '/stays/mid-range-map', key: 'midRangeStaysMap', title: 'Mid Range Stays Map' },
+  { path: '/stays/kathmandu', key: 'hotelsInKathmandu', title: 'Hotels in Kathmandu' },
+  { path: '/dining/nepal-budget', key: 'localEatsBudgetDiningInNepal', title: 'Local Eats Budget Dining in Nepal' },
+  { path: '/dining/low-budget-hd', key: 'lowBudgetLocalEatsHd', title: 'Low Budget Local Eats HD' },
+  { path: '/dining/mid-range-guide', key: 'midRangeDiningGuide', title: 'Mid Range Dining Guide' },
+];
