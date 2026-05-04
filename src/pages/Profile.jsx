@@ -1,14 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Map, Calendar, Leaf, Book, ShieldAlert, Mail } from 'lucide-react';
 
 const Profile = () => {
   return (
     <div className="min-h-screen pt-32 pb-20 bg-surface">
       <div className="container mx-auto px-6 md:px-12 max-w-4xl">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+        <div
           className="bg-surface-container-lowest rounded-[2rem] p-10 md:p-14 mb-8 ghost-border ambient-shadow"
         >
           <div className="flex flex-col items-center text-center">
@@ -18,14 +15,11 @@ const Profile = () => {
             <h1 className="text-4xl font-display font-bold text-on-surface mb-3 tracking-tight">Elena Rostova</h1>
             <p className="text-on-surface-variant text-lg max-w-md">Finding stillness in high altitudes. Photography, tea, and long trails.</p>
           </div>
-        </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* My Journeys */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
+          <div
             className="bg-surface-container-lowest rounded-[2rem] p-10 ghost-border ambient-shadow flex flex-col"
           >
              <h2 className="text-2xl font-display font-bold text-on-surface mb-8 flex items-center gap-3">
@@ -53,13 +47,10 @@ const Profile = () => {
                  </p>
                </div>
              </div>
-          </motion.div>
+          </div>
 
           {/* Account Settings */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
+          <div
             className="flex flex-col gap-4"
           >
             <div className="bg-surface-container-low rounded-[1.5rem] p-6 hover:bg-surface-container-lowest transition-colors cursor-pointer group flex items-center justify-between ghost-border">
@@ -110,7 +101,7 @@ const Profile = () => {
               </div>
             </div>
             
-          </motion.div>
+          </div>
         </div>
       </div>
     </div>
