@@ -3,39 +3,144 @@ import { motion } from 'framer-motion';
 
 const ActivityCategories = () => {
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-surface">
-      <div className="container mx-auto px-6 md:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-4xl"
-        >
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-on-surface mb-6 tracking-tight">
-            Activity Categories
-          </h1>
-          <p className="text-lg text-on-surface-variant mb-12">
-            This page represents the Activity Categories section. Content will be loaded dynamically.
-          </p>
-        </motion.div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="w-full pt-24 md:pt-32 pb-32 md:pb-24 max-w-7xl mx-auto px-4 md:px-8"
+    >
+      
+{/* Header &amp; Category Selector */}
+<header className="mb-16 md:mb-24 flex flex-col items-start gap-6">
+<div>
+<h1 className="font-headline text-4xl md:text-6xl font-bold tracking-tight text-on-background mb-4">Discover by Activity</h1>
+<p className="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl">Find your perfect journey based on what moves you. From serene landscapes to bustling cultural hubs.</p>
+</div>
+<div className="relative w-full md:w-96">
+<select className="w-full appearance-none bg-surface-container-lowest text-on-surface font-headline font-semibold text-lg py-4 pl-6 pr-12 rounded-xl border border-outline-variant/15 focus:outline-none focus:ring-2 focus:ring-surface-tint/50 shadow-[0_4px_30px_rgba(0,0,0,0.03)] cursor-pointer transition-all">
+<option selected="" value="trekking">Trekking &amp; Hiking</option>
+<option value="sightseeing">Sightseeing &amp; Culture</option>
+<option value="markets">Local Markets</option>
+<option value="adventure">Adventure Sports</option>
+</select>
+<div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-on-surface-variant">
+<span className="material-symbols-outlined">expand_more</span>
+</div>
+</div>
+</header>
+{/* Destination List (Filtered by Trekking) */}
+<div className="space-y-24">
+{/* Destination 1: Everest Region */}
+<section className="flex flex-col gap-10">
+{/* Destination Hero Image &amp; Intro */}
+<div className="relative rounded-[2rem] overflow-hidden aspect-[16/9] md:aspect-[21/9] group bg-surface-container-lowest">
+<img alt="Everest Region Trekking" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Majestic view of Mount Everest base camp with colorful prayer flags in foreground, clear blue sky, snow capped peaks, vibrant sunshine" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSPcPzPmpIJUnA3CD3MRMxf8XfmJqZJG83n9XtC-Om-P9_fI7_SAd4xfqbbiNUzOSHPrql_hJNnTETuh_RvXom2WWbLkm4xFFwB9rslHyQliC5eJ4D2wiTPrCUk4C7_H8o-s8IhBzMp9Yg8qbGCqTsfzTghaAyfLBJ80UUd1d0nyf0Z4nyQ1wF_FO-G0Jx_rfK2U53LwRE8i_4qlAwCC0RBbjIio8w-EVl7wzKjiz0yRj6g81JO7qmtV7KYnS1jAKVhOsOKpHsqdXb"/>
+<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+<div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+<span className="inline-block px-4 py-1 mb-4 rounded-full bg-surface/20 backdrop-blur-md text-on-primary font-label text-sm uppercase tracking-widest">High Altitude</span>
+<h2 className="font-headline text-3xl md:text-5xl font-extrabold text-on-primary tracking-tight mb-2">Everest Region</h2>
+<p className="font-body text-lg text-on-primary/90 max-w-3xl drop-shadow-md">
+                            A legendary landscape where earth meets sky. Experience the profound silence of the highest peaks, the resilience of Sherpa culture, and trails that have called to adventurers for generations.
+                        </p>
+</div>
+</div>
+{/* Must Visit Grid */}
+<div className="pl-4 md:pl-0">
+<h3 className="font-headline text-2xl font-bold text-on-background mb-6 flex items-center gap-2">
+<span className="material-symbols-outlined text-primary">place</span>
+                        Must-Visit Places
+                    </h3>
+<div className="flex overflow-x-auto gap-6 pb-8 no-scrollbar pr-4 md:pr-0 md:grid md:grid-cols-3">
+{/* Spot 1 */}
+<div className="min-w-[280px] md:min-w-0 bg-surface-container-lowest rounded-xl overflow-hidden group">
+<div className="aspect-[4/3] relative overflow-hidden">
+<img alt="Namche Bazaar" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Namche Bazaar village nestled in a mountain amphitheater, colorful roofs, terraced hillsides, clear weather" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADv6poD0aCGMvmSAM8XaT1V1yiyvN6PpyzxhDM9DQiLnA2URIVqNqlqca3ponMZyN9iC264_uAzUTqBxzVvmzy1W2lYpj4x8etdvz_J7xVL02Q5a9vs28cpFgU-i60mJLaHdHXEb4IOqsj5ciK4eYiLZGmKg6gQwp3TX98OoOd4XLoo7xI89vDfrrXiQ2GLAZWSVejuSggl6VO4z9_PUr7IRrYb6htdFyIX5FkNGENhzahVYODYXVJHxvkinQtrmpXLJEOxye8r9LR"/>
+</div>
+<div className="p-6">
+<h4 className="font-headline text-xl font-bold text-on-surface mb-2">Namche Bazaar</h4>
+<p className="font-body text-sm text-on-surface-variant line-clamp-2">The bustling heart of the Khumbu region, a vital acclimatization stop rich in culture and vibrant markets.</p>
+</div>
+</div>
+{/* Spot 2 */}
+<div className="min-w-[280px] md:min-w-0 bg-surface-container-lowest rounded-xl overflow-hidden group">
+<div className="aspect-[4/3] relative overflow-hidden">
+<img alt="Kala Patthar" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Stunning sunset view of Mount Everest from Kala Patthar rocky viewpoint, dramatic lighting, golden hour on snow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACKg3VcWU7bOCWZM3hTfuDTZ5iMVW2wzqisbrCV7H1h8UXc_k_2PraigGX6KuWWYnMFURiEMdCFr6kHz6ooAbtVMC1tEKzI2-GzN9MIme5bq3N610i8Oesyg_IuMgoxcJBpfm4CSh6CPyvgBNQFmC0rNhj7JyjTAULWC9pkTlESTlnleMBRPNTat1GAdUMNJCQlAAD-JKp3fDCeRPYr_v74sU3hLHp5GwdQlCewpW1jUFVGy4fkywr70tc9RaXgHZIjrPgOhUPxIFx"/>
+</div>
+<div className="p-6">
+<h4 className="font-headline text-xl font-bold text-on-surface mb-2">Kala Patthar</h4>
+<p className="font-body text-sm text-on-surface-variant line-clamp-2">The ultimate vantage point offering unparalleled, up-close views of Mount Everest's imposing summit.</p>
+</div>
+</div>
+{/* Spot 3 */}
+<div className="min-w-[280px] md:min-w-0 bg-surface-container-lowest rounded-xl overflow-hidden group">
+<div className="aspect-[4/3] relative overflow-hidden">
+<img alt="Tengboche Monastery" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Tengboche Monastery exterior with mountains in background, peaceful atmosphere, red and white architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfVq-rEZcOTTq7AyAamZodwF2CSf8SakFO1NIKjI_jXYZxngDwwQfHh-2pA2FZUcdxR8TZ_OX7Ruf35YGPZr7D3LjYCEARIOW4BerbORmPOL9cKbvXcafEcz0PSdnfLetMhr48MvekeJroHsdN_r26Iz5pGkLxgQ28_Tm2datWdnAfLLNhRIp6jIREiDHsVI834AHnKi0WdvqvFe8Fc5sjFu4TbygE_jAt-6ZGTLGgJVsJcR75BjA4uJo2Ov2Z3ZVwPKUSaENToOwK"/>
+</div>
+<div className="p-6">
+<h4 className="font-headline text-xl font-bold text-on-surface mb-2">Tengboche</h4>
+<p className="font-body text-sm text-on-surface-variant line-clamp-2">Home to the largest gompa in the Khumbu, offering spiritual solace against a backdrop of Ama Dablam.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+{/* Destination 2: Annapurna Circuit */}
+<section className="flex flex-col gap-10">
+{/* Destination Hero Image &amp; Intro */}
+<div className="relative rounded-[2rem] overflow-hidden aspect-[16/9] md:aspect-[21/9] group bg-surface-container-lowest">
+<img alt="Annapurna Circuit" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" data-alt="Annapurna mountain range towering over lush green valley, clear morning light, vast open landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQo5Tc4TQTRF0JrlbDnzC5FNTBZhTOTjbZ-647GRbOJFJI_ipo5SjVWJnMkzUjgPeIffbFOwGkfyjBLPovZLiHoGODIHPCPOTIlWksHxTOsSv-7tK9Yzcmu6v7ZPzzXMGpKntomiPf3APs_fl_zrl63wU0umFFKN4BxSllp8A9pgrzNdqveRyunR0S5wm6jDape9Zg_43uu5nbkbdOUz6nqT8Pn3cYCimQ3PsSEfTVRfrU3UQQ6UnZF-p2Q9KEpsgvwkO1rivkUgx_"/>
+<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+<div className="absolute bottom-0 left-0 p-8 md:p-12 w-full">
+<span className="inline-block px-4 py-1 mb-4 rounded-full bg-surface/20 backdrop-blur-md text-on-primary font-label text-sm uppercase tracking-widest">Diverse Terrain</span>
+<h2 className="font-headline text-3xl md:text-5xl font-extrabold text-on-primary tracking-tight mb-2">Annapurna Region</h2>
+<p className="font-body text-lg text-on-primary/90 max-w-3xl drop-shadow-md">
+                            A journey through shifting ecological zones. From subtropical forests teeming with life to barren, high-altitude alpine deserts, the Annapurna trails are a masterclass in natural diversity.
+                        </p>
+</div>
+</div>
+{/* Must Visit Grid */}
+<div className="pl-4 md:pl-0">
+<h3 className="font-headline text-2xl font-bold text-on-background mb-6 flex items-center gap-2">
+<span className="material-symbols-outlined text-primary">place</span>
+                        Must-Visit Places
+                    </h3>
+<div className="flex overflow-x-auto gap-6 pb-8 no-scrollbar pr-4 md:pr-0 md:grid md:grid-cols-3">
+{/* Spot 1 */}
+<div className="min-w-[280px] md:min-w-0 bg-surface-container-lowest rounded-xl overflow-hidden group">
+<div className="aspect-[4/3] relative overflow-hidden">
+<img alt="Thorong La Pass" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Thorong La pass marker adorned with countless colorful prayer flags, high altitude snow environment, bright sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZog8tu1KrNhZRNVEyaBZi5vfatIM7rUPY80IUSjmotsp0sNN08y_kMEcN4RY22EItxbs65DMqQwGIBZx_Q2XiKHpRQZ8Ei8tURzqBA8V-zCWxvBGj1mskpaByXlkjDVJ_WbDWabDSDPXsW8OCQ0oRgLEK_lEHqSVXDVCDFw5dWyBXLonG0oXjd1YD2ZqpZd0jwzr6acHp6cNuGpYorvG_-BKDx420YmPlxZER5suA6z8-dR0Zvt0xmnbRE1trrKyo6kpqbkA7BJUy"/>
+</div>
+<div className="p-6">
+<h4 className="font-headline text-xl font-bold text-on-surface mb-2">Thorong La Pass</h4>
+<p className="font-body text-sm text-on-surface-variant line-clamp-2">The challenging apex of the circuit at 5,416m, rewarding trekkers with an unforgettable sense of achievement.</p>
+</div>
+</div>
+{/* Spot 2 */}
+<div className="min-w-[280px] md:min-w-0 bg-surface-container-lowest rounded-xl overflow-hidden group">
+<div className="aspect-[4/3] relative overflow-hidden">
+<img alt="Poon Hill" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Poon Hill sunrise view, golden light hitting the Annapurna south peak, silhouette of hills in foreground" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPxZHlVrt2qWyvLhJ3dWPkP8Xok6hoGrfBfIkijO9FRpNxpQg5-Qpty4Ka9c8eRJb7S9PbToAHd6FLY6HIYDAKO06hS4AfB4H64EmD9-Q5Z09dX-xiUuaL5jb6B6a0ltjAK10st3zkjMeO3dMldzVaN4LLy7jEpf-AucrHIKPP1dJkUWSBZpRQpVoSLKn9_so54SHuwoLKgTHVIQckirUzePWTyTeaUVDX_tkyhc1Bl3iv6Lk6NDBlQ2jVLfORkFo-FU9oFZaA1v-n"/>
+</div>
+<div className="p-6">
+<h4 className="font-headline text-xl font-bold text-on-surface mb-2">Poon Hill</h4>
+<p className="font-body text-sm text-on-surface-variant line-clamp-2">Famous for spectacular, panoramic sunrise views over the entire Annapurna and Dhaulagiri mountain ranges.</p>
+</div>
+</div>
+{/* Spot 3 */}
+<div className="min-w-[280px] md:min-w-0 bg-surface-container-lowest rounded-xl overflow-hidden group">
+<div className="aspect-[4/3] relative overflow-hidden">
+<img alt="Manang Village" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Manang village with traditional stone houses, arid mountain landscape in background, clear sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzjn17T833ScZAXLxbSHb_KimcdwGZSBzID6bi7DjqBC2O2aJ8YvHORXV2eTDqrT0XZBofid05pUPSjOCU0NnDm0XCsLlQqccFAjNXx_GovBWVvKrY5l1KvHw8RsStgfeJArlkz5JcKvZpZKrYT4kG7MorfSAyIc6NAIeLcuplOepk7Y06DiwpUQgDm8gtBwqlI3izkLO33TNY-6UClL5MbqSsmImu4PiUP7GLvV83jBekB7HcLKA8__Tk2rkpG9OAzL5GHu7l9WHV"/>
+</div>
+<div className="p-6">
+<h4 className="font-headline text-xl font-bold text-on-surface mb-2">Manang</h4>
+<p className="font-body text-sm text-on-surface-variant line-clamp-2">A fascinating village in the rain shadow area, featuring unique Tibetan-influenced culture and stark, beautiful landscapes.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[1, 2, 3].map((item) => (
-            <motion.div
-              key={item}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: item * 0.1 }}
-              className="bg-surface-container-lowest p-8 rounded-[1.5rem] ambient-shadow ghost-border flex flex-col"
-            >
-              <div className="h-48 bg-surface-container-low rounded-xl mb-6"></div>
-              <h3 className="text-xl font-display font-bold text-on-surface mb-3">Example Item {item}</h3>
-              <p className="text-on-surface-variant text-[0.9375rem]">Detailed description mimicking the Alpine Sanctuary editorial aesthetic.</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </div>
+    </motion.div>
   );
 };
 
