@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-surface text-on-surface font-sans transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-on-surface;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .glass-nav {
+    @apply bg-surface/70 backdrop-blur-[20px] transition-all duration-300;
+  }
+  
+  .ghost-border {
+    box-shadow: inset 0 0 0 2px rgba(191, 199, 210, 0.15);
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary to-primary-container text-white rounded-full transition-transform hover:scale-[1.02] active:scale-[0.98] shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-surface-container-high text-primary rounded-xl transition-colors hover:bg-surface-container-highest;
+  }
+
+  .card-borderless {
+    @apply rounded-xl bg-surface-container-lowest overflow-hidden transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .ambient-shadow {
+    box-shadow: 0 8px 30px rgba(11, 28, 48, 0.06);
+  }
+
+  /* Stitch Typography System */
+  .text-display-lg {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 700;
+  }
+  .text-display-md {
+    font-size: 2.75rem;
+    line-height: 1.2;
+    font-weight: 700;
+  }
+  .text-headline-lg {
+    font-size: 2rem;
+    line-height: 1.3;
+    font-weight: 600;
+  }
+  .text-body-lg {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  .text-label-md {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    font-weight: 500;
+  }
+
+  /* Stitch Gradient & Effect Utilities */
+  .bg-mist {
+    background: linear-gradient(to bottom, rgba(248, 249, 255, 0) 0%, rgba(248, 249, 255, 0.9) 100%);
+    backdrop-filter: blur(40px);
+  }
+  .bg-mountain-gradient {
+    background: linear-gradient(135deg, #006194 0%, #007bb9 100%);
+  }
+  .hover-zoom:hover img {
+    transform: scale(1.05);
+    transition: transform 1s ease;
+  }
+  .hover-zoom img {
+    transition: transform 1s ease;
+  }
+
+  /* Line Clamp Utilities */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
