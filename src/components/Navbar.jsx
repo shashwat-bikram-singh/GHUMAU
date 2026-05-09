@@ -24,6 +24,7 @@ const Navbar = () => {
     { name: 'Activities', path: '/activities' },
     { name: 'Community', path: '/community' },
     { name: 'Dining', path: '/dining' },
+    { name: 'Saved Trips', path: '/saved-trips' },
     { name: 'Profile', path: '/profile' },
   ];
 

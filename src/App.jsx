@@ -22,6 +22,7 @@ import PackingList from './pages/PackingList';
 import Activities from './pages/Activities';
 import Reviews from './pages/Reviews';
 import Profile from './pages/Profile';
+import SavedTrips from './pages/SavedTrips';
 
 // Generated Stitch Pages
 import MustVisitPlaces from './pages/MustVisitPlaces';
@@ -69,6 +70,7 @@ const AnimatedRoutes = () => {
         <Route path="/activities" element={<Activities />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/saved-trips" element={<SavedTrips />} />
 
         {/* Additional Generated Routes */}
         <Route path="/places/must-visit" element={<MustVisitPlaces />} />
