@@ -1,16 +1,58 @@
-# React + Vite
+# GHUMAU - Modern Travel Platform for Nepal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Ghumau is a premium, modern travel platform designed to provide a seamless and immersive experience for exploring the beauty of Nepal. Built with a focus on aesthetics and performance, it features the "Alpine Sanctuary" design system.
 
-Currently, two official plugins are available:
+## 🏔️ Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **AI Trip Planner**: Personalized itineraries based on your budget, duration, and preferences.
+- **Saved Adventures**: Curated collection of your favorite destinations and trekking routes.
+- **Local Eats Guide**: Discover authentic Nepalese cuisine, from street food to fine dining.
+- **Booking Management**: Seamlessly browse and book stays across Nepal.
+- **Interactive Maps**: Visualize your journey with mid-range stay maps and destination guides.
+- **Packing List Generator**: Smart checklist to ensure you're prepared for the Himalayan terrain.
 
-## React Compiler
+## 🎨 Design System: Alpine Sanctuary
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The platform adheres to a strict "No-Line" rule, utilizing tonal backgrounds, glassmorphism, and premium typography (Plus Jakarta Sans & Manrope) to create a serene, editorial-grade user experience.
 
-## Expanding the ESLint configuration
+## 🛠️ Technology Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend**: React 19, Vite 8, Tailwind CSS 3
+- **Animations**: Framer Motion 12
+- **Icons**: Lucide React & Material Symbols
+- **Styling**: PostCSS with custom design tokens
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/shashwat-bikram-singh/GHUMAU.git
+   cd GHUMAU
+   ```
+
+2. Install dependencies for the root and frontend:
+   ```bash
+   npm run install-all
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+## 📂 Project Structure
+
+- `/frontend`: The core React application.
+- `/src`: Legacy or root-level source files.
+- `/stitch_ghumuam_nepal_travel_ui`: Original UI/UX design source and migration assets.
+
+## 📄 License
+
+Private - All rights reserved.
