@@ -1,3 +1,8 @@
+/**
+ * GHUMAU - Modern Travel Platform for Nepal
+ * Built with the "Alpine Sanctuary" Design System
+ * Focus: No-lines, Tonal hierarchy, Glassmorphism
+ */
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
