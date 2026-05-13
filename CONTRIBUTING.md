@@ -12,6 +12,7 @@ The Ghumau platform is built on the **Alpine Sanctuary** design system. Every ne
 4. **Motion**: Every interactive element should have a transition or animation. Use `framer-motion` for page entries and hover effects.
 5. **Glassmorphism**: Use `backdrop-blur-xl` and semi-transparent backgrounds for floating elements like the navbar.
 6. **Color Palette**: Stick to the predefined semantic tokens: `bg-surface` for backgrounds, `text-on-surface` for primary text, and `primary` for accent actions.
+7. **Elevation & Shadows**: Instead of hard shadows, use "Elevation Layers". Use `shadow-elevation-1` for cards and `shadow-elevation-2` for floating menus. These are designed to mimic the soft, diffused light of the Himalayas.
 
 ## 🛠️ Development Workflow
 
