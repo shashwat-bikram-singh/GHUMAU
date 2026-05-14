@@ -10,7 +10,7 @@ const categories = [
     title: 'Trekking & Hiking',
     count: 24,
     color: 'bg-blue-50 text-blue-600',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Annapurna_Massif_Aerial_View.jpg',
     link: '/activities/budget',
     desc: 'From gentle hill walks to the legendary Everest Base Camp trek.'
   },
@@ -19,7 +19,7 @@ const categories = [
     title: 'Adventure Sports',
     count: 12,
     color: 'bg-red-50 text-red-600',
-    image: 'https://images.unsplash.com/photo-1520113412536-69d67566cb4b?q=80&w=800&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Pokhara_Valley.jpg',
     link: '/activities/mid-range',
     desc: 'Paragliding, bungee jumping, white-water rafting and more.'
   },
@@ -28,7 +28,7 @@ const categories = [
     title: 'Wildlife & Jungle',
     count: 8,
     color: 'bg-green-50 text-green-600',
-    image: 'https://images.unsplash.com/photo-1581008697198-5c464817a02c?q=80&w=800&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Chitwan_swamp.jpg',
     link: '/activities/budget',
     desc: 'Jungle safaris, rhino spotting, and bird watching in Chitwan & Bardia.'
   },
@@ -37,7 +37,7 @@ const categories = [
     title: 'Cultural Tours',
     count: 18,
     color: 'bg-amber-50 text-amber-600',
-    image: 'https://images.unsplash.com/photo-1518002171953-a080ee817e1f?q=80&w=800&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/View_of_Bhaktapur_Durbar_Square.jpg',
     link: '/activities/budget',
     desc: 'Ancient temples, UNESCO World Heritage Sites, and local village life.'
   },
@@ -46,7 +46,7 @@ const categories = [
     title: 'Wellness & Yoga',
     count: 9,
     color: 'bg-purple-50 text-purple-600',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/1/18/BRP_Lumbini_Mayadevi_temple.jpg',
     link: '/activities/mid-range',
     desc: 'Retreat centers, meditation courses, and Ayurvedic treatments.'
   },
@@ -55,7 +55,7 @@ const categories = [
     title: 'Water Activities',
     count: 7,
     color: 'bg-cyan-50 text-cyan-600',
-    image: 'https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?q=80&w=800&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Phewa_lake%2C_Pokhara.jpg',
     link: '/activities/mid-range',
     desc: 'Boating on Phewa Lake, kayaking, and world-class river rafting.'
   },

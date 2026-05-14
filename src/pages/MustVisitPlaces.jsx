@@ -12,7 +12,7 @@ const places = [
     category: 'Religious',
     rating: 4.9,
     time: '2-3 hrs',
-    image: 'https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?q=80&w=800&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Pashupatinath_Temple-2020.jpg',
     description: 'One of the most sacred Hindu temples in the world, dedicated to Lord Shiva, sitting on the banks of the Bagmati River.',
   },
   {
@@ -22,7 +22,7 @@ const places = [
     category: 'UNESCO Heritage',
     rating: 4.9,
     time: '1-2 hrs',
-    image: 'https://images.unsplash.com/photo-1605640372305-71cd63f63c72?q=80&w=800&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/Boudhanath_stupa_%2C_Kathmandu%2C_Nepal.jpg',
     description: 'One of the largest spherical stupas in Nepal and the holiest Tibetan Buddhist temple outside Tibet.',
   },
   {
@@ -32,7 +32,7 @@ const places = [
     category: 'Religious',
     rating: 4.8,
     time: '2-3 hrs',
-    image: 'https://images.unsplash.com/photo-1518002171953-a080ee817e1f?q=80&w=800&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Swayambhunath_2018.jpg',
     description: 'An ancient religious complex atop a hill offering panoramic views of the Kathmandu Valley and its unique blend of Buddhist and Hindu iconography.',
   },
   {
@@ -42,7 +42,7 @@ const places = [
     category: 'Natural Wonder',
     rating: 4.8,
     time: 'Half Day',
-    image: 'https://images.unsplash.com/photo-1605640371661-d73dd9818ae3?q=80&w=800&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Phewa_lake%2C_Pokhara.jpg',
     description: 'The second largest lake in Nepal, famous for its reflections of Mt. Fishtail (Machhapuchhre) and the surrounding Annapurna range.',
   },
   {
@@ -52,7 +52,7 @@ const places = [
     category: 'Adventure',
     rating: 5.0,
     time: '12-14 Days Trek',
-    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Khumbutse.jpg',
     description: 'The ultimate bucket-list destination — a challenging high-altitude trek through Sherpa culture and dramatic Himalayan landscapes.',
   },
   {
@@ -62,7 +62,7 @@ const places = [
     category: 'UNESCO Heritage',
     rating: 4.7,
     time: '4-5 hrs',
-    image: 'https://images.unsplash.com/photo-1627885068412-3dfaae10a4db?q=80&w=800&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/1/18/BRP_Lumbini_Mayadevi_temple.jpg',
     description: 'The birthplace of Lord Siddhartha Gautama (Buddha), a UNESCO World Heritage site with ancient monasteries and the sacred Maya Devi Temple.',
   },
 ];
