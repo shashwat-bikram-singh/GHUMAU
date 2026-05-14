@@ -1,42 +1,105 @@
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import { Mountain, Compass, TreePine, Camera, Heart, Waves, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-const ActivityCategories = () => {
-  return (
-    <div className="min-h-screen pt-32 pb-20 bg-surface">
-      <div className="container mx-auto px-6 md:px-12">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-4xl"
-        >
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-on-surface mb-6 tracking-tight">
-            Activity Categories
-          </h1>
-          <p className="text-lg text-on-surface-variant mb-12">
-            This page represents the Activity Categories section. Content will be loaded dynamically.
-          </p>
-        </motion.div>
+const categories = [
+  {
+    icon: Mountain,
+    title: 'Trekking & Hiking',
+    count: 24,
+    color: 'bg-blue-50 text-blue-600',
+    image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop',
+    link: '/activities/budget',
+    desc: 'From gentle hill walks to the legendary Everest Base Camp trek.'
+  },
+  {
+    icon: Compass,
+    title: 'Adventure Sports',
+    count: 12,
+    color: 'bg-red-50 text-red-600',
+    image: 'https://images.unsplash.com/photo-1520113412536-69d67566cb4b?q=80&w=800&auto=format&fit=crop',
+    link: '/activities/mid-range',
+    desc: 'Paragliding, bungee jumping, white-water rafting and more.'
+  },
+  {
+    icon: TreePine,
+    title: 'Wildlife & Jungle',
+    count: 8,
+    color: 'bg-green-50 text-green-600',
+    image: 'https://images.unsplash.com/photo-1581008697198-5c464817a02c?q=80&w=800&auto=format&fit=crop',
+    link: '/activities/budget',
+    desc: 'Jungle safaris, rhino spotting, and bird watching in Chitwan & Bardia.'
+  },
+  {
+    icon: Camera,
+    title: 'Cultural Tours',
+    count: 18,
+    color: 'bg-amber-50 text-amber-600',
+    image: 'https://images.unsplash.com/photo-1518002171953-a080ee817e1f?q=80&w=800&auto=format&fit=crop',
+    link: '/activities/budget',
+    desc: 'Ancient temples, UNESCO World Heritage Sites, and local village life.'
+  },
+  {
+    icon: Heart,
+    title: 'Wellness & Yoga',
+    count: 9,
+    color: 'bg-purple-50 text-purple-600',
+    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=800&auto=format&fit=crop',
+    link: '/activities/mid-range',
+    desc: 'Retreat centers, meditation courses, and Ayurvedic treatments.'
+  },
+  {
+    icon: Waves,
+    title: 'Water Activities',
+    count: 7,
+    color: 'bg-cyan-50 text-cyan-600',
+    image: 'https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?q=80&w=800&auto=format&fit=crop',
+    link: '/activities/mid-range',
+    desc: 'Boating on Phewa Lake, kayaking, and world-class river rafting.'
+  },
+];
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[1, 2, 3].map((item) => (
-            <motion.div
-              key={item}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: item * 0.1 }}
-              className="bg-surface-container-lowest p-8 rounded-[1.5rem] ambient-shadow ghost-border flex flex-col"
-            >
-              <div className="h-48 bg-surface-container-low rounded-xl mb-6"></div>
-              <h3 className="text-xl font-display font-bold text-on-surface mb-3">Example Item {item}</h3>
-              <p className="text-on-surface-variant text-[0.9375rem]">Detailed description mimicking the Alpine Sanctuary editorial aesthetic.</p>
-            </motion.div>
-          ))}
-        </div>
+const ActivityCategories = () => (
+  <div className="min-h-screen pt-32 pb-20 bg-surface">
+    <div className="container mx-auto px-6 md:px-12">
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-3xl mb-16">
+        <h1 className="text-4xl md:text-5xl font-display font-bold text-on-surface mb-4 tracking-tight">All Activity Categories</h1>
+        <p className="text-lg text-on-surface-variant">Browse Nepal's diverse range of experiences — from high-altitude treks to cultural deep dives.</p>
+      </motion.div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {categories.map((cat, i) => (
+          <motion.div
+            key={cat.title}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: i * 0.08 }}
+            className="bg-surface-container-lowest rounded-[1.5rem] overflow-hidden ghost-border ambient-shadow group hover:-translate-y-1 transition-transform duration-300"
+          >
+            <div className="h-52 relative overflow-hidden">
+              <img src={cat.image} alt={cat.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold ${cat.color}`}>
+                {cat.count} Activities
+              </div>
+            </div>
+            <div className="p-6">
+              <div className={`w-12 h-12 rounded-2xl ${cat.color} flex items-center justify-center mb-4`}>
+                <cat.icon size={24} strokeWidth={1.5} />
+              </div>
+              <h3 className="font-display font-bold text-xl text-on-surface mb-2">{cat.title}</h3>
+              <p className="text-on-surface-variant text-[0.9375rem] mb-4 leading-relaxed">{cat.desc}</p>
+              <Link to={cat.link} className="flex items-center gap-1.5 text-sm font-bold text-primary hover:text-primary-container transition-colors">
+                Explore Activities <ArrowRight size={16} />
+              </Link>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </div>
-  );
-};
+  </div>
+);
 
 export default ActivityCategories;
