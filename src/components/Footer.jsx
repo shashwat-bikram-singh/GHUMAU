@@ -6,19 +6,18 @@ const Footer = () => {
   return (
     <footer className="bg-surface-container-low text-on-surface-variant pt-20 pb-10">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          
-          <div className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
+
+          {/* Brand Column */}
+          <div className="lg:col-span-2 space-y-6">
             <Link to="/" className="flex items-center gap-3">
               <div className="text-primary">
                 <Plane size={28} className="transform -rotate-45" strokeWidth={1.5} />
               </div>
-              <span className="text-2xl font-display font-bold tracking-tight text-on-surface">
-                Ghumuam
-              </span>
+              <span className="text-2xl font-display font-bold tracking-tight text-on-surface">Ghumuam</span>
             </Link>
             <p className="text-[0.9375rem] leading-relaxed max-w-xs">
-              Discover the beauty of Nepal with Ghumuam. We offer premium travel planning, curated destinations, and seamless booking experiences.
+              Discover the beauty of Nepal with Ghumuam. Premium travel planning, curated destinations, and seamless booking experiences for every budget.
             </p>
             <div className="flex gap-4 pt-2">
               <a href="#" className="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center hover:bg-primary-container hover:text-white transition-colors text-primary">
@@ -33,32 +32,41 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Explore Column */}
           <div>
-            <h3 className="text-on-surface font-display font-semibold mb-6 text-lg">Quick Links</h3>
-            <ul className="space-y-4">
-              <li><Link to="/" className="hover:text-primary transition-colors">Home</Link></li>
-              <li><Link to="/explore" className="hover:text-primary transition-colors">Explore</Link></li>
-              <li><Link to="/planner" className="hover:text-primary transition-colors">Trip Planner</Link></li>
-              <li><Link to="/dashboard" className="hover:text-primary transition-colors">Dashboard</Link></li>
+            <h3 className="text-on-surface font-display font-semibold mb-6 text-lg">Explore</h3>
+            <ul className="space-y-3">
+              <li><Link to="/" className="hover:text-primary transition-colors text-[0.9375rem]">Home</Link></li>
+              <li><Link to="/explore" className="hover:text-primary transition-colors text-[0.9375rem]">Destinations</Link></li>
+              <li><Link to="/places/must-visit" className="hover:text-primary transition-colors text-[0.9375rem]">Must-Visit Places</Link></li>
+              <li><Link to="/activities" className="hover:text-primary transition-colors text-[0.9375rem]">Activities</Link></li>
+              <li><Link to="/dining" className="hover:text-primary transition-colors text-[0.9375rem]">Local Eats</Link></li>
+              <li><Link to="/community" className="hover:text-primary transition-colors text-[0.9375rem]">Community</Link></li>
+              <li><Link to="/reviews" className="hover:text-primary transition-colors text-[0.9375rem]">Reviews</Link></li>
             </ul>
           </div>
 
+          {/* Plan Column */}
           <div>
-            <h3 className="text-on-surface font-display font-semibold mb-6 text-lg">Destinations</h3>
-            <ul className="space-y-4">
-              <li><Link to="/explore?cat=Mid" className="hover:text-primary transition-colors">Pokhara</Link></li>
-              <li><Link to="/explore?cat=Low" className="hover:text-primary transition-colors">Kathmandu</Link></li>
-              <li><Link to="/explore?cat=High" className="hover:text-primary transition-colors">Everest Base Camp</Link></li>
-              <li><Link to="/explore?cat=Mid" className="hover:text-primary transition-colors">Chitwan</Link></li>
+            <h3 className="text-on-surface font-display font-semibold mb-6 text-lg">Plan & Book</h3>
+            <ul className="space-y-3">
+              <li><Link to="/planner" className="hover:text-primary transition-colors text-[0.9375rem]">Trip Planner</Link></li>
+              <li><Link to="/bookings" className="hover:text-primary transition-colors text-[0.9375rem]">Book a Stay</Link></li>
+              <li><Link to="/stays/kathmandu" className="hover:text-primary transition-colors text-[0.9375rem]">Hotels in Kathmandu</Link></li>
+              <li><Link to="/stays/budget" className="hover:text-primary transition-colors text-[0.9375rem]">Budget Hotels</Link></li>
+              <li><Link to="/packing-list" className="hover:text-primary transition-colors text-[0.9375rem]">Packing List</Link></li>
+              <li><Link to="/saved-trips" className="hover:text-primary transition-colors text-[0.9375rem]">Saved Trips</Link></li>
+              <li><Link to="/dashboard" className="hover:text-primary transition-colors text-[0.9375rem]">Dashboard</Link></li>
             </ul>
           </div>
 
+          {/* Contact Column */}
           <div>
             <h3 className="text-on-surface font-display font-semibold mb-6 text-lg">Contact Us</h3>
             <ul className="space-y-5">
               <li className="flex items-start gap-4">
                 <MapPin size={20} className="text-primary shrink-0 mt-0.5" strokeWidth={1.5} />
-                <span className="text-[0.9375rem]">Thamel, Kathmandu<br/>Bagmati, Nepal</span>
+                <span className="text-[0.9375rem]">Thamel, Kathmandu<br />Bagmati, Nepal</span>
               </li>
               <li className="flex items-center gap-4">
                 <Phone size={20} className="text-primary shrink-0" strokeWidth={1.5} />
@@ -70,14 +78,14 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
         </div>
-        
+
         <div className="pt-8 border-t ghost-border flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
           <p>&copy; {new Date().getFullYear()} Ghumuam Travel. All rights reserved.</p>
           <div className="flex items-center gap-8">
             <Link to="#" className="hover:text-primary">Privacy Policy</Link>
             <Link to="#" className="hover:text-primary">Terms of Service</Link>
+            <Link to="/register" className="hover:text-primary">Create Account</Link>
           </div>
         </div>
       </div>
