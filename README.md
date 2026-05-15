@@ -53,6 +53,21 @@ The platform adheres to a strict "No-Line" rule, utilizing tonal backgrounds, gl
 - `/src`: Legacy or root-level source files.
 - `/stitch_ghumuam_nepal_travel_ui`: Original UI/UX design source and migration assets.
 
+## 🏗️ Architecture Overview
+
+The project is structured as a monorepo-lite, with the core application residing in the `frontend` directory. The main repository manages global configurations, documentation, and the design source assets.
+
+- **Design First**: The development follows a design-first approach using the "Alpine Sanctuary" tokens.
+- **Component Driven**: React components are built to be reusable and themeable.
+- **Submodule Flow**: The `frontend` directory is managed as a git submodule to allow independent development and deployment cycles.
+
+## 📊 Project Status
+
+- [x] Phase 1: Core Design System & UI Migration
+- [x] Phase 2: Authentic Content & Real Imagery Integration
+- [/] Phase 3: Interactive Features & API Integration
+- [ ] Phase 4: Performance Optimization & SEO
+
 ## 📄 License
 
 Private - All rights reserved.
