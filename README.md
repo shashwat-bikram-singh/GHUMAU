@@ -15,6 +15,12 @@ Ghumau is a premium, modern travel platform designed to provide a seamless and i
 
 The platform adheres to a strict "No-Line" rule, utilizing tonal backgrounds, glassmorphism, and premium typography (Plus Jakarta Sans & Manrope) to create a serene, editorial-grade user experience.
 
+## 🌿 Design Philosophy
+
+- **Serenity through Simplicity**: Minimizing visual noise by removing hard borders and utilizing soft shadows.
+- **Contextual Awareness**: Every interaction is designed to feel natural and responsive to the user's journey.
+- **Authentic Storytelling**: Prioritizing real-life photography of Nepal to foster a genuine connection with the destination.
+
 ## 🛠️ Technology Stack
 
 - **Frontend**: React 19, Vite 8, Tailwind CSS 3
