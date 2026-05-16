@@ -10,7 +10,7 @@ const Community = () => {
       author: 'Sarah Jenkins',
       avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150',
       location: 'Annapurna Base Camp',
-      image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=800&auto=format&fit=crop',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/3/34/Thamel_at_night_-_Kathmandu%2C_Nepal_-_panoramio_%281%29.jpg',
       content: 'Just completed the ABC trek! The sunrise view over Machapuchare was absolutely breathtaking. Highly recommend going in October for the clear skies.',
       likes: 245,
       comments: 18
@@ -20,7 +20,7 @@ const Community = () => {
       author: 'David Chen',
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150',
       location: 'Chitwan National Park',
-      image: 'https://images.unsplash.com/photo-1581008697198-5c464817a02c?q=80&w=800&auto=format&fit=crop',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Annapurna_Massif_Aerial_View.jpg',
       content: 'Spotted a one-horned rhino during our morning jungle safari! The wildlife here is incredible. Make sure to book the canoe ride as well.',
       likes: 189,
       comments: 12
@@ -30,7 +30,7 @@ const Community = () => {
       author: 'Emma Wilson',
       avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150',
       location: 'Bhaktapur Durbar Square',
-      image: 'https://images.unsplash.com/photo-1518002171953-a080ee817e1f?q=80&w=800&auto=format&fit=crop',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Latte_and_dark_coffee.jpg',
       content: 'Lost in the ancient alleys of Bhaktapur. The woodwork and architecture are mesmerizing. Don\'t forget to try the local Juju Dhau (King Curd)!',
       likes: 312,
       comments: 24

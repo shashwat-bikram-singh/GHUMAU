@@ -16,7 +16,7 @@ const Activities = () => {
       duration: '10 Days',
       location: 'Annapurna Region',
       icon: Mountain,
-      image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=600&auto=format&fit=crop'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/View_of_Bhaktapur_Durbar_Square.jpg'
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ const Activities = () => {
       duration: '3 Days',
       location: 'Chitwan National Park',
       icon: TreePine,
-      image: 'https://images.unsplash.com/photo-1581008697198-5c464817a02c?q=80&w=600&auto=format&fit=crop'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Chitwan_swamp.jpg'
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ const Activities = () => {
       duration: 'Half Day',
       location: 'Sarangkot, Pokhara',
       icon: Compass,
-      image: 'https://images.unsplash.com/photo-1520113412536-69d67566cb4b?q=80&w=600&auto=format&fit=crop'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Ghorepani.jpg'
     },
     {
       id: 4,
@@ -49,7 +49,7 @@ const Activities = () => {
       duration: '1 Day',
       location: 'Kathmandu Valley',
       icon: Tent,
-      image: 'https://images.unsplash.com/photo-1518002171953-a080ee817e1f?q=80&w=600&auto=format&fit=crop'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Basantapurpalace.JPG'
     }
   ];
 

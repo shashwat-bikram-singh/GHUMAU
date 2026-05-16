@@ -12,7 +12,7 @@ const hotels = [
     price: 180,
     category: 'Luxury',
     amenities: ['Free WiFi', 'Breakfast', 'Pool'],
-    image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Starry_night_in_Langtang_National_Park.jpg',
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const hotels = [
     price: 120,
     category: 'Mid-Range',
     amenities: ['Free WiFi', 'Lake View', 'Restaurant'],
-    image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=600&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Momo_nepal.jpg',
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const hotels = [
     price: 150,
     category: 'Luxury',
     amenities: ['Spa', 'Gym', 'Free WiFi'],
-    image: 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=600&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Namche_Bazaar_Nepal.jpg',
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const hotels = [
     price: 85,
     category: 'Mid-Range',
     amenities: ['Pool', 'Free WiFi', 'Garden'],
-    image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=600&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Patan_durbar_square.jpg',
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const hotels = [
     price: 95,
     category: 'Mid-Range',
     amenities: ['Safari', 'Breakfast', 'River View'],
-    image: 'https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?q=80&w=600&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Phewa_lake%2C_Pokhara.jpg',
   },
   {
     id: 6,
@@ -62,7 +62,7 @@ const hotels = [
     price: 55,
     category: 'Budget',
     amenities: ['Free WiFi', 'Rooftop', 'Breakfast'],
-    image: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=600&auto=format&fit=crop',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Pokhara_Valley.jpg',
   },
 ];
 

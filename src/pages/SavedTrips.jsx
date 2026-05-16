@@ -11,7 +11,7 @@ const SavedTrips = () => {
       duration: '14 Days',
       type: 'Trekking',
       budget: '$1,200 - $1,500',
-      image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2070&auto=format&fit=crop',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Basantapurpalace.JPG',
     },
     {
       id: 2,
@@ -19,7 +19,7 @@ const SavedTrips = () => {
       duration: '5 Days',
       type: 'Relaxation',
       budget: '$400 - $600',
-      image: 'https://images.unsplash.com/photo-1518002171953-a080ee817e1f?q=80&w=2070&auto=format&fit=crop',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Starry_night_in_Langtang_National_Park.jpg',
     }
   ];
 

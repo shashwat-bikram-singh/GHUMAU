@@ -16,7 +16,7 @@ const LocalEats = () => {
       rating: 4.8,
       location: 'Thamel, Kathmandu',
       price: '$',
-      image: 'https://images.unsplash.com/photo-1541529086526-db283c563270?q=80&w=600&auto=format&fit=crop'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/d/df/Sunset_flying_above_Himalayas.jpg'
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ const LocalEats = () => {
       rating: 4.9,
       location: 'Dilli Bazar, Kathmandu',
       price: '$$$',
-      image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=600&auto=format&fit=crop'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/View_of_Bhaktapur_Durbar_Square.jpg'
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ const LocalEats = () => {
       rating: 4.7,
       location: 'Lakeside, Pokhara',
       price: '$$',
-      image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=600&auto=format&fit=crop'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Chitwan_swamp.jpg'
     },
     {
       id: 4,
@@ -43,7 +43,7 @@ const LocalEats = () => {
       rating: 4.8,
       location: 'Thamel, Kathmandu',
       price: '$$$',
-      image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=600&auto=format&fit=crop'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Ghorepani.jpg'
     }
   ];
 

@@ -17,7 +17,7 @@ const Home = () => {
         {/* Background Image & Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?q=80&w=2674&auto=format&fit=crop" 
+            src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Panoramic_view_of_the_Great_Himalayan_Range_from_Dhulikhel%2C_Nepal_in_2025.jpg" 
             alt="Nepal Mountains" 
             className="w-full h-full object-cover scale-105"
           />
