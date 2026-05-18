@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { MapPin, Star, Wifi, Coffee, CheckCircle, Map } from 'lucide-react';
 
 const hotels = [
@@ -83,7 +84,7 @@ const MidRangeStaysMap = () => {
                     <p className="text-xs text-on-surface-variant mb-1">From</p>
                     <p className="font-display font-bold text-2xl text-on-surface">${hotel.price}<span className="text-sm font-normal text-on-surface-variant">/night</span></p>
                   </div>
-                  <button className="btn-primary px-5 py-2.5 text-sm font-medium" onClick={e => e.stopPropagation()}>Book Now</button>
+                  <Link to="/stays/book" className="btn-primary px-5 py-2.5 text-sm font-medium" onClick={e => e.stopPropagation()}>Book Now</Link>
                 </div>
               </div>
             </motion.div>

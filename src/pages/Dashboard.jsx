@@ -69,7 +69,7 @@ const Dashboard = () => {
                 </div>
                 <h3 className="text-2xl font-display font-bold text-on-surface mb-3">No trips planned yet</h3>
                 <p className="text-on-surface-variant mb-8 text-[0.9375rem]">Start planning your next adventure in Nepal.</p>
-                <a href="/planner" className="btn-primary px-8 py-3.5 inline-block text-[0.9375rem]">Plan a Trip</a>
+                <Link to="/planner" className="btn-primary px-8 py-3.5 inline-block text-[0.9375rem]">Plan a Trip</Link>
               </div>
             )}
           </div>

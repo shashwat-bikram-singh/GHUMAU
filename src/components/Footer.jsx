@@ -83,8 +83,8 @@ const Footer = () => {
         <div className="pt-8 border-t ghost-border flex flex-col md:flex-row items-center justify-between gap-4 text-sm">
           <p>&copy; {new Date().getFullYear()} Ghumuam Travel. All rights reserved.</p>
           <div className="flex items-center gap-8">
-            <Link to="#" className="hover:text-primary">Privacy Policy</Link>
-            <Link to="#" className="hover:text-primary">Terms of Service</Link>
+            <Link to="/privacy" className="hover:text-primary">Privacy Policy</Link>
+            <Link to="/terms" className="hover:text-primary">Terms of Service</Link>
             <Link to="/register" className="hover:text-primary">Create Account</Link>
           </div>
         </div>

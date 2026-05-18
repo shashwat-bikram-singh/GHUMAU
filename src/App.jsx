@@ -1,18 +1,16 @@
 /**
  * GHUMAU - Modern Travel Platform for Nepal
  * Built with the "Alpine Sanctuary" Design System
- * Focus: No-lines, Tonal hierarchy, Glassmorphism
  */
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import PageTransition from './components/PageTransition';
 
-// Components
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import NotFound from './pages/NotFound';
 
-// Core Pages
 import Home from './pages/Home';
 import Explore from './pages/Explore';
 import DestinationDetails from './pages/DestinationDetails';
@@ -28,8 +26,9 @@ import Activities from './pages/Activities';
 import Reviews from './pages/Reviews';
 import Profile from './pages/Profile';
 import SavedTrips from './pages/SavedTrips';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
 
-// Generated Stitch Pages
 import MustVisitPlaces from './pages/MustVisitPlaces';
 import ActivityCategories from './pages/ActivityCategories';
 import ActivityCategoriesWithPriceFilter from './pages/ActivityCategoriesWithPriceFilter';
@@ -45,6 +44,40 @@ import LocalEatsBudgetDiningInNepal from './pages/LocalEatsBudgetDiningInNepal';
 import LowBudgetLocalEatsHd from './pages/LowBudgetLocalEatsHd';
 import MidRangeDiningGuide from './pages/MidRangeDiningGuide';
 
+const appRoutes = [
+  { path: '/', component: Home },
+  { path: '/explore', component: Explore },
+  { path: '/destination/:id', component: DestinationDetails },
+  { path: '/planner', component: TripPlanner },
+  { path: '/dashboard', component: Dashboard },
+  { path: '/login', component: Login },
+  { path: '/register', component: Register },
+  { path: '/bookings', component: Bookings },
+  { path: '/community', component: Community },
+  { path: '/dining', component: LocalEats },
+  { path: '/packing-list', component: PackingList },
+  { path: '/activities', component: Activities },
+  { path: '/reviews', component: Reviews },
+  { path: '/profile', component: Profile },
+  { path: '/saved-trips', component: SavedTrips },
+  { path: '/privacy', component: Privacy },
+  { path: '/terms', component: Terms },
+  { path: '/places/must-visit', component: MustVisitPlaces },
+  { path: '/activities/all-categories', component: ActivityCategories },
+  { path: '/activities/price-filter', component: ActivityCategoriesWithPriceFilter },
+  { path: '/activities/budget', component: BudgetActivityCategories },
+  { path: '/activities/budget-hd', component: LowBudgetActivityCategoriesHd },
+  { path: '/activities/mid-range', component: MidRangeActivityCategories },
+  { path: '/stays/book', component: BookYourStay },
+  { path: '/stays/budget', component: BudgetHotelBooking },
+  { path: '/stays/budget-hd', component: LowBudgetHotelBookingHd },
+  { path: '/stays/mid-range-map', component: MidRangeStaysMap },
+  { path: '/stays/kathmandu', component: HotelsInKathmandu },
+  { path: '/dining/nepal-budget', component: LocalEatsBudgetDiningInNepal },
+  { path: '/dining/low-budget-hd', component: LowBudgetLocalEatsHd },
+  { path: '/dining/mid-range-guide', component: MidRangeDiningGuide },
+];
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -53,48 +86,31 @@ const ScrollToTop = () => {
   return null;
 };
 
-// Wrapper for AnimatePresence to work with Routes
 const AnimatedRoutes = () => {
   const location = useLocation();
-  
+
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        {/* Core Routes */}
-        <Route path="/" element={<Home />} />
-        <Route path="/explore" element={<Explore />} />
-        <Route path="/destination/:id" element={<DestinationDetails />} />
-        <Route path="/planner" element={<TripPlanner />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/bookings" element={<Bookings />} />
-        <Route path="/community" element={<Community />} />
-        <Route path="/dining" element={<LocalEats />} />
-        <Route path="/packing-list" element={<PackingList />} />
-        <Route path="/activities" element={<Activities />} />
-        <Route path="/reviews" element={<Reviews />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/saved-trips" element={<SavedTrips />} />
-
-        {/* Additional Generated Routes */}
-        <Route path="/places/must-visit" element={<MustVisitPlaces />} />
-        <Route path="/activities/all-categories" element={<ActivityCategories />} />
-        <Route path="/activities/price-filter" element={<ActivityCategoriesWithPriceFilter />} />
-        <Route path="/activities/budget" element={<BudgetActivityCategories />} />
-        <Route path="/activities/budget-hd" element={<LowBudgetActivityCategoriesHd />} />
-        <Route path="/activities/mid-range" element={<MidRangeActivityCategories />} />
-        <Route path="/stays/book" element={<BookYourStay />} />
-        <Route path="/stays/budget" element={<BudgetHotelBooking />} />
-        <Route path="/stays/budget-hd" element={<LowBudgetHotelBookingHd />} />
-        <Route path="/stays/mid-range-map" element={<MidRangeStaysMap />} />
-        <Route path="/stays/kathmandu" element={<HotelsInKathmandu />} />
-        <Route path="/dining/nepal-budget" element={<LocalEatsBudgetDiningInNepal />} />
-        <Route path="/dining/low-budget-hd" element={<LowBudgetLocalEatsHd />} />
-        <Route path="/dining/mid-range-guide" element={<MidRangeDiningGuide />} />
-
-        {/* 404 Route */}
-        <Route path="*" element={<NotFound />} />
+        {appRoutes.map(({ path, component: Component }) => (
+          <Route
+            key={path}
+            path={path}
+            element={
+              <PageTransition>
+                <Component />
+              </PageTransition>
+            }
+          />
+        ))}
+        <Route
+          path="*"
+          element={
+            <PageTransition>
+              <NotFound />
+            </PageTransition>
+          }
+        />
       </Routes>
     </AnimatePresence>
   );
@@ -116,3 +132,4 @@ function App() {
 }
 
 export default App;
+
