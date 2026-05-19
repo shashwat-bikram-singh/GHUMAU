@@ -12,7 +12,7 @@ const hotels = [
     price: 180,
     category: 'Luxury',
     amenities: ['Free WiFi', 'Breakfast', 'Pool'],
-    image: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Starry_night_in_Langtang_National_Park.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/1/1b/Kathmandu-Hotel-06-Kantipur_Temple_House-Gartenfront-2014-gje.jpg',
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const hotels = [
     price: 120,
     category: 'Mid-Range',
     amenities: ['Free WiFi', 'Lake View', 'Restaurant'],
-    image: 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Momo_nepal.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/2/26/World_Famous_%27Fish_Tail_Lodge%27_hotel_in_Pokhara..jpg',
   },
   {
     id: 3,
@@ -32,7 +32,7 @@ const hotels = [
     price: 150,
     category: 'Luxury',
     amenities: ['Spa', 'Gym', 'Free WiFi'],
-    image: 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Namche_Bazaar_Nepal.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/b/b4/Lights_on_Lal_Darbar.jpg',
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const hotels = [
     price: 85,
     category: 'Mid-Range',
     amenities: ['Pool', 'Free WiFi', 'Garden'],
-    image: 'https://upload.wikimedia.org/wikipedia/commons/8/89/Patan_durbar_square.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/New-pokhara-lodge.jpg',
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ const hotels = [
     price: 95,
     category: 'Mid-Range',
     amenities: ['Safari', 'Breakfast', 'River View'],
-    image: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Phewa_lake%2C_Pokhara.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Chitwan_swamp.jpg',
   },
   {
     id: 6,
@@ -62,7 +62,27 @@ const hotels = [
     price: 55,
     category: 'Budget',
     amenities: ['Free WiFi', 'Rooftop', 'Breakfast'],
-    image: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Pokhara_Valley.jpg',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/3/34/Thamel_at_night_-_Kathmandu%2C_Nepal_-_panoramio_%281%29.jpg',
+  },
+  {
+    id: 7,
+    name: 'Hotel Shanker',
+    location: 'Lazimpat, Kathmandu',
+    rating: 4.6,
+    price: 90,
+    category: 'Mid-Range',
+    amenities: ['Heritage', 'Pool', 'Free WiFi'],
+    image: 'https://upload.wikimedia.org/wikipedia/commons/9/97/Shanker.jpg',
+  },
+  {
+    id: 8,
+    name: 'Barahi Jungle Lodge',
+    location: 'Chitwan National Park',
+    rating: 4.8,
+    price: 110,
+    category: 'Mid-Range',
+    amenities: ['Safari', 'River View', 'Breakfast'],
+    image: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Chitwan_swamp.jpg',
   },
 ];
 

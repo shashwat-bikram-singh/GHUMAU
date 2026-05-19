@@ -43,6 +43,16 @@ const mustVisitPreview = [
     location: 'Solukhumbu',
     image: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Khumbutse.jpg',
   },
+  {
+    name: 'Chitwan National Park',
+    location: 'Chitwan',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Indian_rhinoceros_(Rhinoceros_unicornis)_6.jpg',
+  },
+  {
+    name: 'Nagarkot Viewpoint',
+    location: 'Bhaktapur District',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/c/c4/2015-03-18_Annapurna%2CNagarkot_DSCF2140.jpg',
+  },
 ];
 
 const stats = [

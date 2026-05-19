@@ -4,12 +4,14 @@ import { motion } from 'framer-motion';
 import { Clock, MapPin, Star, Filter } from 'lucide-react';
 
 const activities = [
-  { id: 1, title: 'Ghorepani Poon Hill Trek', cat: 'Trekking', rating: 4.8, price: '$95', duration: '4 Days', location: 'Annapurna', image: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/View_of_Bhaktapur_Durbar_Square.jpg' },
-  { id: 2, title: 'Pokhara Paragliding', cat: 'Adventure', rating: 4.9, price: '$85', duration: 'Half Day', location: 'Pokhara', image: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Chitwan_swamp.jpg' },
-  { id: 3, title: 'Namobuddha Hike & Monastery', cat: 'Cultural', rating: 4.7, price: '$40', duration: '1 Day', location: 'Kavrepalanchok', image: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Ghorepani.jpg' },
-  { id: 4, title: 'Seti River Gorge Kayaking', cat: 'Water Sports', rating: 4.6, price: '$75', duration: '1 Day', location: 'Pokhara', image: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Basantapurpalace.JPG' },
+  { id: 1, title: 'Ghorepani Poon Hill Trek', cat: 'Trekking', rating: 4.8, price: '$95', duration: '4 Days', location: 'Annapurna', image: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Ghorepani.jpg' },
+  { id: 2, title: 'Pokhara Paragliding', cat: 'Adventure', rating: 4.9, price: '$85', duration: 'Half Day', location: 'Pokhara', image: 'https://upload.wikimedia.org/wikipedia/commons/a/a3/Paragliding_in_Pokhara.jpg' },
+  { id: 3, title: 'Namobuddha Hike & Monastery', cat: 'Cultural', rating: 4.7, price: '$40', duration: '1 Day', location: 'Kavrepalanchok', image: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Panoramic_view_of_the_Great_Himalayan_Range_from_Dhulikhel%2C_Nepal_in_2025.jpg' },
+  { id: 4, title: 'Seti River Gorge Kayaking', cat: 'Water Sports', rating: 4.6, price: '$75', duration: '1 Day', location: 'Pokhara', image: 'https://upload.wikimedia.org/wikipedia/commons/e/ed/Rafting_in_Trishuli_River%2C_Nepal-3087.jpg' },
   { id: 5, title: 'Langtang Valley Trek', cat: 'Trekking', rating: 4.8, price: '$90', duration: '7 Days', location: 'Langtang', image: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Starry_night_in_Langtang_National_Park.jpg' },
-  { id: 6, title: 'Zip-Line, Pokhara', cat: 'Adventure', rating: 4.9, price: '$60', duration: '2 hrs', location: 'Pokhara', image: 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Momo_nepal.jpg' },
+  { id: 6, title: 'Zip-Line, Pokhara', cat: 'Adventure', rating: 4.9, price: '$60', duration: '2 hrs', location: 'Pokhara', image: 'https://upload.wikimedia.org/wikipedia/commons/a/a3/Paragliding_in_Pokhara.jpg' },
+  { id: 7, title: 'Chitwan Jungle Safari', cat: 'Wildlife', rating: 4.8, price: '$120', duration: '3 Days', location: 'Chitwan', image: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Indian_rhinoceros_(Rhinoceros_unicornis)_6.jpg' },
+  { id: 8, title: 'Kathmandu Heritage Walk', cat: 'Cultural', rating: 4.7, price: '$25', duration: '1 Day', location: 'Kathmandu', image: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Basantapurpalace.JPG' },
 ];
 
 const LowBudgetActivityCategoriesHd = () => {

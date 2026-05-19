@@ -16,7 +16,7 @@ const LocalEats = () => {
       rating: 4.8,
       location: 'Thamel, Kathmandu',
       price: '$',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/d/df/Sunset_flying_above_Himalayas.jpg'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/a/a1/Momo_nepal.jpg'
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ const LocalEats = () => {
       rating: 4.9,
       location: 'Dilli Bazar, Kathmandu',
       price: '$$$',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/View_of_Bhaktapur_Durbar_Square.jpg'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/7/74/Traditional_Nepali_Thali.jpg'
     },
     {
       id: 3,
@@ -34,7 +34,7 @@ const LocalEats = () => {
       rating: 4.7,
       location: 'Lakeside, Pokhara',
       price: '$$',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Chitwan_swamp.jpg'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Coffee_Himalayan_Java_Nepal.jpg'
     },
     {
       id: 4,
@@ -43,7 +43,43 @@ const LocalEats = () => {
       rating: 4.8,
       location: 'Thamel, Kathmandu',
       price: '$$$',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Ghorepani.jpg'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Wood-fired_Pizza_Oven_at_Baronessa_Italian_Restaurant.jpg'
+    },
+    {
+      id: 5,
+      name: 'OR2K Restaurant',
+      type: 'Traditional',
+      rating: 4.6,
+      location: 'Thamel, Kathmandu',
+      price: '$$',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/b/bf/Lebanese_style_hummus.jpg'
+    },
+    {
+      id: 6,
+      name: 'Fire & Ice Pizzeria',
+      type: 'Fine Dining',
+      rating: 4.7,
+      location: 'Thamel, Kathmandu',
+      price: '$$',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/8/84/Wood-fired_Pizza_Oven_at_Baronessa_Italian_Restaurant.jpg'
+    },
+    {
+      id: 7,
+      name: 'Krishnarpan Restaurant',
+      type: 'Traditional',
+      rating: 4.9,
+      location: 'Battisputali, Kathmandu',
+      price: '$$$$',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/6/60/Nepali_dal-bhat-tarkari.jpg'
+    },
+    {
+      id: 8,
+      name: 'Moondance Restaurant',
+      type: 'Cafes',
+      rating: 4.6,
+      location: 'Lakeside, Pokhara',
+      price: '$$',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Phewa_lake%2C_Pokhara.jpg'
     }
   ];
 

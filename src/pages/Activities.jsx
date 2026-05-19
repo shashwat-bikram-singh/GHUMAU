@@ -16,7 +16,7 @@ const Activities = () => {
       duration: '10 Days',
       location: 'Annapurna Region',
       icon: Mountain,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/View_of_Bhaktapur_Durbar_Square.jpg'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/6/6e/Annapurna_Base_Camp_2019.jpg'
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ const Activities = () => {
       duration: '3 Days',
       location: 'Chitwan National Park',
       icon: TreePine,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Chitwan_swamp.jpg'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Indian_rhinoceros_(Rhinoceros_unicornis)_6.jpg'
     },
     {
       id: 3,
@@ -38,7 +38,7 @@ const Activities = () => {
       duration: 'Half Day',
       location: 'Sarangkot, Pokhara',
       icon: Compass,
-      image: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Ghorepani.jpg'
+      image: 'https://upload.wikimedia.org/wikipedia/commons/a/a3/Paragliding_in_Pokhara.jpg'
     },
     {
       id: 4,
@@ -50,6 +50,50 @@ const Activities = () => {
       location: 'Kathmandu Valley',
       icon: Tent,
       image: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Basantapurpalace.JPG'
+    },
+    {
+      id: 5,
+      title: 'Trisuli River Rafting',
+      category: 'Adventure',
+      priceLevel: 'Budget',
+      price: '$55',
+      duration: '1 Day',
+      location: 'Trisuli River',
+      icon: Compass,
+      image: 'https://upload.wikimedia.org/wikipedia/commons/e/ed/Rafting_in_Trishuli_River%2C_Nepal-3087.jpg'
+    },
+    {
+      id: 6,
+      title: 'Poon Hill Sunrise Trek',
+      category: 'Trekking',
+      priceLevel: 'Budget',
+      price: '$90',
+      duration: '4 Days',
+      location: 'Ghorepani, Annapurna',
+      icon: Mountain,
+      image: 'https://upload.wikimedia.org/wikipedia/commons/6/61/Annapurna_South,_Himchuli,_Machapuchare_Himal-3794.jpg'
+    },
+    {
+      id: 7,
+      title: 'Everest Scenic Flight',
+      category: 'Adventure',
+      priceLevel: 'Mid-Range',
+      price: '$220',
+      duration: '1 Hour',
+      location: 'Kathmandu Airport',
+      icon: Compass,
+      image: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Khumbutse.jpg'
+    },
+    {
+      id: 8,
+      title: 'Bhaktapur Heritage Tour',
+      category: 'Cultural',
+      priceLevel: 'Budget',
+      price: '$30',
+      duration: '1 Day',
+      location: 'Bhaktapur',
+      icon: Tent,
+      image: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/View_of_Bhaktapur_Durbar_Square.jpg'
     }
   ];
 
