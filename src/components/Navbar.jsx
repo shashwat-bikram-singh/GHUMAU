@@ -95,10 +95,15 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  const pathname = location.pathname;
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsOpen(false);
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMobileExpanded(null);
-  }, [location.pathname]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   return (
     <header

@@ -13,7 +13,7 @@ const pageTransition = {
   ease: [0.22, 1, 0.36, 1],
 };
 
-export const PageTransition = ({ children }) => (
+const PageTransition = ({ children }) => (
   <motion.div
     variants={pageVariants}
     initial="initial"
@@ -25,15 +25,5 @@ export const PageTransition = ({ children }) => (
     {children}
   </motion.div>
 );
-
-export const withPageTransition = (Component) => {
-  const Wrapped = (props) => (
-    <PageTransition>
-      <Component {...props} />
-    </PageTransition>
-  );
-  Wrapped.displayName = `Page(${Component.displayName || Component.name || 'Screen'})`;
-  return Wrapped;
-};
 
 export default PageTransition;

@@ -92,13 +92,13 @@ const AnimatedRoutes = () => {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        {appRoutes.map(({ path, component: Component }) => (
+        {appRoutes.map(({ path, component: PageComponent }) => (
           <Route
             key={path}
             path={path}
             element={
               <PageTransition>
-                <Component />
+                <PageComponent />
               </PageTransition>
             }
           />
