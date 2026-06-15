@@ -97,7 +97,26 @@ const Bookings = () => {
   const [categoryFilter, setCategoryFilter] = useState('All');
 
   const filtered = hotels.filter(h => {
-    const matchesSearch = h.name.toLowerCase().includes(search.toLowerCase()) || h.location.toLowerCase().includes(search.toLowerCase());
+    const cleanSearch = search.toLowerCase().trim();
+    let matchesSearch = true;
+    if (cleanSearch) {
+      const isKtm = cleanSearch === 'ktm' || cleanSearch === 'kathmandu';
+      const isPkr = cleanSearch === 'pkr' || cleanSearch === 'pokhara';
+      const isCht = cleanSearch === 'cht' || cleanSearch === 'chitwan';
+      
+      const loc = h.location.toLowerCase();
+      const name = h.name.toLowerCase();
+      
+      if (isKtm && loc.includes('kathmandu')) {
+        matchesSearch = true;
+      } else if (isPkr && loc.includes('pokhara')) {
+        matchesSearch = true;
+      } else if (isCht && loc.includes('chitwan')) {
+        matchesSearch = true;
+      } else {
+        matchesSearch = name.includes(cleanSearch) || loc.includes(cleanSearch);
+      }
+    }
     const matchesCat = categoryFilter === 'All' || h.category === categoryFilter;
     return matchesSearch && matchesCat;
   });

@@ -38,15 +38,37 @@ const MidRangeStaysMap = () => {
               <p className="font-display font-bold text-on-surface text-xl mb-2">Interactive Map View</p>
               <p className="text-on-surface-variant text-sm">Select a hotel below to see its location</p>
             </div>
-            {/* Decorative map pins */}
-            {[{ top: '30%', left: '35%', label: 'KTM' }, { top: '45%', left: '28%', label: 'PKR' }, { top: '60%', left: '42%', label: 'CHT' }].map(pin => (
-              <div key={pin.label} style={{ top: pin.top, left: pin.left }} className="absolute transform -translate-x-1/2 -translate-y-1/2">
-                <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition-transform">
-                  <MapPin size={16} className="text-white" />
+            {/* Interactive map pins */}
+            {[
+              { label: 'KTM', city: 'Kathmandu', top: '45%', left: '48%' },
+              { label: 'PKR', city: 'Pokhara', top: '35%', left: '25%' },
+              { label: 'CHT', city: 'Chitwan', top: '60%', left: '35%' }
+            ].map(pin => {
+              const selectedHotel = selected ? hotels.find(h => h.id === selected) : null;
+              const isSelectedCity = selectedHotel && selectedHotel.location.includes(pin.city);
+              const isActive = locFilter === pin.city || (locFilter === 'All' && isSelectedCity);
+              
+              return (
+                <div key={pin.label} style={{ top: pin.top, left: pin.left }} className="absolute transform -translate-x-1/2 -translate-y-1/2 z-10">
+                  <button 
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setLocFilter(locFilter === pin.city ? 'All' : pin.city);
+                    }}
+                    className={`w-10 h-10 rounded-full flex items-center justify-center shadow-xl cursor-pointer hover:scale-115 transition-all duration-300 ${
+                      isActive 
+                        ? 'bg-secondary ring-4 ring-secondary/30 scale-110' 
+                        : 'bg-primary hover:bg-primary/90'
+                    }`}
+                  >
+                    <MapPin size={18} className="text-white" />
+                  </button>
+                  <div className="bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-0.5 rounded-md text-[0.6875rem] font-bold text-on-surface mt-1 text-center shadow-sm border border-surface-container-low select-none">
+                    {pin.label}
+                  </div>
                 </div>
-                <div className="text-xs font-bold text-on-surface mt-1 text-center">{pin.label}</div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 

@@ -18,7 +18,7 @@ const PlannerForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate(`/explore?cat=${formData.budget}`);
+    navigate(`/explore?cat=${formData.budget}&dest=${formData.destination}`);
   };
 
   const inputClasses = "w-full bg-surface-container-low text-on-surface rounded-xl py-3.5 pl-12 pr-4 focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/40 transition-all duration-300 appearance-none font-medium text-[0.9375rem]";

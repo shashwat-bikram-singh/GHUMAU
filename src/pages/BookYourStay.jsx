@@ -20,6 +20,12 @@ const BookYourStay = () => {
   const [checkin, setCheckin] = useState('');
   const [checkout, setCheckout] = useState('');
   const [guests, setGuests] = useState(2);
+  const [destination, setDestination] = useState('Anywhere in Nepal');
+  const [appliedDestination, setAppliedDestination] = useState('Anywhere in Nepal');
+
+  const filteredHotels = appliedDestination === 'Anywhere in Nepal'
+    ? hotels
+    : hotels.filter(h => h.location.toLowerCase().includes(appliedDestination.toLowerCase()));
 
   return (
     <div className="min-h-screen pt-32 pb-20 bg-surface">
@@ -37,11 +43,15 @@ const BookYourStay = () => {
               <label className="text-xs font-semibold text-on-surface-variant uppercase tracking-wider block mb-2">Destination</label>
               <div className="bg-surface-container-low rounded-xl flex items-center px-4 py-3 gap-3">
                 <MapPin size={18} className="text-primary shrink-0" />
-                <select className="bg-transparent text-on-surface text-[0.9375rem] outline-none w-full">
-                  <option>Anywhere in Nepal</option>
-                  <option>Kathmandu</option>
-                  <option>Pokhara</option>
-                  <option>Chitwan</option>
+                <select
+                  value={destination}
+                  onChange={e => setDestination(e.target.value)}
+                  className="bg-transparent text-on-surface text-[0.9375rem] outline-none w-full cursor-pointer"
+                >
+                  <option value="Anywhere in Nepal">Anywhere in Nepal</option>
+                  <option value="Kathmandu">Kathmandu</option>
+                  <option value="Pokhara">Pokhara</option>
+                  <option value="Chitwan">Chitwan</option>
                 </select>
               </div>
             </div>
@@ -67,44 +77,56 @@ const BookYourStay = () => {
               </div>
             </div>
           </div>
-          <button className="btn-primary mt-6 px-10 py-3.5 font-bold text-[0.9375rem]">Search Available Hotels</button>
+          <button
+            onClick={() => setAppliedDestination(destination)}
+            className="btn-primary mt-6 px-10 py-3.5 font-bold text-[0.9375rem]"
+          >
+            Search Available Hotels
+          </button>
         </div>
 
         {/* Hotel Listings */}
         <h2 className="font-display font-bold text-2xl text-on-surface mb-8">Available Accommodations</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {hotels.map((hotel, i) => (
-            <motion.div key={hotel.id} initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}
-              className="bg-surface-container-lowest rounded-[1.5rem] overflow-hidden ghost-border ambient-shadow group hover:-translate-y-1 transition-transform duration-300 flex flex-col">
-              <div className="h-52 relative overflow-hidden">
-                <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-sm font-bold text-secondary flex items-center gap-1">
-                  <Star size={13} className="fill-secondary" /> {hotel.rating}
-                </div>
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="font-display font-bold text-xl text-on-surface mb-1">{hotel.name}</h3>
-                <p className="text-sm text-on-surface-variant flex items-center gap-1 mb-3"><MapPin size={13} className="text-primary" />{hotel.location}</p>
-                <p className="text-on-surface-variant text-[0.9375rem] leading-relaxed mb-4 flex-grow">{hotel.desc}</p>
-                <div className="flex flex-wrap gap-2 mb-5">
-                  {hotel.amenities.map(am => (
-                    <span key={am} className="bg-surface-container-low text-on-surface-variant px-3 py-1 rounded-lg text-xs flex items-center gap-1.5">
-                      {amenityIcons[am] ? React.createElement(amenityIcons[am], { size: 12, className: 'text-primary' }) : <CheckCircle size={12} className="text-primary" />}
-                      {am}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex justify-between items-end border-t ghost-border pt-4 mt-auto">
-                  <div>
-                    <p className="text-xs text-on-surface-variant mb-1">Per night from</p>
-                    <p className="font-display font-bold text-2xl text-on-surface">${hotel.price}<span className="text-sm font-normal text-on-surface-variant">/night</span></p>
+        {filteredHotels.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredHotels.map((hotel, i) => (
+              <motion.div key={hotel.id} initial={{ opacity: 0, y: 25 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}
+                className="bg-surface-container-lowest rounded-[1.5rem] overflow-hidden ghost-border ambient-shadow group hover:-translate-y-1 transition-transform duration-300 flex flex-col">
+                <div className="h-52 relative overflow-hidden">
+                  <img src={hotel.image} alt={hotel.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-sm font-bold text-secondary flex items-center gap-1">
+                    <Star size={13} className="fill-secondary" /> {hotel.rating}
                   </div>
-                  <button className="btn-primary px-5 py-2.5 text-sm font-medium">Reserve</button>
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="font-display font-bold text-xl text-on-surface mb-1">{hotel.name}</h3>
+                  <p className="text-sm text-on-surface-variant flex items-center gap-1 mb-3"><MapPin size={13} className="text-primary" />{hotel.location}</p>
+                  <p className="text-on-surface-variant text-[0.9375rem] leading-relaxed mb-4 flex-grow">{hotel.desc}</p>
+                  <div className="flex flex-wrap gap-2 mb-5">
+                    {hotel.amenities.map(am => (
+                      <span key={am} className="bg-surface-container-low text-on-surface-variant px-3 py-1 rounded-lg text-xs flex items-center gap-1.5">
+                        {amenityIcons[am] ? React.createElement(amenityIcons[am], { size: 12, className: 'text-primary' }) : <CheckCircle size={12} className="text-primary" />}
+                        {am}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex justify-between items-end border-t ghost-border pt-4 mt-auto">
+                    <div>
+                      <p className="text-xs text-on-surface-variant mb-1">Per night from</p>
+                      <p className="font-display font-bold text-2xl text-on-surface">${hotel.price}<span className="text-sm font-normal text-on-surface-variant">/night</span></p>
+                    </div>
+                    <button className="btn-primary px-5 py-2.5 text-sm font-medium">Reserve</button>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <div className="py-24 text-center bg-surface-container-low rounded-[2rem]">
+            <h3 className="text-2xl font-display font-bold text-on-surface mb-2">No hotels found</h3>
+            <p className="text-on-surface-variant">Try selecting a different destination.</p>
+          </div>
+        )}
       </div>
     </div>
   );

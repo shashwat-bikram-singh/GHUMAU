@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { MapPin, Star, Clock, ArrowRight } from 'lucide-react';
+import { MapPin, Star, Clock, ArrowRight, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const places = [
@@ -126,8 +126,36 @@ const categoryColors = {
 
 const MustVisitPlaces = () => {
   const [selected, setSelected] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
   const categories = ['All', ...new Set(places.map(p => p.category))];
-  const filtered = selected === 'All' ? places : places.filter(p => p.category === selected);
+  
+  const filtered = places.filter(p => {
+    const matchesCat = selected === 'All' || p.category === selected;
+    
+    let matchesSearch = true;
+    if (searchQuery.trim()) {
+      const sq = searchQuery.toLowerCase().trim();
+      const isKtm = sq === 'ktm' || sq === 'kathmandu';
+      const isPkr = sq === 'pkr' || sq === 'pokhara';
+      const isCht = sq === 'cht' || sq === 'chitwan';
+      
+      const loc = p.location.toLowerCase();
+      const name = p.name.toLowerCase();
+      const desc = p.description.toLowerCase();
+      
+      if (isKtm && (loc.includes('kathmandu') || loc.includes('lalitpur') || loc.includes('bhaktapur'))) {
+        matchesSearch = true;
+      } else if (isPkr && loc.includes('pokhara')) {
+        matchesSearch = true;
+      } else if (isCht && loc.includes('chitwan')) {
+        matchesSearch = true;
+      } else {
+        matchesSearch = name.includes(sq) || loc.includes(sq) || desc.includes(sq);
+      }
+    }
+    
+    return matchesCat && matchesSearch;
+  });
 
   return (
     <div className="min-h-screen pt-32 pb-20 bg-surface">
@@ -140,6 +168,20 @@ const MustVisitPlaces = () => {
             From ancient temples and UNESCO World Heritage Sites to breathtaking natural wonders — these are the places you absolutely cannot miss.
           </p>
         </motion.div>
+
+        {/* Search Bar */}
+        <div className="mb-8 max-w-xl bg-surface-container-lowest p-2 rounded-2xl ambient-shadow ghost-border flex items-center">
+          <div className="flex-1 bg-surface-container-low rounded-xl flex items-center px-4 py-2.5">
+            <Search size={20} className="text-primary mr-3 shrink-0" strokeWidth={1.5} />
+            <input
+              type="text"
+              placeholder="Search places (e.g. Kathmandu, Pokhara, EBC...)"
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              className="bg-transparent border-none outline-none w-full text-on-surface placeholder-on-surface-variant/70 text-[0.9375rem]"
+            />
+          </div>
+        </div>
 
         {/* Category Filter */}
         <div className="flex flex-wrap gap-3 mb-12">
@@ -157,43 +199,50 @@ const MustVisitPlaces = () => {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filtered.map((place, i) => (
-            <motion.div
-              key={place.id}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.08 }}
-              className="bg-surface-container-lowest rounded-[1.5rem] overflow-hidden ghost-border ambient-shadow group flex flex-col hover:-translate-y-1 transition-transform duration-300"
-            >
-              <div className="h-56 relative overflow-hidden">
-                <img src={place.image} alt={place.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold ${categoryColors[place.category] || 'text-primary bg-primary/10'}`}>
-                  {place.category}
+        {filtered.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filtered.map((place, i) => (
+              <motion.div
+                key={place.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.08 }}
+                className="bg-surface-container-lowest rounded-[1.5rem] overflow-hidden ghost-border ambient-shadow group flex flex-col hover:-translate-y-1 transition-transform duration-300"
+              >
+                <div className="h-56 relative overflow-hidden">
+                  <img src={place.image} alt={place.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                  <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-xs font-bold ${categoryColors[place.category] || 'text-primary bg-primary/10'}`}>
+                    {place.category}
+                  </div>
+                  <div className="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-sm font-bold text-secondary flex items-center gap-1">
+                    <Star size={14} className="fill-secondary" /> {place.rating}
+                  </div>
                 </div>
-                <div className="absolute top-4 right-4 bg-surface-container-lowest/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-sm font-bold text-secondary flex items-center gap-1">
-                  <Star size={14} className="fill-secondary" /> {place.rating}
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="font-display font-bold text-xl text-on-surface mb-1">{place.name}</h3>
+                  <p className="text-sm text-on-surface-variant flex items-center gap-1 mb-3">
+                    <MapPin size={14} className="text-primary" /> {place.location}
+                  </p>
+                  <p className="text-on-surface-variant text-[0.9375rem] leading-relaxed mb-4 flex-grow">{place.description}</p>
+                  <div className="flex items-center justify-between pt-4 border-t ghost-border">
+                    <span className="flex items-center gap-1.5 text-sm font-medium text-on-surface-variant">
+                      <Clock size={15} /> {place.time}
+                    </span>
+                    <Link to="/planner" className="flex items-center gap-1 text-sm font-bold text-primary hover:text-primary-container transition-colors">
+                      Plan Visit <ArrowRight size={16} />
+                    </Link>
+                  </div>
                 </div>
-              </div>
-              <div className="p-6 flex flex-col flex-grow">
-                <h3 className="font-display font-bold text-xl text-on-surface mb-1">{place.name}</h3>
-                <p className="text-sm text-on-surface-variant flex items-center gap-1 mb-3">
-                  <MapPin size={14} className="text-primary" /> {place.location}
-                </p>
-                <p className="text-on-surface-variant text-[0.9375rem] leading-relaxed mb-4 flex-grow">{place.description}</p>
-                <div className="flex items-center justify-between pt-4 border-t ghost-border">
-                  <span className="flex items-center gap-1.5 text-sm font-medium text-on-surface-variant">
-                    <Clock size={15} /> {place.time}
-                  </span>
-                  <Link to="/planner" className="flex items-center gap-1 text-sm font-bold text-primary hover:text-primary-container transition-colors">
-                    Plan Visit <ArrowRight size={16} />
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              </motion.div>
+            ))}
+          </div>
+        ) : (
+          <div className="py-24 text-center bg-surface-container-low rounded-[2rem]">
+            <h3 className="text-2xl font-display font-bold text-on-surface mb-2">No places found</h3>
+            <p className="text-on-surface-variant">Try adjusting your search query or category filter.</p>
+          </div>
+        )}
       </div>
     </div>
   );

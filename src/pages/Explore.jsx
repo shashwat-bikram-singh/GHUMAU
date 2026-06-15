@@ -1,32 +1,88 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Search } from 'lucide-react';
 import DestinationCard from '../components/DestinationCard';
 import { destinations } from '../data/mockData';
 
 const Explore = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const searchParams = new URLSearchParams(location.search);
-  const initialCategory = searchParams.get('cat') || 'All';
+  const filter = searchParams.get('cat') || 'All';
+  const destFilter = searchParams.get('dest') || '';
+  const [searchQuery, setSearchQuery] = useState('');
 
-  const [filter, setFilter] = useState(initialCategory);
-  
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setFilter(initialCategory);
-  }, [initialCategory]);
+  const setFilter = (cat) => {
+    const params = new URLSearchParams(location.search);
+    params.set('cat', cat);
+    navigate(`/explore?${params.toString()}`, { replace: true });
+  };
 
-  const filteredDestinations = filter === 'All' 
-    ? destinations 
-    : destinations.filter(d => d.category === filter);
+  const setDestFilter = (dest) => {
+    const params = new URLSearchParams(location.search);
+    if (dest) {
+      params.set('dest', dest);
+    } else {
+      params.delete('dest');
+    }
+    navigate(`/explore?${params.toString()}`, { replace: true });
+  };
+
+  const filteredDestinations = destinations.filter(d => {
+    // 1. Budget Category Filter
+    const matchesCat = filter === 'All' || d.category === filter;
+
+    // 2. Destination Parameter Filter (from Trip Planner form)
+    let matchesDestParam = true;
+    if (destFilter && destFilter !== 'any') {
+      const df = destFilter.toLowerCase().trim();
+      const name = d.name.toLowerCase();
+      const desc = d.description.toLowerCase();
+      
+      if (df === 'kathmandu' || df === 'ktm') {
+        matchesDestParam = name.includes('kathmandu') || desc.includes('kathmandu');
+      } else if (df === 'pokhara' || df === 'pkr') {
+        matchesDestParam = name.includes('pokhara') || desc.includes('pokhara');
+      } else if (df === 'chitwan' || df === 'cht') {
+        matchesDestParam = name.includes('chitwan') || desc.includes('chitwan');
+      } else if (df === 'everest') {
+        matchesDestParam = name.includes('everest') || desc.includes('everest');
+      } else {
+        matchesDestParam = name.includes(df) || desc.includes(df);
+      }
+    }
+
+    // 3. Text Search Input Filter
+    let matchesSearchQuery = true;
+    if (searchQuery.trim()) {
+      const sq = searchQuery.toLowerCase().trim();
+      const name = d.name.toLowerCase();
+      const desc = d.description.toLowerCase();
+      
+      if (sq === 'ktm' || sq === 'kathmandu') {
+        matchesSearchQuery = name.includes('kathmandu') || desc.includes('kathmandu');
+      } else if (sq === 'pkr' || sq === 'pokhara') {
+        matchesSearchQuery = name.includes('pokhara') || desc.includes('pokhara');
+      } else if (sq === 'cht' || sq === 'chitwan') {
+        matchesSearchQuery = name.includes('chitwan') || desc.includes('chitwan');
+      } else if (sq === 'everest') {
+        matchesSearchQuery = name.includes('everest') || desc.includes('everest');
+      } else {
+        matchesSearchQuery = name.includes(sq) || desc.includes(sq);
+      }
+    }
+
+    return matchesCat && matchesDestParam && matchesSearchQuery;
+  });
 
   return (
     <div className="min-h-screen pt-40 pb-28 bg-surface">
       <div className="container mx-auto px-6 md:px-12">
         
         {/* Header */}
-        <div className="mb-16 max-w-2xl">
+        <div className="mb-12 max-w-2xl">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -43,6 +99,38 @@ const Explore = () => {
             Find the perfect destination that fits your budget and adventure style.
           </motion.p>
         </div>
+
+        {/* Search Bar */}
+        <div className="mb-8 max-w-xl bg-surface-container-lowest p-2 rounded-2xl ambient-shadow ghost-border flex items-center">
+          <div className="flex-1 bg-surface-container-low rounded-xl flex items-center px-4 py-2.5">
+            <Search size={20} className="text-primary mr-3 shrink-0" strokeWidth={1.5} />
+            <input
+              type="text"
+              placeholder="Search destination (e.g. Kathmandu, Pokhara, KTM...)"
+              value={searchQuery}
+              onChange={e => setSearchQuery(e.target.value)}
+              className="bg-transparent border-none outline-none w-full text-on-surface placeholder-on-surface-variant/70 text-[0.9375rem]"
+            />
+          </div>
+        </div>
+
+        {/* Active Destination Filter Indicator */}
+        {destFilter && destFilter !== 'any' && (
+          <div className="mb-8 inline-flex items-center gap-2.5 bg-primary/10 text-primary px-4 py-2 rounded-xl text-sm font-semibold">
+            <span>Filtering by planner location: <strong className="capitalize">{destFilter}</strong></span>
+            <button 
+              onClick={() => {
+                setDestFilter('');
+                const newParams = new URLSearchParams(location.search);
+                newParams.delete('dest');
+                navigate(`/explore?${newParams.toString()}`, { replace: true });
+              }}
+              className="hover:text-primary-container text-xs font-bold underline ml-1 cursor-pointer"
+            >
+              Clear
+            </button>
+          </div>
+        )}
 
         {/* Filters */}
         <div className="flex flex-wrap gap-4 mb-16">
@@ -82,7 +170,7 @@ const Explore = () => {
           </motion.div>
         ) : (
           <div className="py-32 text-center bg-surface-container-low rounded-[2rem]">
-            <h3 className="text-2xl font-display font-bold text-on-surface">No destinations found for this budget.</h3>
+            <h3 className="text-2xl font-display font-bold text-on-surface">No destinations found for your filters.</h3>
           </div>
         )}
       </div>
