@@ -79,3 +79,5 @@ Recent update: repository documentation refreshed on 2026-06-17.
 ## 📄 License
 
 Private - All rights reserved.
+
+Repository maintenance note: frontend documentation also refreshed on 2026-06-17.
