@@ -74,6 +74,8 @@ The project is structured as a monorepo-lite, with the core application residing
 - [/] Phase 3: Interactive Features & API Integration
 - [ ] Phase 4: Performance Optimization & SEO
 
+Recent update: repository documentation refreshed on 2026-06-17.
+
 ## 📄 License
 
 Private - All rights reserved.
