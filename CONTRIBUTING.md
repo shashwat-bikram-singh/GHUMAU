@@ -36,3 +36,5 @@ When adding a new screen:
 ## 🆘 Need Help?
 
 If you have questions about the design system or architecture, please refer to the `stitch_ghumuam_nepal_travel_ui` directory for reference implementations and source designs.
+
+Repository maintenance note: documentation updates were recorded on 2026-06-17.
