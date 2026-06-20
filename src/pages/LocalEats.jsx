@@ -80,6 +80,33 @@ const LocalEats = () => {
       location: 'Lakeside, Pokhara',
       price: '$$',
       image: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Phewa_lake%2C_Pokhara.jpg'
+    },
+    {
+      id: 9,
+      name: 'Juju Dhau Curd Shop & Cafe',
+      type: 'Street Food',
+      rating: 4.8,
+      location: 'Pottery Square, Bhaktapur',
+      price: '$',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/King_Curd_or_Jujudhau_making_at_Bhaktapur_Nepal.jpg'
+    },
+    {
+      id: 10,
+      name: 'Mithila Sweets & Thali',
+      type: 'Traditional',
+      rating: 4.7,
+      location: 'Janakpurdham',
+      price: '$',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/6/60/Nepali_dal-bhat-tarkari.jpg'
+    },
+    {
+      id: 11,
+      name: 'Bandipur Organic Cafe',
+      type: 'Cafes',
+      rating: 4.7,
+      location: 'Bandipur Bazaar',
+      price: '$$',
+      image: 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Coffee_Himalayan_Java_Nepal.jpg'
     }
   ];
 

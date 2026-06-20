@@ -115,6 +115,16 @@ const places = [
     image: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/View_of_Bhaktapur_Durbar_Square.jpg',
     description: 'The best-preserved medieval city in the Kathmandu Valley, with the 55-Window Palace, Nyatapola Temple, and living Newari culture.',
   },
+  {
+    id: 12,
+    name: 'Bandipur Bazaar',
+    location: 'Bandipur',
+    category: 'Natural Wonder',
+    rating: 4.8,
+    time: '1-2 Days',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Old_houses_in_Bandipur.jpg',
+    description: 'A beautifully preserved, car-free hilltop Newari town featuring 18th-century architecture, cafes, and sweeping views of the central Himalayas.',
+  },
 ];
 
 const categoryColors = {
@@ -138,6 +148,9 @@ const MustVisitPlaces = () => {
       const isKtm = sq === 'ktm' || sq === 'kathmandu';
       const isPkr = sq === 'pkr' || sq === 'pokhara';
       const isCht = sq === 'cht' || sq === 'chitwan';
+      const isBkt = sq === 'bkt' || sq === 'bhaktapur';
+      const isJkp = sq === 'jkp' || sq === 'janakpur';
+      const isBdp = sq === 'bdp' || sq === 'bandipur';
       
       const loc = p.location.toLowerCase();
       const name = p.name.toLowerCase();
@@ -148,6 +161,12 @@ const MustVisitPlaces = () => {
       } else if (isPkr && loc.includes('pokhara')) {
         matchesSearch = true;
       } else if (isCht && loc.includes('chitwan')) {
+        matchesSearch = true;
+      } else if (isBkt && loc.includes('bhaktapur')) {
+        matchesSearch = true;
+      } else if (isJkp && loc.includes('janakpur')) {
+        matchesSearch = true;
+      } else if (isBdp && loc.includes('bandipur')) {
         matchesSearch = true;
       } else {
         matchesSearch = name.includes(sq) || loc.includes(sq) || desc.includes(sq);
