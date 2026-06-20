@@ -69,6 +69,8 @@ export default {
         sans: ['Manrope', 'sans-serif'],
         body: ['Manrope', 'sans-serif'],
         label: ['Manrope', 'sans-serif'],
+        outfit: ['Outfit', 'sans-serif'],
+        playfair: ['"Playfair Display"', 'serif'],
       },
       borderRadius: {
         DEFAULT: '0.25rem',

@@ -12,6 +12,9 @@ const hotels = [
   { id: 6, name: 'Sarangkot Mountain Lodge', location: 'Sarangkot, Pokhara', rating: 4.9, price: 55, amenities: ['Mountain View', 'Breakfast', 'Free WiFi'], image: 'https://upload.wikimedia.org/wikipedia/commons/6/61/Annapurna_South,_Himchuli,_Machapuchare_Himal-3794.jpg', desc: 'Wake up to panoramic Himalayan sunrise views from this elevated mountain lodge.' },
   { id: 7, name: 'Fish Tail Lodge', location: 'Lakeside, Pokhara', rating: 4.8, price: 120, amenities: ['Lake View', 'Restaurant', 'Free WiFi'], image: 'https://upload.wikimedia.org/wikipedia/commons/2/26/World_Famous_%27Fish_Tail_Lodge%27_hotel_in_Pokhara..jpg', desc: 'Iconic lakeside resort on a peninsula in Phewa Lake, accessible by boat with stunning Machhapuchhre views.' },
   { id: 8, name: 'Hotel Shanker', location: 'Lazimpat, Kathmandu', rating: 4.6, price: 90, amenities: ['Heritage', 'Pool', 'Free WiFi'], image: 'https://upload.wikimedia.org/wikipedia/commons/9/97/Shanker.jpg', desc: 'A 19th-century Rana palace converted into a heritage hotel with a beautiful swimming pool in Lazimpat.' },
+  { id: 9, name: 'Golden Gate Guest House', location: 'Heritage Zone, Bhaktapur', rating: 4.6, price: 24, amenities: ['Free WiFi', 'Rooftop', 'Breakfast'], image: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/View_of_Bhaktapur_Durbar_Square.jpg', desc: 'A charming heritage guest house next to the Golden Gate with spectacular views of Nyatapola Temple.' },
+  { id: 10, name: 'Hotel Welcome & Lodge', location: 'Janakpurdham', rating: 4.4, price: 18, amenities: ['Free WiFi', 'Breakfast', 'Restaurant'], image: 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Janaki_Temple_Janakpur-Janakpur030315_MG_36680059.jpg', desc: 'A clean, comfortable budget lodge located within walking distance of the historic Janaki Mandir.' },
+  { id: 11, name: 'The Old Inn Bandipur', location: 'Bandipur Town', rating: 4.8, price: 40, amenities: ['Free WiFi', 'Breakfast', 'Mountain View'], image: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Old_houses_in_Bandipur.jpg', desc: 'A meticulously restored Newari townhouse offering authentic traditional architecture and breathtaking Himalayan views.' },
 ];
 
 const amenityIcons = { 'Free WiFi': Wifi, 'Breakfast': Coffee };
@@ -52,6 +55,9 @@ const BookYourStay = () => {
                   <option value="Kathmandu">Kathmandu</option>
                   <option value="Pokhara">Pokhara</option>
                   <option value="Chitwan">Chitwan</option>
+                  <option value="Bhaktapur">Bhaktapur</option>
+                  <option value="Janakpur">Janakpur</option>
+                  <option value="Bandipur">Bandipur</option>
                 </select>
               </div>
             </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Plane, Menu, X, User, ChevronDown } from 'lucide-react';
+import { Menu, X, User, ChevronDown } from 'lucide-react';
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -112,11 +112,16 @@ const Navbar = () => {
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group shrink-0">
-            <div className="text-primary group-hover:text-primary-container transition-colors">
-              <Plane size={28} className="transform -rotate-45" strokeWidth={1.5} />
+          <Link to="/" className="flex items-center gap-3 group shrink-0 select-none">
+            <div className="text-primary transition-transform duration-500 group-hover:rotate-6 shrink-0">
+              <svg viewBox="0 0 100 100" className="w-9 h-9" fill="none" stroke="currentColor">
+                <circle cx="50" cy="45" r="18" className="fill-secondary/10" />
+                <path d="M50 15 L50 32 M50 58 L50 75 M20 45 L37 45 M63 45 L80 45" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.3" />
+                <path d="M15 80 L45 35 L60 58 L72 42 L90 80 Z" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M45 35 L52 80 M72 42 L78 80" stroke="currentColor" strokeWidth="2" strokeLinecap="round" opacity="0.35" />
+              </svg>
             </div>
-            <span className="text-2xl font-display font-bold tracking-tight text-on-surface">Ghumuam</span>
+            <span className="text-2xl font-outfit font-extrabold tracking-tight bg-gradient-to-r from-primary via-[#007bb9] to-secondary bg-clip-text text-transparent">Ghumuam</span>
           </Link>
 
           {/* Desktop Nav */}

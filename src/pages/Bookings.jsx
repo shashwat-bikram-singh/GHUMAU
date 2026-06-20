@@ -84,6 +84,36 @@ const hotels = [
     amenities: ['Safari', 'River View', 'Breakfast'],
     image: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Chitwan_swamp.jpg',
   },
+  {
+    id: 9,
+    name: 'Golden Gate Guest House',
+    location: 'Heritage Zone, Bhaktapur',
+    rating: 4.6,
+    price: 24,
+    category: 'Budget',
+    amenities: ['Free WiFi', 'Breakfast', 'Rooftop'],
+    image: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/View_of_Bhaktapur_Durbar_Square.jpg',
+  },
+  {
+    id: 10,
+    name: 'Hotel Welcome & Lodge',
+    location: 'Janakpurdham',
+    rating: 4.4,
+    price: 18,
+    category: 'Budget',
+    amenities: ['Free WiFi', 'Breakfast', 'Parking'],
+    image: 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Janaki_Temple_Janakpur-Janakpur030315_MG_36680059.jpg',
+  },
+  {
+    id: 11,
+    name: 'The Old Inn Bandipur',
+    location: 'Bandipur Town',
+    rating: 4.8,
+    price: 40,
+    category: 'Mid-Range',
+    amenities: ['Free WiFi', 'Breakfast', 'Heritage'],
+    image: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Old_houses_in_Bandipur.jpg',
+  },
 ];
 
 const amenityIcons = {
@@ -103,6 +133,9 @@ const Bookings = () => {
       const isKtm = cleanSearch === 'ktm' || cleanSearch === 'kathmandu';
       const isPkr = cleanSearch === 'pkr' || cleanSearch === 'pokhara';
       const isCht = cleanSearch === 'cht' || cleanSearch === 'chitwan';
+      const isBkt = cleanSearch === 'bkt' || cleanSearch === 'bhaktapur';
+      const isJkp = cleanSearch === 'jkp' || cleanSearch === 'janakpur';
+      const isBdp = cleanSearch === 'bdp' || cleanSearch === 'bandipur';
       
       const loc = h.location.toLowerCase();
       const name = h.name.toLowerCase();
@@ -112,6 +145,12 @@ const Bookings = () => {
       } else if (isPkr && loc.includes('pokhara')) {
         matchesSearch = true;
       } else if (isCht && loc.includes('chitwan')) {
+        matchesSearch = true;
+      } else if (isBkt && loc.includes('bhaktapur')) {
+        matchesSearch = true;
+      } else if (isJkp && loc.includes('janakpur')) {
+        matchesSearch = true;
+      } else if (isBdp && loc.includes('bandipur')) {
         matchesSearch = true;
       } else {
         matchesSearch = name.includes(cleanSearch) || loc.includes(cleanSearch);
