@@ -4,7 +4,67 @@ import { motion } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Search } from 'lucide-react';
 import DestinationCard from '../components/DestinationCard';
+import AnimatedHero from '../components/AnimatedHero';
+import ParallaxCard from '../components/ParallaxCard';
 import { destinations } from '../data/mockData';
+
+// Real images for every destination mentioned in mockData
+const exploreHeroSlides = [
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Phewa_lake%2C_Pokhara.jpg',
+    title: 'Pokhara',
+    subtitle: 'Tourism capital of Nepal',
+    location: 'Gandaki Province',
+  },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/Boudhanath_stupa_%2C_Kathmandu%2C_Nepal.jpg',
+    title: 'Kathmandu Valley',
+    subtitle: 'Ancient temples & vibrant culture',
+    location: 'Bagmati Province',
+  },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Khumbutse.jpg',
+    title: 'Everest Base Camp',
+    subtitle: 'The ultimate Himalayan trek',
+    location: 'Solukhumbu District',
+  },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Indian_rhinoceros_(Rhinoceros_unicornis)_6.jpg',
+    title: 'Chitwan National Park',
+    subtitle: 'Nepal\'s first national park',
+    location: 'Bagmati Province',
+  },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/1/17/Jharkot_Village-Upper_Mustang_Trek-1281.jpg',
+    title: 'Mustang',
+    subtitle: 'Mystical high-desert kingdom',
+    location: 'Gandaki Province',
+  },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/c/c9/View_of_Bhaktapur_Durbar_Square.jpg',
+    title: 'Bhaktapur',
+    subtitle: 'Medieval Newari heritage city',
+    location: 'Bagmati Province',
+  },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/1/18/BRP_Lumbini_Mayadevi_temple.jpg',
+    title: 'Lumbini',
+    subtitle: 'Birthplace of the Buddha',
+    location: 'Lumbini Province',
+  },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/6/6c/Janaki_Temple_Janakpur-Janakpur030315_MG_36680059.jpg',
+    title: 'Janakpur',
+    subtitle: 'Birthplace of Goddess Sita',
+    location: 'Madhesh Province',
+  },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Old_houses_in_Bandipur.jpg',
+    title: 'Bandipur',
+    subtitle: 'Hilltop Newari heritage town',
+    location: 'Gandaki Province',
+  },
+];
 
 const Explore = () => {
   const location = useLocation();
@@ -78,28 +138,38 @@ const Explore = () => {
   });
 
   return (
-    <div className="min-h-screen pt-40 pb-28 bg-surface">
-      <div className="container mx-auto px-6 md:px-12">
-        
-        {/* Header */}
-        <div className="mb-12 max-w-2xl">
-          <motion.h1 
+    <div className="min-h-screen bg-surface">
+      {/* ── Animated Hero Banner ─────────────────────────────────────────── */}
+      <AnimatedHero
+        slides={exploreHeroSlides}
+        className="pt-32 pb-16"
+        interval={4200}
+        compact
+      >
+        <div className="container mx-auto px-6 md:px-12">
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-display font-bold text-on-surface mb-6 tracking-tight"
+            className="max-w-2xl"
           >
-            Explore Nepal
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-lg text-on-surface-variant leading-relaxed"
-          >
-            Find the perfect destination that fits your budget and adventure style.
-          </motion.p>
+            <motion.span
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              className="inline-block text-primary-container font-semibold text-sm uppercase tracking-widest mb-3"
+            >
+              9 Destinations · All Budgets
+            </motion.span>
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4 tracking-tight leading-[1.1]">
+              Explore Nepal
+            </h1>
+            <p className="text-lg text-white/72 leading-relaxed">
+              Find the perfect destination that fits your budget and adventure style.
+            </p>
+          </motion.div>
         </div>
+      </AnimatedHero>
 
+      <div className="container mx-auto px-6 md:px-12 mt-10 pb-28">
         {/* Search Bar */}
         <div className="mb-8 max-w-xl bg-surface-container-lowest p-2 rounded-2xl ambient-shadow ghost-border flex items-center">
           <div className="flex-1 bg-surface-container-low rounded-xl flex items-center px-4 py-2.5">
@@ -132,7 +202,7 @@ const Explore = () => {
           </div>
         )}
 
-        {/* Filters */}
+        {/* Budget Filters */}
         <div className="flex flex-wrap gap-4 mb-16">
           {['All', 'Low', 'Mid', 'High'].map(cat => (
             <button
@@ -149,22 +219,21 @@ const Explore = () => {
           ))}
         </div>
 
-        {/* Grid */}
+        {/* Destinations Grid */}
         {filteredDestinations.length > 0 ? (
-          <motion.div 
-            layout
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
-          >
-            {filteredDestinations.map(dest => (
+          <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {filteredDestinations.map((dest, i) => (
               <motion.div
                 layout
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.4 }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
                 key={dest.id}
               >
-                <DestinationCard destination={dest} />
+                <ParallaxCard intensity={8}>
+                  <DestinationCard destination={dest} />
+                </ParallaxCard>
               </motion.div>
             ))}
           </motion.div>
