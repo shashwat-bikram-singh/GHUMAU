@@ -18,13 +18,55 @@ import {
 import PlannerForm from '../components/PlannerForm';
 import DestinationCard from '../components/DestinationCard';
 import SectionHeading from '../components/SectionHeading';
+import AnimatedHero from '../components/AnimatedHero';
+import ParallaxCard from '../components/ParallaxCard';
 import { destinations } from '../data/mockData';
 
+// ── Hero slides – real places of Nepal ──────────────────────────────────────
+const heroSlides = [
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Panoramic_view_of_the_Great_Himalayan_Range_from_Dhulikhel%2C_Nepal_in_2025.jpg',
+    title: 'The Great Himalayas',
+    subtitle: 'Witness the roof of the world',
+    location: 'Dhulikhel, Bagmati Province',
+  },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Phewa_lake%2C_Pokhara.jpg',
+    title: 'Phewa Lake',
+    subtitle: 'Mirror of the Annapurnas',
+    location: 'Pokhara, Gandaki Province',
+  },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/4/4d/Boudhanath_stupa_%2C_Kathmandu%2C_Nepal.jpg',
+    title: 'Boudhanath Stupa',
+    subtitle: 'Spiritual heart of Kathmandu',
+    location: 'Kathmandu Valley',
+  },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/e/e4/Khumbutse.jpg',
+    title: 'Everest Region',
+    subtitle: 'The ultimate high-altitude adventure',
+    location: 'Solukhumbu, Koshi Province',
+  },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/1/1f/Pashupatinath_Temple-2020.jpg',
+    title: 'Pashupatinath Temple',
+    subtitle: 'Sacred shrine on the Bagmati',
+    location: 'Kathmandu, Bagmati Province',
+  },
+  {
+    image: 'https://upload.wikimedia.org/wikipedia/commons/b/b2/Annapurna_Massif_Aerial_View.jpg',
+    title: 'Annapurna Massif',
+    subtitle: 'Trekker\'s paradise in the clouds',
+    location: 'Gandaki Province',
+  },
+];
+
 const quickLinks = [
-  { icon: Compass, label: 'Explore', path: '/explore', color: 'bg-primary/10 text-primary' },
-  { icon: Sparkles, label: 'Trip Planner', path: '/planner', color: 'bg-secondary/20 text-secondary' },
-  { icon: BedDouble, label: 'Book Stays', path: '/bookings', color: 'bg-tertiary/10 text-tertiary' },
-  { icon: Utensils, label: 'Local Eats', path: '/dining', color: 'bg-primary/10 text-primary' },
+  { icon: Compass,   label: 'Explore',      path: '/explore',   color: 'bg-primary/10 text-primary' },
+  { icon: Sparkles,  label: 'Trip Planner', path: '/planner',   color: 'bg-secondary/20 text-secondary' },
+  { icon: BedDouble, label: 'Book Stays',   path: '/bookings',  color: 'bg-tertiary/10 text-tertiary' },
+  { icon: Utensils,  label: 'Local Eats',   path: '/dining',    color: 'bg-primary/10 text-primary' },
 ];
 
 const mustVisitPreview = [
@@ -56,10 +98,10 @@ const mustVisitPreview = [
 ];
 
 const stats = [
-  { value: '50+', label: 'Destinations' },
+  { value: '50+',  label: 'Destinations' },
   { value: '200+', label: 'Activities' },
   { value: '1.2k', label: 'Happy Travelers' },
-  { value: '4.9', label: 'Avg. Rating' },
+  { value: '4.9',  label: 'Avg. Rating' },
 ];
 
 const communityPreview = [
@@ -82,18 +124,13 @@ const Home = () => {
 
   return (
     <div className="min-h-screen bg-surface">
-      {/* Hero */}
-      <section className="relative pt-40 pb-28 lg:pt-56 lg:pb-40 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/4/4c/Panoramic_view_of_the_Great_Himalayan_Range_from_Dhulikhel%2C_Nepal_in_2025.jpg"
-            alt="Nepal Mountains"
-            className="w-full h-full object-cover scale-105"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0b1c30]/80 via-[#0b1c30]/40 to-surface" />
-        </div>
-
-        <div className="container mx-auto px-6 md:px-12 relative z-10">
+      {/* ── Cinematic Hero ─────────────────────────────────────────────────── */}
+      <AnimatedHero
+        slides={heroSlides}
+        className="pt-40 pb-36 lg:pt-56 lg:pb-48"
+        interval={5500}
+      >
+        <div className="container mx-auto px-6 md:px-12">
           <div className="max-w-4xl mb-16 text-left">
             <motion.p
               initial={{ opacity: 0, y: 16 }}
@@ -132,9 +169,9 @@ const Home = () => {
             <PlannerForm />
           </motion.div>
         </div>
-      </section>
+      </AnimatedHero>
 
-      {/* Quick links */}
+      {/* ── Quick links ────────────────────────────────────────────────────── */}
       <section className="pt-48 pb-12 bg-surface">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
@@ -163,7 +200,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Stats */}
+      {/* ── Stats ──────────────────────────────────────────────────────────── */}
       <section className="py-16 bg-surface-container-low">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -184,7 +221,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Featured destinations */}
+      {/* ── Featured destinations ──────────────────────────────────────────── */}
       <section className="py-24 bg-surface">
         <motion.div className="container mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row md:justify-between md:items-end mb-16 gap-6">
@@ -209,7 +246,9 @@ const Home = () => {
                 viewport={{ once: true, margin: '-100px' }}
                 transition={{ delay: i * 0.1, duration: 0.5 }}
               >
-                <DestinationCard destination={dest} />
+                <ParallaxCard intensity={8}>
+                  <DestinationCard destination={dest} />
+                </ParallaxCard>
               </motion.div>
             ))}
           </div>
@@ -225,7 +264,7 @@ const Home = () => {
         </motion.div>
       </section>
 
-      {/* Must visit preview */}
+      {/* ── Must visit preview ─────────────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low relative overflow-hidden">
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-secondary/5 rounded-full blur-[100px] -translate-x-1/3 translate-y-1/3 pointer-events-none" />
         <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -235,40 +274,44 @@ const Home = () => {
             linkTo="/places/must-visit"
             linkLabel="See all places"
           />
-          <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* 5 cards: 1 col → 2 col → 3 col, last row centred on md */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {mustVisitPreview.map((place, i) => (
               <motion.div
                 key={place.name}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
+                transition={{ delay: i * 0.08 }}
+                className={mustVisitPreview.length === 5 && i === 3 ? 'sm:col-start-1 lg:col-start-auto' : ''}
               >
-                <Link
-                  to="/places/must-visit"
-                  className="group block bg-surface-container-lowest rounded-[1.5rem] overflow-hidden ambient-shadow ghost-border hover:-translate-y-1 transition-all duration-300"
-                >
-                  <div className="h-52 overflow-hidden">
-                    <img
-                      src={place.image}
-                      alt={place.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-display font-bold text-xl text-on-surface mb-2">{place.name}</h3>
-                    <p className="text-on-surface-variant text-sm flex items-center gap-1.5">
-                      <MapPin size={14} className="text-primary" /> {place.location}
-                    </p>
-                  </div>
-                </Link>
+                <ParallaxCard intensity={10} className="h-full">
+                  <Link
+                    to="/places/must-visit"
+                    className="group block bg-surface-container-lowest rounded-[1.5rem] overflow-hidden ambient-shadow ghost-border h-full"
+                  >
+                    <div className="h-52 overflow-hidden">
+                      <img
+                        src={place.image}
+                        alt={place.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-display font-bold text-xl text-on-surface mb-2">{place.name}</h3>
+                      <p className="text-on-surface-variant text-sm flex items-center gap-1.5">
+                        <MapPin size={14} className="text-primary" /> {place.location}
+                      </p>
+                    </div>
+                  </Link>
+                </ParallaxCard>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Why choose us */}
+      {/* ── Why choose us ─────────────────────────────────────────────────── */}
       <section className="py-24 bg-surface relative overflow-hidden">
         <motion.div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
         <div className="container mx-auto px-6 md:px-12 relative z-10">
@@ -311,7 +354,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Community preview */}
+      {/* ── Community preview ─────────────────────────────────────────────── */}
       <section className="py-24 bg-surface-container-low">
         <div className="container mx-auto px-6 md:px-12">
           <SectionHeading
@@ -353,7 +396,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ── CTA ────────────────────────────────────────────────────────────── */}
       <section className="py-24 bg-surface">
         <div className="container mx-auto px-6 md:px-12">
           <motion.div
