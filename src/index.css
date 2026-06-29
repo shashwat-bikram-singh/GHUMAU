@@ -34,6 +34,29 @@
     @apply bg-surface-container-high text-primary rounded-xl transition-colors hover:bg-surface-container-highest;
   }
 
+  /* ─── Unified Tab / Filter Bar ──────────────────────────────────────────── */
+  .tab-bar {
+    @apply inline-flex items-center gap-1 bg-surface-container-low p-1.5 rounded-full;
+  }
+
+  .tab-pill {
+    @apply px-5 py-2 rounded-full text-[0.875rem] font-semibold transition-all duration-200 text-on-surface-variant hover:text-on-surface;
+  }
+
+  .tab-pill.active {
+    @apply bg-surface-container-lowest text-primary shadow-sm;
+  }
+
+  /* ─── Page header spacing (pages without animated hero) ─────────────────── */
+  .page-top {
+    @apply pt-36 pb-20;
+  }
+
+  /* ─── Section label above headings ──────────────────────────────────────── */
+  .eyebrow {
+    @apply inline-block text-primary font-semibold text-xs uppercase tracking-[0.12em] mb-3;
+  }
+
   .card-borderless {
     @apply rounded-xl bg-surface-container-lowest overflow-hidden transition-all duration-300 hover:-translate-y-1;
   }

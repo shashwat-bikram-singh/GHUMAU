@@ -261,20 +261,18 @@ const MustVisitPlaces = () => {
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap gap-3 mb-12">
-          {categories.map(cat => (
-            <button
-              key={cat}
-              onClick={() => setSelected(cat)}
-              className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all ${
-                selected === cat
-                  ? 'bg-primary text-white shadow-md shadow-primary/30'
-                  : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="mb-10">
+          <div className="tab-bar">
+            {categories.map(cat => (
+              <button
+                key={cat}
+                onClick={() => setSelected(cat)}
+                className={`tab-pill${selected === cat ? ' active' : ''}`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* ── Places Grid ───────────────────────────────────────────────── */}

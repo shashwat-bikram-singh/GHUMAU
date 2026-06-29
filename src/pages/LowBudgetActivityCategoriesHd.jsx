@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { Clock, MapPin, Star, Filter } from 'lucide-react';
+import { Clock, MapPin, Star } from 'lucide-react';
 
 const activities = [
   { id: 1, title: 'Ghorepani Poon Hill Trek', cat: 'Trekking', rating: 4.8, price: '$95', duration: '4 Days', location: 'Annapurna', image: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Ghorepani.jpg' },
@@ -28,11 +28,12 @@ const LowBudgetActivityCategoriesHd = () => {
           <p className="text-lg text-on-surface-variant leading-relaxed">Premium Nepal experiences curated for smart travellers — maximum memories, minimum spend.</p>
         </motion.div>
 
-        <div className="flex items-center gap-3 mb-10 flex-wrap">
-          <Filter size={16} className="text-on-surface-variant" />
-          {cats.map(c => (
-            <button key={c} onClick={() => setCat(c)} className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${cat === c ? 'bg-primary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}>{c}</button>
-          ))}
+        <div className="mb-10">
+          <div className="tab-bar">
+            {cats.map(c => (
+              <button key={c} onClick={() => setCat(c)} className={`tab-pill${cat === c ? ' active' : ''}`}>{c}</button>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -41,10 +41,12 @@ const MidRangeDiningGuide = () => {
         </div>
 
         {/* Cuisine Filter */}
-        <div className="flex flex-wrap gap-3 mb-10">
-          {cuisines.map(c => (
-            <button key={c} onClick={() => setCuisine(c)} className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${cuisine === c ? 'bg-primary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}>{c}</button>
-          ))}
+        <div className="mb-10">
+          <div className="tab-bar flex-wrap">
+            {cuisines.map(c => (
+              <button key={c} onClick={() => setCuisine(c)} className={`tab-pill${cuisine === c ? ' active' : ''}`}>{c}</button>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

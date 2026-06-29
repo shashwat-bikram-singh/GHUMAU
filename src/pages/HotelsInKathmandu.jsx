@@ -32,13 +32,14 @@ const HotelsInKathmandu = () => {
         </motion.div>
 
         {/* Star Filter */}
-        <div className="flex items-center gap-3 mb-10 flex-wrap">
-          <span className="text-sm font-semibold text-on-surface-variant">Filter by stars:</span>
-          {[0, 3, 4, 5].map(s => (
-            <button key={s} onClick={() => setStarFilter(s)} className={`px-5 py-2 rounded-full text-sm font-semibold transition-all flex items-center gap-1 ${starFilter === s ? 'bg-primary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}>
-              {s === 0 ? 'All' : <>{s} <Star size={13} className={starFilter === s ? 'fill-white text-white' : 'fill-secondary text-secondary'} /></>}
-            </button>
-          ))}
+        <div className="mb-10">
+          <div className="tab-bar">
+            {[0, 3, 4, 5].map(s => (
+              <button key={s} onClick={() => setStarFilter(s)} className={`tab-pill flex items-center gap-1${starFilter === s ? ' active' : ''}`}>
+                {s === 0 ? 'All' : <>{s} <Star size={12} className={starFilter === s ? 'fill-primary text-primary' : 'fill-secondary text-secondary'} /></>}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

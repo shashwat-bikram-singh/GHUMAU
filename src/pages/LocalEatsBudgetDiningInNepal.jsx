@@ -42,10 +42,12 @@ const LocalEatsBudgetDiningInNepal = () => {
         </div>
 
         {/* Filter */}
-        <div className="flex flex-wrap gap-3 mb-10">
-          {types.map(t => (
-            <button key={t} onClick={() => setType(t)} className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${type === t ? 'bg-primary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}>{t}</button>
-          ))}
+        <div className="mb-10">
+          <div className="tab-bar">
+            {types.map(t => (
+              <button key={t} onClick={() => setType(t)} className={`tab-pill${type === t ? ' active' : ''}`}>{t}</button>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

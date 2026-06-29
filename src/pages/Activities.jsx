@@ -176,20 +176,18 @@ const Activities = () => {
 
       <div className="container mx-auto px-6 md:px-12 mt-10 pb-20">
         {/* Price Filter */}
-        <div className="flex items-center justify-end gap-2 bg-surface-container-low p-1.5 rounded-full w-fit mb-14">
-          {['All', 'Budget', 'Mid-Range'].map((level) => (
-            <button
-              key={level}
-              onClick={() => setPriceFilter(level)}
-              className={`px-5 py-2 rounded-full text-[0.9375rem] font-semibold transition-all duration-300 ${
-                priceFilter === level 
-                  ? 'bg-surface-container-lowest text-primary shadow-sm' 
-                  : 'text-on-surface-variant hover:text-on-surface'
-              }`}
-            >
-              {level}
-            </button>
-          ))}
+        <div className="mb-10">
+          <div className="tab-bar">
+            {['All', 'Budget', 'Mid-Range'].map((level) => (
+              <button
+                key={level}
+                onClick={() => setPriceFilter(level)}
+                className={`tab-pill${priceFilter === level ? ' active' : ''}`}
+              >
+                {level}
+              </button>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

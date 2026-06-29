@@ -3,7 +3,7 @@ import { Map, Calendar, Leaf, Book, ShieldAlert, Mail } from 'lucide-react';
 
 const Profile = () => {
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-surface">
+    <div className="min-h-screen page-top bg-surface">
       <div className="container mx-auto px-6 md:px-12 max-w-4xl">
         <div
           className="bg-surface-container-lowest rounded-[2rem] p-10 md:p-14 mb-8 ghost-border ambient-shadow"

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import { MapPin, Star, Calendar, Users, Filter, CheckCircle, Wifi, Coffee, Car } from 'lucide-react';
+import { MapPin, Star, Calendar, Users, CheckCircle, Wifi, Coffee, Car } from 'lucide-react';
 import AnimatedHero from '../components/AnimatedHero';
 import ParallaxCard from '../components/ParallaxCard';
 
@@ -261,19 +261,18 @@ const Bookings = () => {
         </div>
 
         {/* Category Filter */}
-        <div className="flex items-center gap-3 mb-10 flex-wrap">
-          <Filter size={18} className="text-on-surface-variant" />
-          {['All', 'Budget', 'Mid-Range', 'Luxury'].map(cat => (
-            <button
-              key={cat}
-              onClick={() => setCategoryFilter(cat)}
-              className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${
-                categoryFilter === cat ? 'bg-primary text-white shadow-md shadow-primary/30' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="mb-10">
+          <div className="tab-bar">
+            {['All', 'Budget', 'Mid-Range', 'Luxury'].map(cat => (
+              <button
+                key={cat}
+                onClick={() => setCategoryFilter(cat)}
+                className={`tab-pill${categoryFilter === cat ? ' active' : ''}`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Hotels Grid */}

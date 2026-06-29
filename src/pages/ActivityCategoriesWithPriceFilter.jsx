@@ -47,7 +47,7 @@ const ActivityCategoriesWithPriceFilter = () => {
               <div className="flex flex-wrap gap-2">
                 {categories.map(cat => (
                   <button key={cat} onClick={() => setCategory(cat)}
-                    className={`px-4 py-2 rounded-full text-sm font-semibold transition-all ${category === cat ? 'bg-primary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}>
+                    className={`tab-pill text-xs py-1.5 ${category === cat ? 'active' : ''}`}>
                     {cat}
                   </button>
                 ))}

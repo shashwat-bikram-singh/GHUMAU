@@ -73,10 +73,12 @@ const MidRangeStaysMap = () => {
         </div>
 
         {/* Filter */}
-        <div className="flex gap-3 mb-8 flex-wrap">
-          {locations.map(l => (
-            <button key={l} onClick={() => setLocFilter(l)} className={`px-5 py-2 rounded-full text-sm font-semibold transition-all ${locFilter === l ? 'bg-primary text-white' : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'}`}>{l}</button>
-          ))}
+        <div className="mb-8">
+          <div className="tab-bar flex-wrap">
+            {locations.map(l => (
+              <button key={l} onClick={() => setLocFilter(l)} className={`tab-pill${locFilter === l ? ' active' : ''}`}>{l}</button>
+            ))}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

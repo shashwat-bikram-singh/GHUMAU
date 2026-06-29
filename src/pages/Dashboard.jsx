@@ -8,7 +8,7 @@ import { savedTrips } from '../data/mockData';
 
 const Dashboard = () => {
   return (
-    <div className="min-h-screen pt-40 pb-20 bg-surface">
+    <div className="min-h-screen page-top bg-surface">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col lg:flex-row gap-12">
           

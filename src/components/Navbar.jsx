@@ -125,7 +125,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) =>
               link.children ? (
                 <DropdownMenu key={link.name} link={link} />
@@ -133,7 +133,7 @@ const Navbar = () => {
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`text-[0.9375rem] transition-colors ${location.pathname === link.path ? 'text-primary font-semibold' : 'text-on-surface-variant hover:text-primary'}`}
+                  className={`text-[0.9375rem] font-medium transition-colors ${location.pathname === link.path ? 'text-primary font-semibold' : 'text-on-surface-variant hover:text-primary'}`}
                 >
                   {link.name}
                 </Link>
@@ -142,10 +142,10 @@ const Navbar = () => {
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden lg:flex items-center gap-3">
-            <Link to="/saved-trips" className="text-on-surface-variant hover:text-primary text-[0.9375rem] font-medium transition-colors">Saved Trips</Link>
-            <Link to="/login" className="btn-primary flex items-center gap-2 px-6 py-2.5 text-[0.9375rem] font-medium ml-2">
-              <User size={18} strokeWidth={1.5} />
+          <div className="hidden lg:flex items-center gap-3 pl-6 border-l border-outline-variant/30">
+            <Link to="/saved-trips" className="text-on-surface-variant hover:text-primary text-[0.9375rem] font-medium transition-colors">Saved</Link>
+            <Link to="/login" className="btn-primary flex items-center gap-2 px-5 py-2.5 text-[0.9375rem] font-medium">
+              <User size={16} strokeWidth={1.5} />
               <span>Login</span>
             </Link>
           </div>

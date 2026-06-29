@@ -184,20 +184,18 @@ const LocalEats = () => {
 
       <div className="container mx-auto px-6 md:px-12 mt-10 pb-20">
         {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-3 mb-14">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveTab(cat)}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
-                activeTab === cat 
-                  ? 'bg-primary text-white shadow-md shadow-primary/30' 
-                  : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
+        <div className="mb-10">
+          <div className="tab-bar">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveTab(cat)}
+                className={`tab-pill${activeTab === cat ? ' active' : ''}`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Restaurant Grid */}

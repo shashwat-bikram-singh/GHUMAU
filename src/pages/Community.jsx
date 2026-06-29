@@ -38,7 +38,7 @@ const Community = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-32 pb-20 bg-surface">
+    <div className="min-h-screen page-top bg-surface">
       <div className="container mx-auto px-6 md:px-12">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <h1 className="text-4xl md:text-5xl font-display font-bold text-on-surface mb-4 tracking-tight">Community Stories</h1>

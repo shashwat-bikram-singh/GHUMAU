@@ -203,20 +203,18 @@ const Explore = () => {
         )}
 
         {/* Budget Filters */}
-        <div className="flex flex-wrap gap-4 mb-16">
-          {['All', 'Low', 'Mid', 'High'].map(cat => (
-            <button
-              key={cat}
-              onClick={() => setFilter(cat)}
-              className={`px-8 py-3 rounded-[1.5rem] font-medium transition-all text-[0.9375rem] ${
-                filter === cat 
-                  ? 'btn-primary' 
-                  : 'bg-surface-container-lowest text-on-surface-variant ghost-border hover:bg-surface-container-low'
-              }`}
-            >
-              {cat === 'All' ? 'All Budgets' : `${cat} Budget`}
-            </button>
-          ))}
+        <div className="mb-12">
+          <div className="tab-bar">
+            {['All', 'Low', 'Mid', 'High'].map(cat => (
+              <button
+                key={cat}
+                onClick={() => setFilter(cat)}
+                className={`tab-pill${filter === cat ? ' active' : ''}`}
+              >
+                {cat === 'All' ? 'All Budgets' : `${cat} Budget`}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Destinations Grid */}

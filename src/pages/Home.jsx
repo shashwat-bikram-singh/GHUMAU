@@ -127,11 +127,11 @@ const Home = () => {
       {/* ── Cinematic Hero ─────────────────────────────────────────────────── */}
       <AnimatedHero
         slides={heroSlides}
-        className="pt-40 pb-36 lg:pt-56 lg:pb-48"
+        className="pt-40 pb-20 lg:pt-56 lg:pb-28"
         interval={5500}
       >
         <div className="container mx-auto px-6 md:px-12">
-          <div className="max-w-4xl mb-16 text-left">
+          <div className="max-w-4xl text-left">
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -153,26 +153,22 @@ const Home = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-lg md:text-xl text-surface-container-low max-w-2xl leading-relaxed mb-8"
+              className="text-lg md:text-xl text-surface-container-low max-w-2xl leading-relaxed"
             >
               From the highest peaks on Earth to dense jungles and ancient temples. Plan your next unforgettable journey
               with Ghumuam.
             </motion.p>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="-mb-32 relative z-20"
-          >
-            <PlannerForm />
-          </motion.div>
         </div>
       </AnimatedHero>
 
+      {/* ── Planner Form ── */}
+      <div className="container mx-auto px-6 md:px-12 mt-10 relative z-30">
+        <PlannerForm />
+      </div>
+
       {/* ── Quick links ────────────────────────────────────────────────────── */}
-      <section className="pt-48 pb-12 bg-surface">
+      <section className="pt-14 pb-12 bg-surface">
         <div className="container mx-auto px-6 md:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             {quickLinks.map((item, i) => (
